@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${baseFont.className} bg-shepherds_black text-shepherds_white h-screen flex flex-col`}>
-        <main className='flex-grow'>{children}</main>
+        className={`${baseFont.className} bg-shepherds_black text-shepherds_white h-screen flex flex-col items-center`}>
+        <main className='flex-grow w-10/12 md:w-auto'>{children}</main>
         <Footer />
       </body>
     </html>

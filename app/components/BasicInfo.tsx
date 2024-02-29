@@ -8,14 +8,14 @@ const emailAddress = 'shepherdsofcassini@gmail.com';
 
 const BasicInfo = () => {
   return (
-    <div className='flex flex-col items-center text-center'>
+    <div className='flex flex-col items-center text-center mt-16 sm:mt-8'>
       <p>
         Shepherds Of Cassini is
         <br />
         Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar,
         Vocals, Keys
       </p>
-      <div className='text-primary_green_light flex gap-9'>
+      <div className='text-primary_green_light flex flex-wrap justify-center gap-x-9 gap-y-4 my-4'>
         <Link target='_blank' href={'https://shepherdsofcassini.bandcamp.com/'}>
           <FaBandcamp className={iconClasses} />
         </Link>
