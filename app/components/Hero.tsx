@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Logo from './Logo';
+import MyLink from './ui/MyLink';
 
 const Hero = () => {
   return (
@@ -13,6 +14,10 @@ const Hero = () => {
         className='max-w-lg w-10/12'
       />
       <Logo />
+      <p className='mt-6'>Psyechedlic prog metal from Auckland, New Zealand</p>
+      <MyLink type='button-regular' href='#'>
+        Listen
+      </MyLink>
     </div>
   );
 };
