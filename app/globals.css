@@ -15,7 +15,7 @@
   @media (max-width: 640px) {
     width: 100vw;
     height: 100vw;
-    animation: cloud-left-mobile 5s infinite alternate;
+    animation: cloud-left-mobile 15s infinite alternate;
   }
 }
 
@@ -32,7 +32,7 @@
   @media (max-width: 640px) {
     width: 100vw;
     height: 200vw;
-    right: -40%;
+    right: -50%;
     top: 30%;
     animation: cloud-right-mobile 15s infinite alternate;
   }
@@ -70,7 +70,7 @@
 @keyframes cloud-left-mobile {
   0% {
     transform: scale(1.5);
-    opacity: 0.2;
+    opacity: 0.15;
   }
   50% {
     transform: scale(1.6);
@@ -78,20 +78,20 @@
   }
   100% {
     transform: scale(1.5);
-    opacity: 0.2;
+    opacity: 0.15;
   }
 }
 @keyframes cloud-right-mobile {
   0% {
-    transform: scale(1.6);
-    opacity: 0.2;
+    transform: scale(1.5);
+    opacity: 0.15;
   }
   50% {
-    transform: scale(1.7);
+    transform: scale(1.6);
     opacity: 0.25;
   }
   100% {
-    transform: scale(1.6);
-    opacity: 0.2;
+    transform: scale(1.5);
+    opacity: 0.15;
   }
 }
