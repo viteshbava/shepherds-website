@@ -6,8 +6,8 @@ import MyLink from './ui/MyLink';
 const Hero = () => {
   return (
     <>
-      <div className='sm:grow relative aspect-square w-full sm:w-auto max-h-[1000px]'>
-        <Image src='/imgs/helios-front-cover.png' alt='image' fill />
+      <div className='sm:grow relative aspect-square w-4/5 sm:w-auto max-h-[1000px]'>
+        <Image src='/imgs/helios-front-cover.png' alt='Helios Forsaken front cover' fill />
       </div>
       <Logo />
       <p className='mt-2 mb-4'>Psyechedlic prog metal from Auckland, New Zealand</p>
