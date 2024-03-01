@@ -15,20 +15,6 @@ export const metadata: Metadata = {
   keywords:
     'shepherds of cassini new zealand music rock metal progressive post prog psychedelic auckland',
   metadataBase: new URL('https://shepherdsofcassini.com'),
-  openGraph: {
-    images: [
-      {
-        url: 'https://shepherdsofcassini/og.png', // Must be an absolute URL
-        width: 1200,
-        height: 630,
-      },
-      {
-        url: 'https://shepherdsofcassini/og-alt.png', // Must be an absolute URL
-        width: 630,
-        height: 630,
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
