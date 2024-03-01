@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Barlow_Condensed } from 'next/font/google';
 import './globals.css';
 import Footer from './components/Footer';
-import Clouds from './components/Clouds';
+import Clouds from './components/clouds/Clouds';
 
 const baseFont = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] });
 

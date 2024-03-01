@@ -43,7 +43,7 @@ const HeroImages = () => {
   useEffect(() => {
     const newInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 6000); // Change slide every 5 seconds
     setIntervalId(newInterval);
     return () => {
       if (newInterval) clearInterval(newInterval);
@@ -64,7 +64,8 @@ const HeroImages = () => {
             key={index}
             src={image.path}
             alt={image.alt}
-            fill
+            width={1000}
+            height={1000}
             className={`absolute top-0 left-0 w-full h-full transition duration-1000 ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
