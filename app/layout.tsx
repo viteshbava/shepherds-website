@@ -4,6 +4,7 @@ import './globals.css';
 import Footer from './components/Footer';
 import Clouds from './components/clouds/Clouds';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { url } from 'inspector';
 
 const baseFont = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -14,6 +15,20 @@ export const metadata: Metadata = {
   keywords:
     'shepherds of cassini new zealand music rock metal progressive post prog psychedelic auckland',
   metadataBase: new URL('https://shepherdsofcassini.com'),
+  openGraph: {
+    images: [
+      {
+        url: 'https://shepherdsofcassini/og.png', // Must be an absolute URL
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: 'https://shepherdsofcassini/og-alt.png', // Must be an absolute URL
+        width: 630,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
