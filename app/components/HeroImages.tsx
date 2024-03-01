@@ -16,6 +16,14 @@ const images = [
     path: '/imgs/helios-band.png',
     alt: 'Helios Forsaken album art picture of band members',
   },
+  {
+    path: '/imgs/helios-back-cover.png',
+    alt: 'Helios Forsaken back cover',
+  },
+  {
+    path: '/imgs/helios-inside-image.png',
+    alt: 'Helios Forsaken inside image',
+  },
 ];
 
 const HeroImages = () => {
@@ -24,16 +32,11 @@ const HeroImages = () => {
 
   const handleImageClick = () => {
     if (intervalId) clearInterval(intervalId);
-
     const nextIndex = (currentIndex + 1) % images.length;
     setCurrentIndex(nextIndex);
-
-    // Set the auto-change interval again
     const newInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
-
-    // Store the new interval in state
     setIntervalId(newInterval);
   };
 
@@ -41,11 +44,7 @@ const HeroImages = () => {
     const newInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000); // Change slide every 5 seconds
-
-    // Store the interval ID in state
     setIntervalId(newInterval);
-
-    // Clear the interval when the component unmounts
     return () => {
       if (newInterval) clearInterval(newInterval);
     };
