@@ -38,7 +38,7 @@ ${outline ? 'bg-white' : 'bg-primary_green_light'}
 ${outline && !disabled && 'hover:bg-gray-100'}
 ${outline ? 'border-black' : 'border-primary_green_light'}
 ${outline ? 'text-black' : 'text-white'}
-${small ? 'py-1' : 'py-3'}
+${small ? 'py-1' : ''}
 ${small ? 'text-sm' : 'text-md'}
 ${className}
 `;

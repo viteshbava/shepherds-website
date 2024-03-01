@@ -27,7 +27,7 @@
   right: -35%;
   top: -50%;
   animation: cloud-right-desktop 15s infinite alternate;
-  background: radial-gradient(circle closest-side, #5fb6f4, rgba(77, 204, 211, 0));
+  background: radial-gradient(circle closest-side, #5fa7f4, rgba(77, 204, 211, 0));
 
   @media (max-width: 640px) {
     width: 100vw;
