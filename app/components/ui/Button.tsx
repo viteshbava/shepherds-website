@@ -34,13 +34,14 @@ border-[1px]
 min-w-20 
 uppercase 
 w-min 
+text-md
 ${!disabled && 'active:scale-95'} 
 ${outline ? 'bg-white' : 'bg-primary_green_light'}
 ${outline && !disabled && 'hover:bg-gray-100'}
 ${outline ? 'border-black' : 'border-primary_green_light'}
 ${outline ? 'text-black' : 'text-white'}
 ${small ? 'py-1' : ''}
-${small ? 'text-sm' : 'text-md'}
+${small ? 'text-sm' : ''}
 ${className}
 `;
 

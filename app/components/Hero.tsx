@@ -10,7 +10,7 @@ const Hero = () => {
       <HeroImages />
       <div className='flex flex-col items-center relative z-10'>
         <Logo />
-        <p className='mt-2 mb-4'>Psyechedlic prog metal from Auckland, New Zealand</p>
+        <p className='text-xl mt-2 mb-4'>Psyechedlic prog metal from Auckland, New Zealand</p>
         <MyLink
           type='button-regular'
           target='_blank'
