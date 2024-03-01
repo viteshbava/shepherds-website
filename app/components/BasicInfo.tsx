@@ -15,7 +15,7 @@ const BasicInfo = () => {
         Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar,
         Vocals, Keys
       </p>
-      <div className='text-primary_green_light grid grid-cols-3 sm:flex sm:flex-wrap justify-center gap-x-9 gap-y-4 my-8 sm:my-4'>
+      <div className='text-primary_green_light grid grid-cols-3 sm:flex sm:flex-wrap justify-center gap-x-9 gap-y-6 my-8 sm:my-4'>
         <Link target='_blank' href={'https://shepherdsofcassini.bandcamp.com/'}>
           <FaBandcamp className={iconClasses} />
         </Link>
