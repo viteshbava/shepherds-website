@@ -3,10 +3,11 @@
   width: 70vw;
   height: 100vh;
   border-radius: 50%;
-  left: -50%;
+  left: -45%;
   top: 10%;
-  animation: cloud-left-desktop 5s infinite alternate;
+  animation: cloud-left-desktop 15s infinite alternate;
   background: radial-gradient(circle closest-side, #4dccd3, rgba(77, 204, 211, 0));
+  /* border: solid red 1px; */
 
   @media (max-width: 640px) {
     width: 100vw;
@@ -24,6 +25,7 @@
   top: -50%;
   animation: cloud-right-desktop 15s infinite alternate;
   background: radial-gradient(circle closest-side, #5fa7f4, rgba(77, 204, 211, 0));
+  /* border: solid green 1px; */
 
   @media (max-width: 640px) {
     width: 100vw;
@@ -36,21 +38,21 @@
 
 @keyframes cloud-left-desktop {
   0% {
-    transform: scale(1.5);
+    transform: scale(1);
     opacity: 0.2;
   }
   50% {
-    transform: scale(1.6);
+    transform: scale(1.65);
     opacity: 0.25;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1);
     opacity: 0.2;
   }
 }
 @keyframes cloud-right-desktop {
   0% {
-    transform: scale(1.6);
+    transform: scale(1);
     opacity: 0.2;
   }
   50% {
@@ -58,14 +60,14 @@
     opacity: 0.25;
   }
   100% {
-    transform: scale(1.6);
+    transform: scale(1);
     opacity: 0.2;
   }
 }
 
 @keyframes cloud-left-mobile {
   0% {
-    transform: scale(1.5);
+    transform: scale(1);
     opacity: 0.15;
   }
   50% {
@@ -73,13 +75,13 @@
     opacity: 0.25;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1);
     opacity: 0.15;
   }
 }
 @keyframes cloud-right-mobile {
   0% {
-    transform: scale(1.5);
+    transform: scale(1);
     opacity: 0.15;
   }
   50% {
@@ -87,7 +89,7 @@
     opacity: 0.25;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(1);
     opacity: 0.15;
   }
 }
