@@ -3,6 +3,7 @@ import { Barlow_Condensed } from 'next/font/google';
 import './globals.css';
 import Footer from './components/Footer';
 import Clouds from './components/clouds/Clouds';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const baseFont = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <main className='flex-grow w-10/12 md:w-auto'>{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId='G-L7J30WL4PG' />
     </html>
   );
 }
