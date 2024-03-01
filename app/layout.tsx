@@ -9,7 +9,9 @@ const baseFont = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] }
 export const metadata: Metadata = {
   title: 'Shepherds of Cassini',
   description:
-    'Psyechedlic prog metal from Auckland, New Zealand. Shepherds Of Cassini is Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar, Vocals, Keys',
+    'Psychedelic prog metal from Auckland, New Zealand. Shepherds Of Cassini is Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar, Vocals, Keys',
+  keywords:
+    'shepherds of cassini new zealand music rock metal progressive post prog psychedelic auckland',
 };
 
 export default function RootLayout({
@@ -20,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
+        suppressHydrationWarning={true}
         className={`${baseFont.className} bg-shepherds_black text-shepherds_white h-svh min-h-[670px] flex flex-col items-center`}>
         <Clouds />
         <main className='flex-grow w-10/12 md:w-auto'>{children}</main>
