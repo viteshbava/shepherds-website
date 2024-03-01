@@ -1,3 +1,5 @@
+'use client';
+
 import BasicInfo from './components/BasicInfo';
 import Hero from './components/Hero';
 

@@ -8,14 +8,16 @@ const Hero = () => {
   return (
     <>
       <HeroImages />
-      <Logo />
-      <p className='mt-2 mb-4'>Psyechedlic prog metal from Auckland, New Zealand</p>
-      <MyLink
-        type='button-regular'
-        target='_blank'
-        href='https://shepherdsofcassini.bandcamp.com/album/helios-forsaken'>
-        Listen
-      </MyLink>
+      <div className='flex flex-col items-center relative z-10'>
+        <Logo />
+        <p className='mt-2 mb-4'>Psyechedlic prog metal from Auckland, New Zealand</p>
+        <MyLink
+          type='button-regular'
+          target='_blank'
+          href='https://shepherdsofcassini.bandcamp.com/album/helios-forsaken'>
+          Listen
+        </MyLink>
+      </div>
     </>
   );
 };

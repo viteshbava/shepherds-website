@@ -33,6 +33,7 @@ py-2
 border-[1px] 
 min-w-20 
 uppercase 
+w-min 
 ${!disabled && 'active:scale-95'} 
 ${outline ? 'bg-white' : 'bg-primary_green_light'}
 ${outline && !disabled && 'hover:bg-gray-100'}
