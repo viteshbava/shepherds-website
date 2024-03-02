@@ -10,7 +10,7 @@ const BasicInfo = () => {
   return (
     <div className='flex flex-col items-center text-center mt-16 sm:mt-8'>
       <p>
-        Shepherds Of Cassini is
+        Shepherds of Cassini is
         <br />
         Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar,
         Vocals, Keys
