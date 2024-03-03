@@ -17,6 +17,22 @@ const images = [
     alt: 'Helios Forsaken album art picture of band members',
   },
   {
+    path: '/imgs/selftitled-eyelid.png',
+    alt: 'Self titled eyelid image',
+  },
+  {
+    path: '/imgs/selftitled-asomatous.png',
+    alt: 'Self titled asomatous image',
+  },
+  {
+    path: '/imgs/selftitled-silent-cartographer.png',
+    alt: 'Self titled silent cartographer image',
+  },
+  {
+    path: '/imgs/selftitled-nefarous.png',
+    alt: 'Self titled nefarous image',
+  },
+  {
     path: '/imgs/helios-back-cover.png',
     alt: 'Helios Forsaken back cover',
   },
@@ -61,6 +77,7 @@ const HeroImages = () => {
         if (currentIndex === 0 && index === images.length - 1) scale = 0.7;
         return (
           <Image
+            priority
             key={index}
             src={image.path}
             alt={image.alt}
