@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import { Barlow_Condensed } from 'next/font/google';
+import { Archivo_Narrow } from 'next/font/google';
 import './globals.css';
 import Footer from './components/footer/Footer';
 import Clouds from './components/clouds/Clouds';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import Navbar from './components/navbar/Navbar';
+import Header from './components/header/Header';
 
-const baseFont = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] });
+const baseFont = Archivo_Narrow({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: 'Shepherds of Cassini',
@@ -28,7 +28,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${baseFont.className} bg-shepherds_black text-shepherds_white h-svh min-h-[670px] flex flex-col items-center`}>
         {/* <Clouds /> */}
-        <Navbar />
+        <Header />
         <main className='flex-grow w-10/12 md:w-auto'>{children}</main>
         <Footer />
       </body>
