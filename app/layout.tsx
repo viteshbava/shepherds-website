@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { Barlow_Condensed } from 'next/font/google';
 import './globals.css';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import Clouds from './components/clouds/Clouds';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { url } from 'inspector';
+import Navbar from './components/navbar/Navbar';
 
 const baseFont = Barlow_Condensed({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -27,7 +27,8 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={`${baseFont.className} bg-shepherds_black text-shepherds_white h-svh min-h-[670px] flex flex-col items-center`}>
-        <Clouds />
+        {/* <Clouds /> */}
+        <Navbar />
         <main className='flex-grow w-10/12 md:w-auto'>{children}</main>
         <Footer />
       </body>

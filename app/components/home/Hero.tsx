@@ -1,13 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import Logo from './Logo';
-import MyLink from './ui/MyLink';
 import HeroImages from './HeroImages';
 
 const Hero = () => {
   return (
     <>
-      <HeroImages />
+      {/* <HeroImages />
       <div className='flex flex-col items-center relative z-10'>
         <Logo />
         <p className='text-xl mt-2 mb-4'>Psyechedlic prog metal from Auckland, New Zealand</p>
@@ -17,7 +15,8 @@ const Hero = () => {
           href='https://shepherdsofcassini.bandcamp.com/album/helios-forsaken'>
           Listen
         </MyLink>
-      </div>
+      </div> */}
+      <h1>Hero</h1>
     </>
   );
 };
