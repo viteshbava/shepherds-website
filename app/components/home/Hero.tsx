@@ -16,7 +16,9 @@ const Hero = () => {
           Listen
         </MyLink>
       </div> */}
-      <h1>Hero</h1>
+      <div id='hero' className='h-screen border border-red-600 w-full'>
+        <h1>Hero</h1>
+      </div>
     </>
   );
 };

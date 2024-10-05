@@ -9,7 +9,6 @@ const Header = () => {
       <Link className='transition duration-200 ease-in-out hover:opacity-50' href={'#/home'}>
         <Logo />
       </Link>
-
       <Navbar />
     </header>
   );
