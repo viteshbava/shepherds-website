@@ -1,6 +1,6 @@
 import React from 'react';
+import styles from './styles.module.css';
 import Image from 'next/image';
-import HeroImages from './HeroImages';
 
 const Hero = () => {
   return (
@@ -16,7 +16,9 @@ const Hero = () => {
           Listen
         </MyLink>
       </div> */}
-      <section id='hero' className='h-screen border border-red-600 w-full'>
+      <section
+        id='hero'
+        className={`${styles['hero-height']} h-screen border border-red-600 w-full`}>
         <h1>Hero</h1>
       </section>
     </>

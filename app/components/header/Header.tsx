@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header className='w-full py-6 px-4 sm:px-10 flex justify-between items-center'>
+    <header className='fixed z-40 w-full h-[4.5rem] sm:h-24 px-4 sm:px-10 flex justify-between items-center border border-green-500'>
       <Link
         className='transition duration-200 ease-in-out hover:opacity-50 flex-1 flex justify-center lg:justify-start'
         href={'#/home'}>

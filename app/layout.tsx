@@ -26,10 +26,12 @@ export default function RootLayout({
     <html lang='en'>
       <body
         suppressHydrationWarning={true}
-        className={`${baseFont.className} bg-shepherds_black text-shepherds_white h-svh min-h-[670px] flex flex-col items-center`}>
+        className={`${baseFont.className} bg-shepherds_black text-shepherds_white flex flex-col items-center`}>
         {/* <Clouds /> */}
         <Header />
-        <main className='w-full'>{children}</main>
+        <main className='w-full flex flex-col grow items-center min-h-full text-center'>
+          {children}
+        </main>
         <Footer />
       </body>
       <GoogleAnalytics gaId='G-L7J30WL4PG' />
