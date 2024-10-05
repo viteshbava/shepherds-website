@@ -1,41 +1,63 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { HamburgerButton } from './HamburgerButtons';
+import HamburgerMenu from './HamburgerMenu';
 
 const navLinks = [
   {
-    name: 'Home',
+    title: 'Home',
     href: '/#home',
   },
   {
-    name: 'Music',
+    title: 'Music',
     href: '/#music',
   },
   {
-    name: 'About',
+    title: 'About',
     href: '/#about',
   },
   {
-    name: 'Contact',
+    title: 'Contact',
     href: '/#contact',
   },
 ];
 
 const Navbar = () => {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
   return (
-    <nav>
-      <ul className='flex'>
-        {navLinks.map((link, index) => (
-          <li key={index}>
-            <Link
-              type='nav'
-              className='flex justify-center items-center text-xl text-white rounded-full w-36 h-10 transition duration-200 ease-in-out hover:opacity-50'
-              href={link.href}>
-              {link.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <>
+      <nav className='hidden lg:block'>
+        <ul className='flex'>
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <Link
+                type='nav'
+                className='flex justify-center items-center text-xl text-white rounded-full w-36 h-10 transition duration-200 ease-in-out hover:opacity-50'
+                href={link.href}>
+                {link.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div className='lg:hidden'>
+        <button
+          aria-label='Open menu'
+          onClick={toggleMenu}
+          className='flex justify-center items-center focus:outline-none w-14 h-14 sm:w-16 sm:h-16 rounded-full active:bg-primary_yellow sm:hover:bg-primary_yellow transition'>
+          <HamburgerButton />
+        </button>
+        {isHamburgerOpen && (
+          <HamburgerMenu navLinks={navLinks} closeMenu={() => setIsHamburgerOpen(false)} />
+        )}
+      </div>
+    </>
   );
 };
 
