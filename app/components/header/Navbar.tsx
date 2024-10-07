@@ -46,7 +46,7 @@ const Navbar = () => {
           ))}
         </ul>
       </nav>
-      <div className='lg:hidden'>
+      <div className='absolute top-0 right-0 h-[4.5rem] sm:h-24 lg:hidden flex flex-col justify-center'>
         <button
           aria-label='Open menu'
           onClick={toggleMenu}

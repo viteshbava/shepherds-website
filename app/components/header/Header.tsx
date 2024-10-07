@@ -9,7 +9,7 @@ const Header = () => {
       <Link
         className='transition duration-200 ease-in-out hover:opacity-50 flex-1 flex justify-center lg:justify-start'
         href={'#/home'}>
-        <Logo className='w-56	sm:w-auto' />
+        <Logo className='w-56 px-8 sm:w-auto' />
       </Link>
       <Navbar />
     </header>
