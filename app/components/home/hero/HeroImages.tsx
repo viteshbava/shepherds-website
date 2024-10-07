@@ -20,17 +20,19 @@ const images: HeroImages[] = [
 const HeroImages = ({ duration = 4000 }: { duration?: number }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    let newInterval: NodeJS.Timeout;
-    if (images.length > 1) {
-      newInterval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, duration);
-    }
-    return () => {
-      if (newInterval) clearInterval(newInterval);
-    };
-  }, [duration]);
+  // uncomment this back if using multiple images and switching between them
+
+  // useEffect(() => {
+  //   let newInterval: NodeJS.Timeout;
+  //   if (images.length > 1) {
+  //     newInterval = setInterval(() => {
+  //       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  //     }, duration);
+  //   }
+  //   return () => {
+  //     if (newInterval) clearInterval(newInterval);
+  //   };
+  // }, [duration]);
 
   return (
     <div className='absolute top-0 left-0 w-full min-h-svh aspect-square z-10'>
