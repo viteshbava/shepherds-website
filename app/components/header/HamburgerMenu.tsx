@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { HamburgerCross } from './HamburgerButtons';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import Link from 'next/link';
 import Logo from '../Logo';
@@ -47,9 +46,6 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, closeMenu }) =>
 
   return (
     <>
-      {isShowing && (
-        <div className={`fixed inset-0 z-30 bg-black bg-opacity-30`} onClick={onClose}></div>
-      )}
       <div
         className={`flex fixed bg-white inset-y-0 right-0 max-w-md w-10/12 sm:w-1/2 z-40 flex-col justify-start p-4 transition-transform duration-500 shadow-xl ${
           isShowing ? 'translate-x-0' : 'translate-x-full'
@@ -64,9 +60,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, closeMenu }) =>
           <button
             aria-label='Close menu'
             onClick={onClose}
-            className='flex justify-center items-center focus:outline-none w-14 h-14 sm:w-16 sm:h-16 rounded-full hover:bg-primary_yellow transition'>
-            <HamburgerCross />
-          </button>
+            className='flex justify-center items-center focus:outline-none w-14 h-14 sm:w-16 sm:h-16 rounded-full hover:bg-primary_yellow transition'></button>
         </div>
         <nav>
           <ul className='flex flex-col gap-4'>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { HamburgerButton } from './HamburgerButtons';
 import HamburgerMenu from './HamburgerMenu';
+import { HamburgerButton } from './HamburgerButton';
 
 const navLinks = [
   {
@@ -49,7 +49,7 @@ const Navbar = () => {
           aria-label='Open menu'
           onClick={toggleMenu}
           className='flex justify-center items-center focus:outline-none w-14 h-14 sm:w-16 sm:h-16 rounded-full active:bg-primary_yellow sm:hover:bg-primary_yellow transition'>
-          <HamburgerButton />
+          <HamburgerButton closed={!isHamburgerOpen} />
         </button>
         {isHamburgerOpen && (
           <HamburgerMenu navLinks={navLinks} closeMenu={() => setIsHamburgerOpen(false)} />

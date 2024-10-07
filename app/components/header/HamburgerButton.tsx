@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const HamburgerButton = () => {
+const HamburgerClosed = () => {
   return (
     <svg
       className='h-6 w-6 sm:h-8 sm:w-8'
@@ -29,7 +29,7 @@ export const HamburgerButton = () => {
   );
 };
 
-export const HamburgerCross = () => {
+const HamburgerCross = () => {
   return (
     <svg
       className='h-6 w-6 sm:h-8 sm:w-8'
@@ -43,3 +43,6 @@ export const HamburgerCross = () => {
     </svg>
   );
 };
+
+export const HamburgerButton = ({ closed = true }: { closed: boolean }) =>
+  closed ? <HamburgerClosed /> : <HamburgerCross />;
