@@ -26,7 +26,7 @@ export default function RootLayout({
     <html className='scroll-smooth' lang='en' style={{ scrollBehavior: 'smooth' }}>
       <body
         suppressHydrationWarning={true}
-        className={`${baseFont.className} bg-shepherds_black text-shepherds_white flex flex-col items-center`}>
+        className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
         {/* <Clouds /> */}
         <Header />
         <main className='w-full flex flex-col grow items-center min-h-full text-center'>
