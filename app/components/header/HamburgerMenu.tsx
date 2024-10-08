@@ -1,83 +1,63 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import Link from 'next/link';
-import Logo from '../Logo';
-
-export interface NavLink {
-  href: string;
-  title: string;
-}
+import { NavLink } from './Header';
+import Copyright from '../Copyright';
 
 interface HamburgerMenuProps {
   navLinks: NavLink[];
+  isOpen: boolean;
   closeMenu: () => void;
 }
 
-const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, closeMenu }) => {
-  const [isShowing, setIsShowing] = useState(false);
+const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMenu }) => {
   const [isMounted, setIsMounted] = useState(false);
   const setIsBodyScrollLocked = useLockBodyScroll();
 
   const onClose = useCallback(() => {
-    setIsShowing(false);
+    setTimeout(closeMenu, 200);
     setIsBodyScrollLocked(false);
-  }, [setIsBodyScrollLocked]);
+  }, [setIsBodyScrollLocked, closeMenu]);
 
   useEffect(() => {
-    setIsShowing(true);
     setIsMounted(true);
+    setIsBodyScrollLocked(true);
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         onClose();
       }
     };
-
     document.addEventListener('keydown', handleEscape);
-    setIsBodyScrollLocked(true);
-
     return () => {
       document.removeEventListener('keydown', handleEscape);
     };
   }, [onClose, setIsBodyScrollLocked]);
 
   useEffect(() => {
-    if (isMounted && !isShowing) setTimeout(closeMenu, 500);
-  }, [isShowing, closeMenu, isMounted]);
+    if (isMounted && !isOpen) onClose();
+  }, [isMounted, isOpen, onClose]);
 
   return (
-    <>
-      <div
-        className={`flex fixed bg-white inset-y-0 right-0 max-w-md w-10/12 sm:w-1/2 z-40 flex-col justify-start p-4 transition-transform duration-500 shadow-xl ${
-          isShowing ? 'translate-x-0' : 'translate-x-full'
-        }`}>
-        <div className='flex justify-between mb-8'>
-          <Link
-            href='#home'
-            className='w-full max-w-40 sm:max-w-48 relative filter drop-shadow-[0px_3px_3px_rgba(0,0,0,0.25)] hover:scale-105 transition-all'
-            onClick={onClose}>
-            <Logo />
-          </Link>
-          <button
-            aria-label='Close menu'
-            onClick={onClose}
-            className='flex justify-center items-center focus:outline-none w-14 h-14 sm:w-16 sm:h-16 rounded-full hover:bg-primary_yellow transition'></button>
-        </div>
-        <nav>
-          <ul className='flex flex-col gap-4'>
-            {navLinks.map((link, index) => (
-              <li key={index} onClick={onClose}>
-                <Link
-                  type='nav'
-                  className={`flex items-center p-4 text-2xl text-black rounded-md font-bold w-full h-10 transition duration-200 ease-in-out hover:bg-primary_yellow`}
-                  href={link.href}>
-                  {link.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </>
+    <div
+      className={`flex fixed bg-black inset-y-0 top-0 left-0 w-screen h-screen z-30 flex-col justify-between items-center p-4 transition-all duration-200 ${
+        isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}>
+      <nav className='flex-grow flex items-center justify-center'>
+        <ul className='flex flex-col gap-4'>
+          {navLinks.map((link, index) => (
+            <li key={index} onClick={onClose}>
+              <Link
+                type='nav'
+                className={`flex justify-center items-center p-4 text-xl text-white rounded-md w-full h-10 transition duration-200 ease-in-out hover:bg-primary_yellow`}
+                href={link.href}>
+                {link.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <Copyright className='text-xs' />
+    </div>
   );
 };
 

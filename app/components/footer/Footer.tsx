@@ -1,9 +1,10 @@
 import React from 'react';
+import Copyright from '../Copyright';
 
 const Footer = () => {
   return (
     <footer className='shrink-0 flex justify-center items-center pt-6 pb-2'>
-      <p className='text-xs'>&#169; 2024 Shepherds of Cassini</p>
+      <Copyright className='text-xs' />
     </footer>
   );
 };
