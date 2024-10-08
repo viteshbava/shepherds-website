@@ -1,10 +1,19 @@
 import React from 'react';
+import Image from 'next/image';
+import Section from '../ui/Section';
 
 const Music = () => {
   return (
-    <section id='music' className='min-h-screen border border-red-600 w-full'>
-      Music
-    </section>
+    <Section id='music'>
+      <Image
+        priority
+        src='/imgs/heresy/heresy-front-cover.webp'
+        alt='In Thrall to Heresy front album cover'
+        className='aspect-square'
+        width={100}
+        height={100}
+      />
+    </Section>
   );
 };
 

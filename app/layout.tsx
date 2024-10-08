@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
         {/* <Clouds /> */}
         <Header />
-        <main className='w-full flex flex-col grow items-center min-h-full text-center'>
+        <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
           {children}
         </main>
         <Footer />
