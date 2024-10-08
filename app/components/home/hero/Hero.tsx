@@ -12,7 +12,7 @@ const Hero = () => {
             priority
             src='/imgs/heresy/heresy-front-cover.webp'
             alt='In Thrall to Heresy front album cover'
-            className='w-full aspect-square object-cover'
+            className='aspect-square object-cover'
             width={100}
             height={100}
           />
