@@ -8,17 +8,15 @@ import data from '@/app/data/music/heliosForsaken';
 const Hero = () => {
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-10 lg:gap-20 w-full border border-red-500'>
-        <div className='border border-green-500'>
-          <Image
+      <div className='flex flex-col justify-center items-center h-full flex-grow sm:grid sm:grid-cols-2 gap-5 sm:gap-10 lg:gap-20 w-full border border-red-500'>
+        <div className='relative flex-grow aspect-square border border-green-500'>
+          {/* <Image
             priority
             src={data.frontCover}
             alt='In Thrall to Heresy album cover'
-            className='aspect-square object-cover'
-            layout='responsive'
-            width={100}
-            height={100}
-          />
+            className='object-cover'
+            layout='fill'
+          /> */}
         </div>
         <div className='w-full border border-green-500'>
           <div>
