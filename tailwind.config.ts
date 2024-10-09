@@ -14,6 +14,7 @@ const config: Config = {
         primary_green_light: '#367780',
         red_important: '#B81F1F',
         red_bright: '#DE5F5F',
+        red_dim: '#803636',
       },
     },
   },

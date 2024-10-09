@@ -6,6 +6,7 @@ interface ButtonProps {
   children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
+  color?: 'green' | 'red';
 }
 
 export const buttonStyles = ({
@@ -21,11 +22,10 @@ justify-center
 disabled:opacity-50 
 disabled:cursor-not-allowed 
 rounded-md 
-hover:opacity-90   
 transition 
 px-2 
 py-2 
-border-[1px] 
+hover:bg-opacity-90
 ${!disabled && 'active:scale-95'} 
 ${className}
 `;

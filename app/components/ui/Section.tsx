@@ -8,9 +8,7 @@ interface SectionProps {
 
 const Section = ({ id, children, className }: SectionProps) => {
   return (
-    <section
-      id={id}
-      className={`${className} flex justify-center relative z-20 max-w-5xl w-5/6 border border-blue-400`}>
+    <section id={id} className={`${className} flex justify-center relative z-20 max-w-5xl w-5/6`}>
       {children}
     </section>
   );
