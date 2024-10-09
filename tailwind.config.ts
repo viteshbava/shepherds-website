@@ -12,6 +12,8 @@ const config: Config = {
         shepherds_black: '#130A0B',
         shepherds_white: '#E5FCFF',
         primary_green_light: '#367780',
+        red_important: '#B81F1F',
+        red_bright: '#DE5F5F',
       },
     },
   },

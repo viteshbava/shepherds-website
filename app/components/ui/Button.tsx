@@ -2,21 +2,16 @@ interface ButtonProps {
   onClick?: (value: any) => void;
   // onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
-  outline?: boolean;
-  small?: boolean;
   submit?: boolean;
   children: React.ReactNode;
   className?: string;
+  ariaLabel?: string;
 }
 
 export const buttonStyles = ({
-  outline = false,
-  small = false,
   disabled = false,
   className = '',
 }: Partial<{
-  outline?: boolean;
-  small?: boolean;
   disabled?: boolean;
   className?: string;
 }> = {}) => `
@@ -31,17 +26,7 @@ transition
 px-2 
 py-2 
 border-[1px] 
-min-w-20 
-uppercase 
-w-min 
-text-md
 ${!disabled && 'active:scale-95'} 
-${outline ? 'bg-white' : 'bg-primary_green_light'}
-${outline && !disabled && 'hover:bg-gray-100'}
-${outline ? 'border-black' : 'border-primary_green_light'}
-${outline ? 'text-black' : 'text-white'}
-${small ? 'py-1' : ''}
-${small ? 'text-sm' : ''}
 ${className}
 `;
 
@@ -49,17 +34,17 @@ const Button = ({
   children,
   onClick = () => {},
   disabled = false,
-  outline,
-  small,
   submit,
   className = '',
+  ariaLabel = '',
 }: ButtonProps) => {
   return (
     <button
+      aria-label={ariaLabel}
       onClick={onClick}
       disabled={disabled}
       type={submit ? 'submit' : undefined}
-      className={buttonStyles({ outline, small, disabled, className })}>
+      className={buttonStyles({ disabled, className })}>
       {children}
     </button>
   );
