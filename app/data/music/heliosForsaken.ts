@@ -4,7 +4,7 @@ const data: MusicData = {
   name: 'Helios Forsaken',
   trackListing: [],
   embedLink:
-    'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=small/transparent=true/',
+    'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
   frontCover: '/imgs/heresy/heresy-front-cover.webp',
   listenLinks: [
     {

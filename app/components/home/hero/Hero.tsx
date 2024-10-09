@@ -8,31 +8,39 @@ import data from '@/app/data/music/heliosForsaken';
 const Hero = () => {
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
-      <div className='grid grid-cols-2 gap-20 w-full'>
-        <div className='w-full'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-10 lg:gap-20 w-full border border-red-500'>
+        <div className='border border-green-500'>
           <Image
             priority
-            layout='responsive'
             src={data.frontCover}
-            alt='In Thrall to Heresy album cover featuring [describe the cover image briefly]'
-            className='w-full aspect-square object-cover'
+            alt='In Thrall to Heresy album cover'
+            className='aspect-square object-cover'
+            layout='responsive'
             width={100}
             height={100}
           />
         </div>
-        <div className='w-full'>
+        <div className='w-full border border-green-500'>
           <div>
             <div className='rounded-lg	bg-black/30 py-2'>
-              <h2 className='text-3xl text-red_important'>In Thrall to Heresy</h2>
-              <p className='text-lg'>New album out now</p>
+              <h2 className='text-lg sm:text-3xl text-red_important'>In Thrall to Heresy</h2>
+              <p className='sm:text-lg'>New album out now</p>
             </div>
-            <p className='mt-4'>
-              From upcoming album <span className='text-red_important'>In Thrall to Heresy</span>
+            <p className='text-sm sm:text-base mt-4'>
+              From upcoming album <span className=' text-red_important'>In Thrall to Heresy</span>
             </p>
             <p className='text-red_important'>99 | 99 | 2024</p>
-            <h3 className='text-xl mt-6 mb-3 text-red_bright'>Listen | Purchase</h3>
-            <div className='w-full h-[120px]'>
+            <h3 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 text-red_bright'>
+              Listen | Purchase
+            </h3>
+            <div className='hidden sm:block w-full h-[120px]'>
               <iframe className='border-0 w-full h-full' src={data.embedLink} seamless></iframe>
+            </div>
+            <div className='sm:hidden w-full h-[42px]'>
+              <iframe
+                className='border-0 w-full h-full'
+                src='https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/transparent=true/'
+                seamless></iframe>
             </div>
             <div className='flex flex-col space-y-4 mt-4'>
               {data.listenLinks.map((link, i) => (
