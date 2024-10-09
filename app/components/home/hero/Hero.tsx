@@ -30,7 +30,7 @@ const Hero = () => {
               From upcoming album <span className='text-red_important'>In Thrall to Heresy</span>
             </p>
             <p className='text-red_important'>99 | 99 | 2024</p>
-            <h3 className='text-xl mt-8 mb-3 text-red_bright'>Listen | Purchase</h3>
+            <h3 className='text-xl mt-6 mb-3 text-red_bright'>Listen | Purchase</h3>
             <div className='w-full h-[120px]'>
               <iframe className='border-0 w-full h-full' src={data.embedLink} seamless></iframe>
             </div>
