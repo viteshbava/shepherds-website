@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import Image from 'next/image';
 import Section from '../../ui/Section';
 import ButtonLink from '../../ui/ButtonLink';
-import data from '@/app/data/music/heliosForsaken';
+import data from '@/app/data/music/heresy';
 
 const Hero = () => {
   return (

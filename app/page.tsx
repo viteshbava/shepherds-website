@@ -16,11 +16,5 @@ export default function Home() {
       <About />
       <Contact />
     </>
-    // <section className='flex flex-col grow items-center h-full text-center pt-6'>
-    //   <Hero />
-    //   <Music />
-    //   <About />
-    //   <Contact />
-    // </section>
   );
 }
