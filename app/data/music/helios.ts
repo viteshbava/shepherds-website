@@ -2,6 +2,7 @@ import { MusicData } from '@/app/types';
 
 const data: MusicData = {
   name: 'Helios Forsaken',
+  slug: 'heliosforsaken',
   releaseDate: new Date('2015-07-15'),
   trackListing: [],
   embedLarge:

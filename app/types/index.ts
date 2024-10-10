@@ -6,6 +6,7 @@ interface ListenLink {
 
 export interface MusicData {
   name: string;
+  slug: string;
   releaseDate?: Date;
   trackListing: string[];
   embedLarge: string;

@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Section from '../ui/Section';
 import musicList from '@/app/data/music/musicList';
+import Link from 'next/link';
 
 const Music = () => {
   return (
@@ -12,20 +13,21 @@ const Music = () => {
           const year = release?.releaseDate?.getFullYear();
           const caption = `${release.name}${year ? ` (${year})` : ''}`;
           return (
-            <div
+            <Link
               key={index}
-              className='w-full md:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-5'>
+              href={`/music/${release.slug}`}
+              className='w-full md:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-5 hover:opacity-80'>
               <div className='relative aspect-square w-full'>
                 <Image
                   priority
                   src={release.frontCover}
-                  alt='In Thrall to Heresy album cover'
+                  alt={`${release.name} front cover image`}
                   className='object-cover'
                   layout='fill'
                 />
               </div>
               <p className='mt-1 w-full'>{caption}</p>
-            </div>
+            </Link>
           );
         })}
       </div>

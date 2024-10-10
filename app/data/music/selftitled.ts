@@ -2,6 +2,7 @@ import { MusicData } from '@/app/types';
 
 const data: MusicData = {
   name: 'Shepherds of Cassini',
+  slug: 'shepherdsofcassini',
   releaseDate: new Date('2013-08-24'),
   trackListing: [],
   embedLarge: '',
