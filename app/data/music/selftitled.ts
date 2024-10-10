@@ -6,7 +6,7 @@ const data: MusicData = {
   trackListing: [],
   embedLarge: '',
   embedSmall: '',
-  frontCover: '/imgs/selftitled/selftitled-front-cover.png',
+  frontCover: '/imgs/selftitled/selftitled-front-cover.jpg',
   listenLinks: [
     {
       label: 'Bandcamp | Buy CD',
