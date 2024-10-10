@@ -3,8 +3,10 @@ import { MusicData } from '@/app/types';
 const data: MusicData = {
   name: 'Helios Forsaken',
   trackListing: [],
-  embedLink:
+  embedLarge:
     'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
+  embedSmall:
+    'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/artwork=none/transparent=true/',
   frontCover: '/imgs/heresy/heresy-front-cover.webp',
   listenLinks: [
     {

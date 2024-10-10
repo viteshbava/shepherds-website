@@ -34,13 +34,10 @@ const Hero = () => {
               Listen | Purchase
             </h3>
             <div className='hidden sm:block w-full h-[120px]'>
-              <iframe className='border-0 w-full h-full' src={data.embedLink} seamless></iframe>
+              <iframe className='border-0 w-full h-full' src={data.embedLarge} seamless></iframe>
             </div>
             <div className='sm:hidden w-full h-[42px]'>
-              <iframe
-                className='border-0 w-full h-full'
-                src='https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/transparent=true/'
-                seamless></iframe>
+              <iframe className='border-0 w-full h-full' src={data.embedSmall} seamless></iframe>
             </div>
             <div className='flex flex-col space-y-4 mt-4'>
               {data.listenLinks.map((link, i) => (

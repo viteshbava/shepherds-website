@@ -7,7 +7,8 @@ interface ListenLink {
 export interface MusicData {
   name: string;
   trackListing: string[];
-  embedLink: string;
+  embedLarge: string;
+  embedSmall: string;
   frontCover: string;
   listenLinks: ListenLink[];
 }
