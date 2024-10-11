@@ -1,7 +1,7 @@
 'use client';
 
 import About from './components/home/about/About';
-import Contact from './components/home/Contact';
+import Contact from './components/home/contact/Contact';
 import Hero from './components/home/hero/Hero';
 import BackgroundImages from './components/home/BackgroundImages';
 import Music from './components/home/Music';

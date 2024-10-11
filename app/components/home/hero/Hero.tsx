@@ -9,6 +9,10 @@ const Hero = () => {
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
       <div className='flex flex-col justify-center h-full gap-5 w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-10 lg:gap-20'>
+        <div className='w-full rounded-lg	bg-black/30 py-2'>
+          <h2 className='text-lg sm:text-3xl text-red_important'>In Thrall to Heresy</h2>
+          <p className='sm:text-lg'>New album out now</p>
+        </div>
         <div className='flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full aspect-square sm:items-start '>
           <div className='relative aspect-square max-w-full max-h-full w-auto sm:w-full'>
             <Image
@@ -22,10 +26,6 @@ const Hero = () => {
         </div>
         <div className='w-full mb-4'>
           <div>
-            <div className='rounded-lg	bg-black/30 py-2'>
-              <h2 className='text-lg sm:text-3xl text-red_important'>In Thrall to Heresy</h2>
-              <p className='sm:text-lg'>New album out now</p>
-            </div>
             {/* <div className='mt-4'>
               <p className='text-sm sm:text-base'>
                 From upcoming album <span className=' text-red_important'>In Thrall to Heresy</span>
