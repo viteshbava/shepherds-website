@@ -1,7 +1,16 @@
-const MusicPage = () => (
-  <>
-    <h1>Redirect to Music section on Home page!</h1>
-  </>
-);
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+const MusicPage = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/#music');
+  }, [router]);
+
+  return null;
+};
 
 export default MusicPage;
