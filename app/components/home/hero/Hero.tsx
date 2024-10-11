@@ -26,10 +26,12 @@ const Hero = () => {
               <h2 className='text-lg sm:text-3xl text-red_important'>In Thrall to Heresy</h2>
               <p className='sm:text-lg'>New album out now</p>
             </div>
-            <p className='text-sm sm:text-base mt-4'>
-              From upcoming album <span className=' text-red_important'>In Thrall to Heresy</span>
-            </p>
-            <p className='text-red_important'>99 | 99 | 2024</p>
+            {/* <div className='mt-4'>
+              <p className='text-sm sm:text-base'>
+                From upcoming album <span className=' text-red_important'>In Thrall to Heresy</span>
+              </p>
+              <p className='text-red_important'>99 | 99 | 2024</p>
+            </div> */}
             <h3 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 text-red_bright'>
               Listen | Purchase
             </h3>
