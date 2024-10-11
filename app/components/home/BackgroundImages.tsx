@@ -35,7 +35,7 @@ const HeroImages = ({ duration = 4000 }: { duration?: number }) => {
   // }, [duration]);
 
   return (
-    <div className='absolute top-0 left-0 w-full min-h-svh aspect-square z-10'>
+    <div className='absolute top-0 left-0 w-full min-h-svh aspect-square'>
       {images.map((image, index) => {
         return (
           <Image

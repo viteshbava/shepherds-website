@@ -16,8 +16,8 @@ const Contact = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <Section id='contact' className='mt-24 items-center'>
-      <h2 className='mb-6 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>Contact</h2>
+    <Section id='contact' className='my-24 items-center z-auto'>
+      <h2 className='mb-12 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>Contact</h2>
       <ButtonLink
         isExternal
         href='mailto:shepherdsofcassini@gmail.com'
@@ -25,7 +25,7 @@ const Contact = ({ images }: { images: string[] }) => {
         className='w-80 max-w-full bg-red_dim uppercase text-sm'>
         shepherdsofcassini@gmail.com
       </ButtonLink>
-      <div>
+      <div className='w-full mt-12'>
         <ImageGrid images={images} onClickImage={handleImageClick} />
         {isFullscreen && (
           <FullScreenGallery

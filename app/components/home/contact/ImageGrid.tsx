@@ -16,12 +16,11 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
           className='relative w-full h-48 cursor-pointer'
           onClick={() => onClickImage(index)}>
           <Image
-            src={`/gallery/${image}`}
+            src={`/imgs/gallery/${image}`}
             alt={`Image ${index + 1}`}
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            objectFit='cover'
-            className='rounded-lg'
+            className='rounded-sm object-cover'
           />
         </div>
       ))}

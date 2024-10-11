@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <Music />
       <About />
-      {/* <Contact images={images} /> */}
+      <Contact images={images} />
     </>
   );
 }
