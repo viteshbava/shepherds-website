@@ -5,14 +5,22 @@ import Section from '../../ui/Section';
 import ButtonLink from '../../ui/ButtonLink';
 import ImageGrid from './ImageGrid';
 import FullScreenGallery from './FullScreenGallery';
+import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 
 const Contact = ({ images }: { images: string[] }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const setIsBodyScrollLocked = useLockBodyScroll();
 
   const handleImageClick = (index: number) => {
     setActiveIndex(index);
     setIsFullscreen(true);
+    setIsBodyScrollLocked(true);
+  };
+
+  const closeFullScreenGallery = () => {
+    setIsFullscreen(false);
+    setIsBodyScrollLocked(false);
   };
 
   return (
@@ -31,7 +39,7 @@ const Contact = ({ images }: { images: string[] }) => {
           <FullScreenGallery
             images={images}
             initialIndex={activeIndex}
-            onClose={() => setIsFullscreen(false)}
+            onClose={closeFullScreenGallery}
           />
         )}
       </div>

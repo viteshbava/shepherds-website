@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { HamburgerButton } from '../../header/HamburgerButton';
 
 interface FullscreenImageProps {
   images: string[];
@@ -11,7 +12,20 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [fading, setFading] = useState(false);
 
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [onClose]);
+
   const handleNavigation = (direction: 'prev' | 'next') => {
+    console.log('clicked!');
     setFading(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) => {
@@ -27,26 +41,34 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
 
   return (
     <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50'>
-      <button className='absolute top-4 right-4 text-white text-3xl' onClick={onClose}>
-        &times;
-      </button>
+      <div className='absolute top-0 right-0 pr-2 h-[4.5rem] sm:h-24 flex flex-col justify-center'>
+        <button
+          aria-label='Open menu'
+          onClick={onClose}
+          className='flex justify-center items-center focus:outline-none w-14 h-14 sm:w-16 sm:h-16 rounded-full transition'>
+          <HamburgerButton closed={false} />
+        </button>
+      </div>
       <div className='relative max-w-4xl w-full h-[80vh] flex items-center justify-center'>
         <button
-          className='absolute left-0 h-full px-4 text-white text-2xl'
+          className='h-full px-4 text-white text-2xl'
           onClick={() => handleNavigation('prev')}>
           &#10094;
         </button>
-        <div className={`transition-opacity duration-300 ${fading ? 'opacity-0' : 'opacity-100'}`}>
+        <div
+          className={`relative flex-grow w-full h-full transition-opacity duration-300 ${
+            fading ? 'opacity-0' : 'opacity-100'
+          }`}>
           <Image
-            src={`/gallery/${images[currentIndex]}`}
+            src={`/imgs/gallery/${images[currentIndex]}`}
             alt={`Fullscreen Image ${currentIndex + 1}`}
             fill
-            objectFit='contain'
-            className='w-full h-full'
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            className='object-contain'
           />
         </div>
         <button
-          className='absolute right-0 h-full px-4 text-white text-2xl'
+          className='h-full px-4 text-white text-2xl'
           onClick={() => handleNavigation('next')}>
           &#10095;
         </button>
