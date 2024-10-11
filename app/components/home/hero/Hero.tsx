@@ -8,7 +8,7 @@ import data from '@/app/data/music/heresy';
 const Hero = () => {
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
-      <div className='flex flex-col justify-center h-full gap-x-5 gap-y-0 w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20'>
+      <div className='flex flex-col justify-center h-full gap-5 w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20'>
         <div className='w-full rounded-lg	bg-black/30 py-2 col-start-2 row-start-1'>
           <h2 className='text-lg sm:text-3xl text-red_important'>In Thrall to Heresy</h2>
           <p className='sm:text-lg'>New album out now</p>
@@ -30,7 +30,7 @@ const Hero = () => {
           </p>
           <p className='text-red_important'>99 | 99 | 2024</p>
         </div> */}
-        <div className='w-full mb-4 col-start-2 row-start-3'>
+        <div className='w-full mb-4 col-start-2 row-start-2 row-span-2'>
           <h3 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 text-red_bright'>
             Listen | Purchase
           </h3>
