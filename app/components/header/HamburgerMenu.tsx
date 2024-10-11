@@ -3,6 +3,7 @@ import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import Link from 'next/link';
 import { NavLink } from './Header';
 import Copyright from '../Copyright';
+import SocialIcons from '../SocialIcons';
 
 interface HamburgerMenuProps {
   navLinks: NavLink[];
@@ -101,6 +102,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
           ))}
         </ul>
       </nav>
+      <SocialIcons />
       <Copyright className='text-xs' />
     </div>
   );
