@@ -1,6 +1,7 @@
 import React from 'react';
-import Section from '../ui/Section';
+import Section from '../../ui/Section';
 import Image from 'next/image';
+import BioText from './BioText';
 
 const About = () => {
   return (
@@ -15,10 +16,11 @@ const About = () => {
           layout='fill'
         />
       </div>
-      <p className='self-start text-left mt-1 text-sm sm:text-base'>
+      <p className='self-start text-left mt-1 text-sm'>
         Shepherds of Cassini is (left to right) Omar Al-Hashimi – Drums, Felix Lun – Violin, Vitesh
         Bava – Bass, Brendan Zwaan – Guitar, Vocals, Keys
       </p>
+      <BioText />
     </Section>
   );
 };

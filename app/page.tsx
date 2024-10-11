@@ -1,6 +1,6 @@
 'use client';
 
-import About from './components/home/About';
+import About from './components/home/about/About';
 import Contact from './components/home/Contact';
 import Hero from './components/home/hero/Hero';
 import BackgroundImages from './components/home/BackgroundImages';
