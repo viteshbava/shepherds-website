@@ -11,7 +11,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
       {images.slice(0, 6).map((image, index) => (
         <div
           key={image}
-          className='relative w-full aspect-square cursor-pointer'
+          className='relative w-full aspect-square cursor-pointer hover:opacity-90'
           onClick={() => onClickImage(index)}>
           <Image
             src={`/imgs/gallery/${image}`}
