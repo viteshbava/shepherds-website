@@ -6,8 +6,6 @@ interface ImageGridProps {
 }
 
 const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
-  console.log(images);
-
   return (
     <div className='grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-4'>
       {images.slice(0, 6).map((image, index) => (

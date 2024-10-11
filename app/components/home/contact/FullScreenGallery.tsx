@@ -25,7 +25,6 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
   }, [onClose]);
 
   const handleNavigation = (direction: 'prev' | 'next') => {
-    console.log('clicked!');
     setFading(true);
     setTimeout(() => {
       setCurrentIndex((prevIndex) => {
