@@ -13,7 +13,8 @@ const About = () => {
           src='/imgs/about-photo.webp'
           alt='Band members standing together'
           className='object-cover'
-          layout='fill'
+          fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
       </div>
       <p className='self-start text-left mt-1 text-sm'>

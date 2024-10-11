@@ -20,7 +20,8 @@ const Hero = () => {
               src={data.frontCover}
               alt='In Thrall to Heresy album cover'
               className='object-cover'
-              layout='fill'
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             />
           </div>
         </div>

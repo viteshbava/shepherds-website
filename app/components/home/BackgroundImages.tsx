@@ -44,6 +44,7 @@ const HeroImages = ({ duration = 4000 }: { duration?: number }) => {
             src={image.imageUrl}
             alt={image.altText || 'Rotating hero image'}
             fill
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             className={`absolute top-0 left-0 w-full transition duration-1000 object-cover opacity-40 blur-sm ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}

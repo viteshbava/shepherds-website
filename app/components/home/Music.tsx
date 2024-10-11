@@ -23,7 +23,8 @@ const Music = () => {
                   src={release.frontCover}
                   alt={`${release.name} front cover image`}
                   className='object-cover'
-                  layout='fill'
+                  fill
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
               </div>
               <p className='mt-1 w-full'>{caption}</p>
