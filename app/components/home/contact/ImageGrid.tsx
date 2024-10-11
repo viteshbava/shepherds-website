@@ -9,11 +9,11 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
   console.log(images);
 
   return (
-    <div className='grid grid-cols-3 grid-rows-2 gap-4'>
+    <div className='grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-4'>
       {images.slice(0, 6).map((image, index) => (
         <div
           key={image}
-          className='relative w-full h-48 cursor-pointer'
+          className='relative w-full aspect-square cursor-pointer'
           onClick={() => onClickImage(index)}>
           <Image
             src={`/imgs/gallery/${image}`}
