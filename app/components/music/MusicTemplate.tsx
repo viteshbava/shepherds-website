@@ -3,11 +3,14 @@ import React from 'react';
 import Section from '../ui/Section';
 import Image from 'next/image';
 import ButtonLink from '../ui/ButtonLink';
+import { formatDate } from '@/app/libs/formatDate';
 
 const MusicTemplate = ({ release }: { release: MusicData }) => {
   return (
     <Section className='mt-[4.5rem] sm:mt-[6rem]'>
-      <h1 className='text-2xl sm:text-4xl mb-12 border-white/50 border-b-[1px]'>{release.name}</h1>
+      <h1 className='text-2xl sm:text-4xl pb-4 mb-12 border-white/50 border-b-[1px]'>
+        {release.name}
+      </h1>
       <div className='grid grid-cols-2 gap-5'>
         <div className='col-start-1 row-start-1 row-span-2 relative aspect-square max-w-full max-h-full'>
           <Image
@@ -21,7 +24,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
         </div>
         <div className='col-start-2 row-start-1 row-span-1'>
           <h2>Release Date</h2>
-          <p>XX XXXXXXXXX XXXX</p>
+          <p>{release.releaseDate ? formatDate(release.releaseDate) : 'TBC'}</p>
         </div>
         <div className='col-start-2 row-start-2 row-span-1'>
           <h2>Track Listing</h2>
