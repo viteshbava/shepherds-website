@@ -5,6 +5,7 @@ import ButtonLink from '../ui/ButtonLink';
 import MusicNav from './MusicNav';
 import MainImage from './MainImage';
 import ReleaseDate from './ReleaseDate';
+import TrackListing from './TrackListing';
 
 const MusicTemplate = ({ release }: { release: MusicData }) => {
   return (
@@ -21,14 +22,10 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
           className='col-start-2 row-start-1 row-span-1'
           releaseDate={release.releaseDate}
         />
-        <div className='col-start-2 row-start-2 row-span-1'>
-          <h2>Track Listing</h2>
-          <ol>
-            {release.trackListing.map((track, i) => (
-              <li key={i}>{track}</li>
-            ))}
-          </ol>
-        </div>
+        <TrackListing
+          className='col-start-2 row-start-2 row-span-1'
+          trackListing={release.trackListing}
+        />
         <div className='col-start-2 row-start-3 row-span-2'>
           <h2 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 text-red_bright'>
             Listen | Purchase
