@@ -1,11 +1,10 @@
 import { MusicData } from '@/app/types';
 import React from 'react';
 import Section from '../ui/Section';
-import Image from 'next/image';
 import ButtonLink from '../ui/ButtonLink';
-import { formatDate } from '@/app/libs/formatDate';
 import MusicNav from './MusicNav';
 import MainImage from './MainImage';
+import ReleaseDate from './ReleaseDate';
 
 const MusicTemplate = ({ release }: { release: MusicData }) => {
   return (
@@ -18,10 +17,10 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
           frontCover={release.frontCover}
           name={release.name}
         />
-        <div className='col-start-2 row-start-1 row-span-1'>
-          <h2>Release Date</h2>
-          <p>{release.releaseDate ? formatDate(release.releaseDate) : 'TBC'}</p>
-        </div>
+        <ReleaseDate
+          className='col-start-2 row-start-1 row-span-1'
+          releaseDate={release.releaseDate}
+        />
         <div className='col-start-2 row-start-2 row-span-1'>
           <h2>Track Listing</h2>
           <ol>
