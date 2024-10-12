@@ -24,8 +24,10 @@ const selfTitled: MusicData = {
     { part_1: 'Hand drawn text by', part_2: 'Omar Al-Hashimi and Marie Pfister' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
-  embedLarge: '',
-  embedSmall: '',
+  embed: {
+    large: '',
+    small: '',
+  },
   frontCover: '/imgs/selftitled/selftitled-front-cover.jpg',
   listenLinks: [
     {

@@ -14,8 +14,10 @@ export interface MusicData {
   slug: string;
   releaseDate?: Date;
   trackListing: string[];
-  embedLarge: string;
-  embedSmall: string;
+  embed: {
+    large: string;
+    small: string;
+  };
   frontCover: string;
   listenLinks: ListenLink[];
   credits: Credit[];

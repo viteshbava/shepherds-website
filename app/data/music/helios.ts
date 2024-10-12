@@ -25,10 +25,12 @@ const helios: MusicData = {
     { part_1: 'Photography by', part_2: 'Hazwani Hussain and Fern King' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
-  embedLarge:
-    'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
-  embedSmall:
-    'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/artwork=none/transparent=true/',
+  embed: {
+    large:
+      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
+    small:
+      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/artwork=none/transparent=true/',
+  },
   frontCover: '/imgs/helios/helios-front-cover.jpg',
   listenLinks: [
     {
