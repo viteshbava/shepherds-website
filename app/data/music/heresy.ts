@@ -1,9 +1,26 @@
 import { MusicData } from '@/app/types';
 
-const data: MusicData = {
+const heresy: MusicData = {
   name: 'In Thrall to Heresy',
   slug: 'inthralltoheresy',
-  trackListing: [],
+  trackListing: [
+    'Usurper',
+    'Shifting Gleam',
+    'Slough',
+    'Vestibule',
+    'Red Veil',
+    'Mutineers',
+    'Abyss',
+    'Threnody',
+  ],
+  credits: [
+    { part_1: 'Produced by', part_2: 'Shepherds of Cassini & Dave Rhodes' },
+    { part_1: 'Recorded by', part_2: 'Dave Rhodes at The Chapel, Auckland, NZ' },
+    { part_1: 'Mixed by', part_2: 'Dave Rhodes' },
+    { part_1: 'Mastered by', part_2: 'Luke Finlay at Primal Mastering, Auckland, NZ' },
+    { part_1: 'Album art by', part_2: 'Moonroot' },
+    { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
+  ],
   embedLarge:
     'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
   embedSmall:
@@ -33,4 +50,4 @@ const data: MusicData = {
   ],
 };
 
-export default data;
+export default heresy;

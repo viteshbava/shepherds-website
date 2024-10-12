@@ -1,7 +1,9 @@
+import MusicTemplate from '@/app/components/music/MusicTemplate';
+import helios from '@/app/data/music/helios';
 import React from 'react';
 
 const page = () => {
-  return <h1>Helios Forsaken</h1>;
+  return <MusicTemplate release={helios} />;
 };
 
 export default page;

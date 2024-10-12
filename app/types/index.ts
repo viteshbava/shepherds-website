@@ -4,6 +4,11 @@ interface ListenLink {
   ariaLabel: string;
 }
 
+interface Credit {
+  part_1?: string;
+  part_2?: string;
+}
+
 export interface MusicData {
   name: string;
   slug: string;
@@ -13,4 +18,5 @@ export interface MusicData {
   embedSmall: string;
   frontCover: string;
   listenLinks: ListenLink[];
+  credits: Credit[];
 }

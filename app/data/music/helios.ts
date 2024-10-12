@@ -1,10 +1,30 @@
 import { MusicData } from '@/app/types';
 
-const data: MusicData = {
+const helios: MusicData = {
   name: 'Helios Forsaken',
   slug: 'heliosforsaken',
   releaseDate: new Date('2015-07-15'),
-  trackListing: [],
+  trackListing: [
+    'Raijin',
+    'Mirrors Have No Memory',
+    'The Almagest',
+    'Mauerfall',
+    "Pleiades' Plea",
+    'Helios Forsaken',
+  ],
+  credits: [
+    { part_1: 'Produced by', part_2: 'Shepherds of Cassini & Dave Rhodes' },
+    {
+      part_1: 'Recorded & mixed by',
+      part_2: 'Dave Rhodes at Depot Sound Recording Studio, Auckland, NZ',
+    },
+    { part_1: 'Mastered by', part_2: 'Chris Chetland at Kog Studio, Auckland, NZ' },
+    { part_1: 'Darbuka on Mauerfall & Helios Forsaken performed by', part_2: 'Reyahn Leng' },
+    { part_1: 'Album art by', part_2: 'Chris Lewis' },
+    { part_1: 'Hand drawn text by', part_2: 'Omar Al-Hashimi' },
+    { part_1: 'Photography by', part_2: 'Hazwani Hussain and Fern King' },
+    { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
+  ],
   embedLarge:
     'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
   embedSmall:
@@ -34,4 +54,4 @@ const data: MusicData = {
   ],
 };
 
-export default data;
+export default helios;

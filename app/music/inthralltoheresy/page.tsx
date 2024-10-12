@@ -1,7 +1,9 @@
+import MusicTemplate from '@/app/components/music/MusicTemplate';
 import React from 'react';
+import heresy from '@/app/data/music/heresy';
 
 const page = () => {
-  return <h1>In Thrall to Heresy</h1>;
+  return <MusicTemplate release={heresy} />;
 };
 
 export default page;
