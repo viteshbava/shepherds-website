@@ -17,8 +17,8 @@ const Hero = () => {
           <div className='relative aspect-square max-w-full max-h-full w-auto sm:w-full'>
             <Image
               priority
-              src={data.frontCover}
-              alt='In Thrall to Heresy album cover'
+              src={data.frontCover.url}
+              alt={data.frontCover.altText}
               className='object-cover'
               fill
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'

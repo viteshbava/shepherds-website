@@ -27,7 +27,14 @@ const heresy: MusicData = {
     small:
       'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/artwork=none/transparent=true/',
   },
-  frontCover: '/imgs/heresy/heresy-front-cover.webp',
+  frontCover: {
+    url: '/imgs/heresy/heresy-front-cover.webp',
+    altText: 'Shepherds of Cassini, In Thrall to Heresy, album cover, artwork by Moonroot',
+  },
+  backgroundImage: {
+    url: '/imgs/heresy/heresy-back-cover.webp',
+    altText: 'Shepherds of Cassini, In Thrall to Heresy, back cover artowrk by Moonroot',
+  },
   listenLinks: [
     {
       label: 'Bandcamp | Buy CD / Vinyl',

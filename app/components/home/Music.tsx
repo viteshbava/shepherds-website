@@ -20,8 +20,8 @@ const Music = () => {
               <div className='relative aspect-square w-full'>
                 <Image
                   priority
-                  src={release.frontCover}
-                  alt={`${release.name} front cover image`}
+                  src={release.frontCover.url}
+                  alt={release.frontCover.altText}
                   className='object-cover'
                   fill
                   sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'

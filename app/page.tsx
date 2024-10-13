@@ -1,5 +1,5 @@
 import About from './components/home/about/About';
-import BackgroundImage from './components/home/BackgroundImage';
+import BackgroundImage from './components/BackgroundImage';
 import Contact from './components/home/contact/Contact';
 import Hero from './components/home/hero/Hero';
 import Music from './components/home/Music';

@@ -31,7 +31,14 @@ const helios: MusicData = {
     small:
       'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/artwork=none/transparent=true/',
   },
-  frontCover: '/imgs/helios/helios-front-cover.jpg',
+  frontCover: {
+    url: '/imgs/helios/helios-front-cover.jpg',
+    altText: 'Shepherds of Cassini, Helios Forsaken album cover, art by Chris Lewis',
+  },
+  backgroundImage: {
+    url: '/imgs/helios/helios-background.webp',
+    altText: 'Shepherds of Cassini, Helios Forsaken album art by Chris Lewis',
+  },
   listenLinks: [
     {
       label: 'Bandcamp | Buy CD',

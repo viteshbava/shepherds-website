@@ -28,7 +28,15 @@ const selfTitled: MusicData = {
     large: '',
     small: '',
   },
-  frontCover: '/imgs/selftitled/selftitled-front-cover.jpg',
+  frontCover: {
+    url: '/imgs/selftitled/selftitled-front-cover.jpg',
+    altText: 'Shepherds of Cassini, self titled album cover, artwork by Chris Lewis',
+  },
+  backgroundImage: {
+    url: '/imgs/selftitled/selftitled-background.webp',
+    altText:
+      'Shepherds of Cassini, self titled artwork, layout by Chris Lewis, hand drawn text by Omar Al-Hashimi and Marie Pfister',
+  },
   listenLinks: [
     {
       label: 'Bandcamp | Buy CD',

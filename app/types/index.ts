@@ -14,13 +14,19 @@ export interface EmbedLinks {
   small: string;
 }
 
+interface Image {
+  url: string;
+  altText: string;
+}
+
 export interface MusicData {
   name: string;
   slug: string;
   releaseDate?: Date;
   trackListing: string[];
   embed: EmbedLinks;
-  frontCover: string;
+  frontCover: Image;
+  backgroundImage?: Image;
   listenLinks: ListenLink[];
   credits: Credit[];
 }
