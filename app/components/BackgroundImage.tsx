@@ -14,9 +14,12 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
         alt={altText}
         fill
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-        className='absolute top-0 left-0 w-full transition duration-1000 object-cover opacity-40 blur-sm'
+        className='absolute top-0 left-0 w-full object-cover opacity-40 blur-sm'
+        style={{
+          maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+        }}
       />
-      <div className='absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent'></div>
     </div>
   );
 };

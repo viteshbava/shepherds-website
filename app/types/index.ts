@@ -23,6 +23,7 @@ export enum Theme {
   Green = 'green',
   Red = 'red',
 }
+
 export interface MusicData {
   name: string;
   slug: string;

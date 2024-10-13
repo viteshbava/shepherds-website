@@ -8,10 +8,12 @@ import TrackListing from './TrackListing';
 import ListenBlock from './ListenBlock';
 import Credits from './Credits';
 import BackgroundImage from '../BackgroundImage';
+import Clouds from '../clouds/Clouds';
 
 const MusicTemplate = ({ release }: { release: MusicData }) => {
   return (
     <>
+      <Clouds theme={release.theme} />
       {release.backgroundImage && (
         <BackgroundImage
           url={release.backgroundImage.url}

@@ -27,7 +27,6 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
-        {/* <Clouds /> */}
         <Header />
         <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
           {children}
