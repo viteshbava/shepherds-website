@@ -22,7 +22,7 @@ const Music = () => {
                   priority
                   src={release.frontCover.url}
                   alt={release.frontCover.altText}
-                  className='object-cover'
+                  className='object-cover rounded'
                   fill
                   sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
