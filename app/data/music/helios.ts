@@ -28,9 +28,9 @@ const helios: MusicData = {
   ],
   embed: {
     large:
-      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
+      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=4ec5ec/tracklist=false/artwork=none/transparent=true/',
     small:
-      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/artwork=none/transparent=true/',
+      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/',
   },
   frontCover: {
     url: '/imgs/helios/helios-front-cover.jpg',
@@ -54,7 +54,7 @@ const helios: MusicData = {
     {
       label: 'Apple Music',
       ariaLabel: 'Listen on Apple Music',
-      href: 'https://music.apple.com/us/album/helios-forsaken/1693857752n',
+      href: 'https://music.apple.com/us/album/helios-forsaken/1693857752',
     },
     {
       label: 'YouTube Music',

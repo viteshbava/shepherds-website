@@ -26,8 +26,10 @@ const selfTitled: MusicData = {
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
   embed: {
-    large: '',
-    small: '',
+    large:
+      'https://bandcamp.com/EmbeddedPlayer/album=3887076866/size=large/bgcol=333333/linkcol=4ec5ec/tracklist=false/artwork=none/transparent=true/',
+    small:
+      'https://bandcamp.com/EmbeddedPlayer/album=3887076866/size=small/bgcol=333333/linkcol=4ec5ec/tracklist=false/artwork=none/transparent=true/',
   },
   frontCover: {
     url: '/imgs/selftitled/selftitled-front-cover.jpg',
@@ -42,22 +44,22 @@ const selfTitled: MusicData = {
     {
       label: 'Bandcamp | Buy CD',
       ariaLabel: 'Listen / buy on Bandcamp',
-      href: '',
+      href: 'https://shepherdsofcassini.bandcamp.com/album/shepherds-of-cassini',
     },
     {
       label: 'Spotify',
       ariaLabel: 'Listen on Spotify',
-      href: '',
+      href: 'https://open.spotify.com/album/2fIbm8ODcYrHnDksx2XCJn?si=QQFkegX3QtSB-Fl3_3MARA',
     },
     {
       label: 'Apple Music',
       ariaLabel: 'Listen on Apple Music',
-      href: '',
+      href: 'https://music.apple.com/us/album/shepherds-of-cassini/1693849616',
     },
     {
       label: 'YouTube Music',
       ariaLabel: 'Listen on YouTube Music',
-      href: '',
+      href: 'https://www.youtube.com/watch?v=w634TRfVArU&list=OLAK5uy_kkOnINVx4z9qi5a077Upy3ab4NP_vixNY',
     },
   ],
 };
