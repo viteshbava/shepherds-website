@@ -60,12 +60,9 @@ const Header = () => {
       <header className='fixed z-40 w-full h-[4.5rem] sm:h-24 px-4 sm:px-10 flex justify-between items-center'>
         {/* Background Layer */}
         <div
-          className={`absolute inset-0 transition-opacity duration-500 ease-in-out bg-gradient-to-b from-black/60 via-black/60 to-transparent ${
-            isScrolled ? 'opacity-60' : 'opacity-0'
+          className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+            isScrolled ? 'backdrop-blur-md' : ''
           }`}
-          style={{
-            background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.7) 85%, transparent 100%)`,
-          }}
         />
         {/* Content Layer */}
         <div className='relative flex justify-between items-center w-full h-full'>
