@@ -15,7 +15,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
           onClick={() => onClickImage(index)}>
           <Image
             src={`/imgs/gallery/${image}`}
-            alt={`Image ${index + 1}`}
+            alt='Shepherds of Cassini gallery photo'
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
             className='rounded-sm object-cover'

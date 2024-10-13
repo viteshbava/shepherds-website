@@ -11,7 +11,7 @@ const About = () => {
         <Image
           priority
           src='/imgs/about-photo.webp'
-          alt='Band members standing together'
+          alt='Shepherds of Cassini band members standing together'
           className='object-cover'
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
