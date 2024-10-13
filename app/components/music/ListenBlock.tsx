@@ -1,4 +1,4 @@
-import { EmbedLinks, ListenLink } from '@/app/types';
+import { EmbedLinks, ListenLink, Theme } from '@/app/types';
 import React from 'react';
 import ButtonLink from '../ui/ButtonLink';
 
@@ -6,12 +6,16 @@ interface ListenBlockProps {
   className?: string;
   embedLinks: EmbedLinks;
   listenLinks: ListenLink[];
+  theme: Theme;
 }
 
-const ListenBlock = ({ className = '', listenLinks, embedLinks }: ListenBlockProps) => {
+const ListenBlock = ({ className = '', listenLinks, embedLinks, theme }: ListenBlockProps) => {
   return (
     <div className={`${className} my-6 sm:my-0`}>
-      <h2 className='text-xl text-red_bright mb-2'>Listen | Purchase</h2>
+      <h2
+        className={`text-xl ${theme === Theme.Red ? 'text-red_bright' : 'text-green_bright'} mb-2`}>
+        Listen | Purchase
+      </h2>
       <div className='hidden sm:block w-full h-[120px]'>
         <iframe className='border-0 w-full h-full' src={embedLinks.large} seamless></iframe>
       </div>
@@ -25,7 +29,9 @@ const ListenBlock = ({ className = '', listenLinks, embedLinks }: ListenBlockPro
             isExternal
             href={link.href}
             ariaLabel={link.ariaLabel}
-            className='w-full bg-red_dim uppercase text-sm'>
+            className={`w-full ${
+              theme === Theme.Red ? 'bg-red_dim' : 'bg-green_dim'
+            } uppercase text-sm`}>
             {link.label}
           </ButtonLink>
         ))}

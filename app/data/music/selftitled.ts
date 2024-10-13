@@ -1,9 +1,10 @@
-import { MusicData } from '@/app/types';
+import { MusicData, Theme } from '@/app/types';
 
 const selfTitled: MusicData = {
   name: 'Shepherds of Cassini',
   slug: 'shepherdsofcassini',
   releaseDate: new Date('2013-08-24'),
+  theme: Theme.Green,
   trackListing: [
     'Zuhal',
     'Eyelid',

@@ -1,8 +1,9 @@
-import { MusicData } from '@/app/types';
+import { MusicData, Theme } from '@/app/types';
 
 const heresy: MusicData = {
   name: 'In Thrall to Heresy',
   slug: 'inthralltoheresy',
+  theme: Theme.Red,
   trackListing: [
     'Usurper',
     'Shifting Gleam',

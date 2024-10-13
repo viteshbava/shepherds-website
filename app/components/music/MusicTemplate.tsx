@@ -30,17 +30,24 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
           <ReleaseDate
             className='col-start-2 row-start-1 row-span-1'
             releaseDate={release.releaseDate}
+            theme={release.theme}
           />
           <TrackListing
             className='col-start-2 row-start-2 row-span-1'
             trackListing={release.trackListing}
+            theme={release.theme}
           />
           <ListenBlock
             className='col-start-2 row-start-3 row-span-2'
             embedLinks={release.embed}
             listenLinks={release.listenLinks}
+            theme={release.theme}
           />
-          <Credits className='col-start-1 row-start-3 row-span-2' credits={release.credits} />
+          <Credits
+            className='col-start-1 row-start-3 row-span-2'
+            credits={release.credits}
+            theme={release.theme}
+          />
         </div>
       </Section>
     </>
