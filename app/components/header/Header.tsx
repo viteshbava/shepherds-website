@@ -73,7 +73,7 @@ const Header = () => {
             <Link
               onClick={() => setIsHamburgerOpen(false)}
               className='transition duration-200 ease-in-out hover:opacity-50'
-              href={'#/home'}>
+              href={'/#home'}>
               <Logo className='w-56 px-8 sm:w-80' />
             </Link>
           </div>

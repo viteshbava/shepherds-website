@@ -10,8 +10,8 @@ interface ListenBlockProps {
 
 const ListenBlock = ({ className = '', listenLinks, embedLinks }: ListenBlockProps) => {
   return (
-    <div className={className}>
-      <h2 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 text-red_bright'>Listen | Purchase</h2>
+    <div className={`${className} my-6 sm:my-0`}>
+      <h2 className='text-xl text-red_bright mb-2'>Listen | Purchase</h2>
       <div className='hidden sm:block w-full h-[120px]'>
         <iframe className='border-0 w-full h-full' src={embedLinks.large} seamless></iframe>
       </div>

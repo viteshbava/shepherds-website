@@ -7,11 +7,14 @@ interface TrackListingProps {
 
 const TrackListing = ({ className = '', trackListing }: TrackListingProps) => {
   return (
-    <div className={className}>
-      <h2>Track Listing</h2>
-      <ol>
+    <div
+      className={`${className} flex flex-col justify-center items-center border border-red-500  px-4 py-6 sm:p-0 my-6 sm:my-0`}>
+      <h2 className='text-xl text-red_bright mb-2'>Track Listing</h2>
+      <ol className='list-decimal flex flex-col justify-center items-center'>
         {trackListing.map((track, i) => (
-          <li key={i}>{track}</li>
+          <li key={i} className='pl-2'>
+            {track}
+          </li>
         ))}
       </ol>
     </div>
