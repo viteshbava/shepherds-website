@@ -27,11 +27,13 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
-        <Header />
-        <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
-          <PasswordWrapper>{children}</PasswordWrapper>
-        </main>
-        <Footer />
+        <PasswordWrapper>
+          <Header />
+          <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
+            {children}
+          </main>
+          <Footer />
+        </PasswordWrapper>
       </body>
       <GoogleAnalytics gaId='G-L7J30WL4PG' />
     </html>
