@@ -13,7 +13,7 @@ const Hero = () => {
           <h2 className='text-lg sm:text-3xl text-red_important'>In Thrall to Heresy</h2>
           <p className='sm:text-lg'>New album out now</p>
         </div>
-        <div className='flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full aspect-square sm:items-start col-start-1 row-start-1 row-span-3'>
+        <div className='flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full aspect-square sm:items-start col-start-1 row-start-1 row-span-3 border border-pink-400'>
           <div className='relative aspect-square max-w-full max-h-full w-auto sm:w-full'>
             <Image
               priority
