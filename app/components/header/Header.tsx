@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='fixed z-40 w-full h-[4.5rem] sm:h-24 px-4 sm:px-10 flex justify-between items-center'>
+      <header className='fixed z-40 w-full min-h-[40px] h-[18svh] max-h-[4.5rem] sm:max-h-24 px-4 sm:px-10 flex justify-between items-center'>
         {/* Background Layer */}
         <div
           className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
@@ -77,7 +77,7 @@ const Header = () => {
           <Navbar navLinks={navLinks} />
         </div>
         {/* Hamburger button/cross */}
-        <div className='absolute top-0 right-0 pr-2 h-[4.5rem] sm:h-24 lg:hidden flex flex-col justify-center'>
+        <div className='absolute top-0 right-0 pr-2 h-full lg:hidden flex flex-col justify-center'>
           <button
             aria-label='Open menu'
             onClick={toggleMenu}
