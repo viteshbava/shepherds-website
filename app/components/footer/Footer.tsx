@@ -4,7 +4,7 @@ import SocialIcons from '../SocialIcons';
 
 const Footer = () => {
   return (
-    <footer className='relative flex flex-col justify-center items-center pt-6 pb-2 max-w-screen-xl w-[80%]'>
+    <footer className='relative flex flex-col justify-center items-center py-6 max-w-screen-xl w-[80%]'>
       <SocialIcons />
       <Copyright className='text-xs' />
     </footer>
