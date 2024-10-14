@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { Archivo_Narrow } from 'next/font/google';
 import './globals.css';
 import Footer from './components/footer/Footer';
-import Clouds from './components/clouds/Clouds';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from './components/header/Header';
+import PasswordWrapper from './components/PasswordWrapper';
 
 const baseFont = Archivo_Narrow({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
         <Header />
         <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
-          {children}
+          <PasswordWrapper>{children}</PasswordWrapper>
         </main>
         <Footer />
       </body>
