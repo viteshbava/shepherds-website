@@ -35,7 +35,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
 
   return (
     <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50'>
-      <div className='absolute top-0 right-0 pr-2 h-[4.5rem] sm:h-24 flex flex-col justify-center'>
+      <div className='fixed top-0 right-0 pr-2 h-[4.5rem] sm:h-24 flex flex-col justify-center'>
         <button
           aria-label='Open menu'
           onClick={onClose}
