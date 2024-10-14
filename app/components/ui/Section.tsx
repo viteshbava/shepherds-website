@@ -10,7 +10,7 @@ const Section = ({ id, children, className }: SectionProps) => {
   return (
     <section
       id={id}
-      className={`${className} flex flex-col justify-center relative max-w-screen-xl w-[75%]`}>
+      className={`${className} flex flex-col justify-center relative max-w-screen-xl w-[80%]`}>
       {children}
     </section>
   );
