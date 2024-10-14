@@ -16,6 +16,12 @@ const PasswordScreen: React.FC<{ onAuthSuccess: () => void }> = ({ onAuthSuccess
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSubmit();
+    }
+  };
+
   return (
     <div className='fixed z-50 w-screen h-screen flex items-center justify-center bg-gray-200'>
       <div className='p-6 bg-white shadow-md rounded-md'>
@@ -25,6 +31,7 @@ const PasswordScreen: React.FC<{ onAuthSuccess: () => void }> = ({ onAuthSuccess
           className='border p-2 w-full text-black'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={handleKeyDown} // Listen for Enter key
           placeholder='Password'
         />
         {error && <p className='text-red-500 mt-2'>{error}</p>}
