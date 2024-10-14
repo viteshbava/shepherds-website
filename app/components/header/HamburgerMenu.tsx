@@ -26,6 +26,26 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
   }, [setIsBodyScrollLocked, closeMenu]);
 
   useEffect(() => {
+    // Function to update the menu height dynamically
+    const updateMenuHeight = () => {
+      if (menuRef.current) {
+        // Set height of the menu to match the innerHeight of the window
+        menuRef.current.style.height = `${window.innerHeight}px`;
+      }
+    };
+
+    // Update height on mount and resize
+    if (isOpen) {
+      updateMenuHeight();
+      window.addEventListener('resize', updateMenuHeight);
+    }
+
+    return () => {
+      window.removeEventListener('resize', updateMenuHeight);
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     setIsMounted(true);
     setIsBodyScrollLocked(true);
 
