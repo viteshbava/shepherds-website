@@ -78,7 +78,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
       ref={menuRef}
       aria-hidden={!isOpen}
       role='menu'
-      className={`flex fixed bg-black inset-y-0 top-0 left-0 w-screen h-screen z-30 flex-col justify-between items-center p-4 transition-all duration-200 ${
+      className={`flex fixed bg-black inset-y-0 top-0 left-0 w-screen h-screen z-30 flex-col justify-between items-center p-4 transition-all duration-200 border-8 border-red-500 ${
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}>
       <nav className='flex-grow flex items-center justify-center'>
