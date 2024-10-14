@@ -10,7 +10,6 @@ interface FullscreenImageProps {
 
 const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [fading, setFading] = useState(false);
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -25,17 +24,13 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
   }, [onClose]);
 
   const handleNavigation = (direction: 'prev' | 'next') => {
-    setFading(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => {
-        if (direction === 'next') {
-          return (prevIndex + 1) % images.length;
-        } else {
-          return (prevIndex - 1 + images.length) % images.length;
-        }
-      });
-      setFading(false);
-    }, 300); // Duration of fade-out animation
+    setCurrentIndex((prevIndex) => {
+      if (direction === 'next') {
+        return (prevIndex + 1) % images.length;
+      } else {
+        return (prevIndex - 1 + images.length) % images.length;
+      }
+    });
   };
 
   return (
@@ -54,17 +49,19 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
           onClick={() => handleNavigation('prev')}>
           &#10094;
         </button>
-        <div
-          className={`relative flex-grow w-full h-full transition-opacity duration-300 ${
-            fading ? 'opacity-0' : 'opacity-100'
-          }`}>
-          <Image
-            src={`/imgs/gallery/${images[currentIndex]}`}
-            alt='Shepherds of Cassini gallery photo'
-            fill
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            className='object-contain'
-          />
+        <div className='relative flex-grow w-full h-full'>
+          {images.map((image, index) => (
+            <Image
+              key={index}
+              src={`/imgs/gallery/${image}`}
+              alt='Shepherds of Cassini gallery photo'
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              className={`object-contain transition-opacity duration-300 ${
+                index === currentIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
         </div>
         <button
           className='h-full px-4 text-white text-2xl'
