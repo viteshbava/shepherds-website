@@ -25,7 +25,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
           {release.name}
         </h1>
         <MusicNav className='my-10' currentSlug={release.slug} />
-        <div className='sm:grid sm:grid-cols-2 gap-5'>
+        <div className='w-full sm:grid sm:grid-cols-2 gap-y-5 gap-x-5 md:gap-x-10 lg:gap-x-20'>
           <MainImage
             className='col-start-1 row-start-1 row-span-2'
             imgUrl={release.frontCover.url}
