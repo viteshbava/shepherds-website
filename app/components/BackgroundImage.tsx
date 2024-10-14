@@ -7,8 +7,8 @@ interface BackgroundImageProps {
 
 const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
   return (
-    <div className='absolute top-0 left-0 w-full min-h-svh aspect-square border-red-500 border-8'>
-      <Image
+    <div className='absolute top-0 left-0 w-full min-h-svh aspect-square border-8 border-red-500'>
+      {/* <Image
         priority
         src={url}
         alt={altText}
@@ -19,7 +19,7 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
           maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
           WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
         }}
-      />
+      /> */}
     </div>
   );
 };
