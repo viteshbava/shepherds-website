@@ -15,11 +15,9 @@ const TrackListing = ({ className = '', trackListing, theme }: TrackListingProps
         className={`text-xl ${theme === Theme.Red ? 'text-red_bright' : 'text-green_bright'} mb-2`}>
         Track Listing
       </h2>
-      <ol className='list-decimal flex flex-col justify-center items-center'>
+      <ol className='list-decimal list-inside flex flex-col justify-center items-center'>
         {trackListing.map((track, i) => (
-          <li key={i} className='pl-2'>
-            {track}
-          </li>
+          <li key={i}>{track}</li>
         ))}
       </ol>
     </div>
