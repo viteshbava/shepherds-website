@@ -12,7 +12,7 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className='absolute top-0 left-0 w-full min-h-screen'>
+    <div className='absolute top-0 left-0 aspect-square w-full min-h-screen'>
       <Image
         priority
         src={url}
