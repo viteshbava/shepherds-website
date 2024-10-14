@@ -35,7 +35,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
 
   return (
     <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50'>
-      <div className='fixed top-0 right-0 pr-2 h-[4.5rem] sm:h-24 flex flex-col justify-center'>
+      <div className='fixed z-50 top-0 right-0 pr-2 h-[4.5rem] sm:h-24 flex flex-col justify-center'>
         <button
           aria-label='Open menu'
           onClick={onClose}
@@ -43,7 +43,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
           <HamburgerButton closed={false} />
         </button>
       </div>
-      <div className='relative max-w-4xl w-full h-[80vh] flex items-center justify-center'>
+      <div className='relative z-40 max-w-4xl w-full h-[80vh] flex items-center justify-center'>
         <button
           className='h-full px-4 text-white text-2xl'
           onClick={() => handleNavigation('prev')}>
