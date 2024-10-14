@@ -14,7 +14,7 @@ const Bio = () => {
   return (
     <div className='flex flex-col items-center max-w-xl mx-auto'>
       {/* Displayed text */}
-      <p className='mt-14'>
+      <p className='mt-10'>
         Shepherds of Cassini is a psychedelic prog quartet from Auckland, New Zealand. Formed in
         2012, the group features Omar Al-Hashimi on drums, Vitesh Bava on bass, Felix Lun on
         electric violin, and Brendan Zwaan on guitar, vocals, and keys.
