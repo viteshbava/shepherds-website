@@ -8,7 +8,7 @@ const Music = () => {
   return (
     <Section id='music' className='mt-24'>
       <h2 className='mb-6 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>Music</h2>
-      <div className='md:flex flex-wrap justify-center w-full gap-6'>
+      <div className='sm:flex flex-wrap justify-center w-full gap-6'>
         {[...musicList].reverse().map((release, index) => {
           const year = release?.releaseDate?.getFullYear();
           const caption = `${release.name}${year ? ` (${year})` : ''}`;
@@ -16,7 +16,7 @@ const Music = () => {
             <Link
               key={index}
               href={`/music/${release.slug}`}
-              className='inline-block w-full md:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0  hover:opacity-80'>
+              className='inline-block w-full sm:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0  hover:opacity-80'>
               <div className='relative aspect-square w-full'>
                 <Image
                   priority
