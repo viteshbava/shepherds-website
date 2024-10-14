@@ -20,7 +20,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
           altText={release.backgroundImage.altText}
         />
       )}
-      <Section className='my-[4.5rem] sm:my-[6rem]'>
+      <Section className='my-[4.5rem] sm:my-[6rem] items-center'>
         <h1 className='text-2xl sm:text-4xl pb-4 border-white/50 border-b-[1px]'>{release.name}</h1>
         <MusicNav className='my-10' currentSlug={release.slug} />
         <div className='sm:grid sm:grid-cols-2 gap-5'>

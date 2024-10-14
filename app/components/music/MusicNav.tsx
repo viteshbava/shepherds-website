@@ -16,11 +16,11 @@ const MusicNav = ({ className = '', currentSlug }: MusicNavProps) => {
   const nextLink = `/music/${musicList[index + 1]?.slug}`;
 
   return (
-    <div className={className}>
+    <div className={`${className} flex justify-between w-full max-w-[350px]`}>
       <Link className={`hover:opacity-80 ${index > 0 ? '' : 'invisible'}`} href={prevLink}>
         <span className='mr-3'>&#10094;</span>Prev
       </Link>
-      <Link className='mx-20 hover:opacity-80' href='/#music'>
+      <Link className='hover:opacity-80' href='/#music'>
         All Music
       </Link>
       <Link
