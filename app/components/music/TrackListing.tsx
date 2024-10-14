@@ -10,7 +10,7 @@ interface TrackListingProps {
 const TrackListing = ({ className = '', trackListing, theme }: TrackListingProps) => {
   return (
     <div
-      className={`${className} flex flex-col justify-center items-center bg-black/10 backdrop-blur rounded px-6 py-6 sm:p-0 my-6 sm:my-0`}>
+      className={`${className} flex flex-col justify-center items-center bg-gray-500/10 backdrop-blur rounded px-6 py-6 sm:p-0 my-6 sm:my-0`}>
       <h2
         className={`text-xl ${theme === Theme.Red ? 'text-red_bright' : 'text-green_bright'} mb-2`}>
         Track Listing
