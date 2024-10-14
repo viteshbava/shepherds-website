@@ -7,7 +7,7 @@ interface BackgroundImageProps {
 
 const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
   return (
-    <div className='absolute top-0 left-0 w-full min-h-svh aspect-square'>
+    <div className='absolute top-0 left-0 w-full min-h-svh aspect-square border-red-500 border-8'>
       <Image
         priority
         src={url}
