@@ -19,7 +19,6 @@ const Music = () => {
               className='inline-block w-full sm:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0  hover:opacity-80'>
               <div className='relative aspect-square w-full'>
                 <Image
-                  priority
                   src={release.frontCover.url}
                   alt={release.frontCover.altText}
                   className='object-cover rounded'
