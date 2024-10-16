@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface BackgroundImageProps {
   url: string;
@@ -10,10 +10,30 @@ interface BackgroundImageProps {
 
 const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const parallaxOffset = scrollY * 0.1;
 
   return (
-    <div className='absolute top-0 left-0 w-full min-h-screen max-h-full overflow-hidden'>
-      <div className='aspect-square min-w-full min-h-full'>
+    <div className='absolute top-0 left-0 w-full min-h-screen max-h-full'>
+      <div
+        className='aspect-square min-w-full min-h-full'
+        style={{
+          transform: `translateY(${parallaxOffset}px)`,
+          transition: 'transform 0.1s ease-out',
+        }}>
         <Image
           priority
           src={url}
