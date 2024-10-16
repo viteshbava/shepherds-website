@@ -60,7 +60,7 @@ const Header = () => {
       <header className='fixed z-40 w-full min-h-[40px] h-[18svh] max-h-[4.5rem] sm:max-h-24 px-4 sm:px-10 flex justify-between items-center'>
         {/* Background Layer */}
         <div
-          className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
             isScrolled ? 'backdrop-blur-md' : ''
           }`}
         />
