@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './styles.module.css';
-import Image from 'next/image';
 import Section from '../../ui/Section';
 import ButtonLink from '../../ui/ButtonLink';
 import data from '@/app/data/music/heresy';
+import MainImage from './MainImage';
 
 const Hero = () => {
   return (
@@ -14,16 +14,7 @@ const Hero = () => {
           <p className='sm:text-lg'>New album out now</p>
         </div>
         <div className='flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full aspect-square sm:items-start col-start-1 row-start-1 row-span-3'>
-          <div className='relative aspect-square max-w-full max-h-full w-full'>
-            <Image
-              priority
-              src={data.frontCover.url}
-              alt={data.frontCover.altText}
-              className='object-contain'
-              fill
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            />
-          </div>
+          <MainImage imgUrl={data.frontCover.url} altText={data.frontCover.altText} />
         </div>
         {/* <div className='mt-4 col-start-2 row-start-2'>
           <p className='text-sm sm:text-base'>

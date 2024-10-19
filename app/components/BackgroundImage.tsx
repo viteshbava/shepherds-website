@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 interface BackgroundImageProps {
@@ -10,20 +10,24 @@ interface BackgroundImageProps {
 }
 
 const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
+  const imageRef = useRef<HTMLImageElement | null>(null);
+
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
+      if (imageRef.current) {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
 
-      const newOpacity = Math.max(0, 0.4 - scrollPosition / windowHeight / 2.5);
-      const translateY = Math.min(0, -scrollPosition / 2.5);
+        const newOpacity = Math.max(0, 0.4 - scrollPosition / windowHeight / 2.5);
+        const translateY = Math.min(0, -scrollPosition / 2.5);
 
-      gsap.to('.background-image', {
-        opacity: newOpacity,
-        y: translateY,
-        duration: 0.3,
-        ease: 'power1.out',
-      });
+        gsap.to(imageRef.current, {
+          opacity: newOpacity,
+          y: translateY,
+          duration: 0.3,
+          ease: 'power1.out',
+        });
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -31,15 +35,17 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
   }, []);
 
   const handleImageLoad = () => {
-    gsap.fromTo(
-      '.background-image',
-      { opacity: 0 },
-      {
-        opacity: 0.4,
-        duration: 0.2,
-        ease: 'power1.out',
-      }
-    );
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0 },
+        {
+          opacity: 0.4,
+          duration: 0.2,
+          ease: 'power1.out',
+        }
+      );
+    }
   };
 
   return (
@@ -51,8 +57,9 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
           alt={altText}
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          className='absolute top-0 left-0 w-full object-cover blur-sm background-image opacity-0'
+          className='absolute top-0 left-0 w-full object-cover blur-sm opacity-0'
           onLoadingComplete={handleImageLoad}
+          ref={imageRef}
         />
       </div>
     </div>
