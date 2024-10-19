@@ -53,6 +53,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
             theme={release.theme}
           />
         </div>
+        <MusicNav className='mt-10 sm:mt-20' currentSlug={release.slug} />
       </Section>
     </>
   );
