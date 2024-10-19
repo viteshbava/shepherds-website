@@ -32,7 +32,7 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
 
   return (
     <div className='absolute top-0 left-0 w-full min-h-screen max-h-full'>
-      <div className='fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-full'>
+      <div className='fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-screen'>
         <Image
           priority
           src={url}
