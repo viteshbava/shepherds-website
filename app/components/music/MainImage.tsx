@@ -22,7 +22,7 @@ const MainImage = ({ className = '', imgUrl, altText }: MainImageProps) => {
         }`}
         fill
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-        onLoadingComplete={() => setLoaded(true)}
+        onLoad={() => setLoaded(true)}
       />
     </div>
   );

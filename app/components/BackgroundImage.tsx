@@ -58,7 +58,7 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           className='absolute top-0 left-0 w-full object-cover blur-sm opacity-0'
-          onLoadingComplete={handleImageLoad}
+          onLoad={handleImageLoad}
           ref={imageRef}
         />
       </div>
