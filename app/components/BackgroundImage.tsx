@@ -30,6 +30,18 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleImageLoad = () => {
+    gsap.fromTo(
+      '.background-image',
+      { opacity: 0 },
+      {
+        opacity: 0.4,
+        duration: 0.2,
+        ease: 'power1.out',
+      }
+    );
+  };
+
   return (
     <div className='absolute top-0 left-0 w-full min-h-screen max-h-full'>
       <div className='fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-screen'>
@@ -39,7 +51,8 @@ const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
           alt={altText}
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          className='absolute top-0 left-0 w-full object-cover opacity-40 blur-sm background-image'
+          className='absolute top-0 left-0 w-full object-cover blur-sm background-image opacity-0'
+          onLoadingComplete={handleImageLoad}
         />
       </div>
     </div>
