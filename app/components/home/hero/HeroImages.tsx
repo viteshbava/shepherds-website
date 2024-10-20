@@ -54,7 +54,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
 
   return (
     <div
-      className={`relative aspect-square max-w-full max-h-full w-full ${className}`}
+      className={`relative aspect-square max-w-full max-h-full sm:w-full ${className}`}
       onMouseEnter={() => {
         if (!isTouchDevice) {
           console.log('mouse entered');
@@ -79,7 +79,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
         priority
         src={images[0]}
         alt={altText}
-        className='object-cover border border-red-600 rounded-xl'
+        className='object-contain rounded-xl'
         fill
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
       />
