@@ -28,7 +28,7 @@ const Bio = () => {
       </p>
 
       {/* Toggle button */}
-      <button onClick={toggleExpanded} className='flex items-center mt-6'>
+      <button onClick={toggleExpanded} className='flex items-center mt-6 hover:opacity-90'>
         {isExpanded ? 'Hide bio' : 'Read bio'}
         <span
           className={`ml-1 transform transition-transform duration-300 ${

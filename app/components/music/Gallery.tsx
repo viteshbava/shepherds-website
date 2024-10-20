@@ -15,16 +15,6 @@ const Gallery = ({ className = '', images }: GalleryProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const setIsBodyScrollLocked = useLockBodyScroll();
 
-  // const images = [
-  //   '/imgs/heresy/album-gallery/vinyl-test.webp',
-  //   '/imgs/heresy/album-gallery/cd-test.avif',
-  //   '/imgs/heresy/album-gallery/cd-test.avif',
-  //   '/imgs/heresy/album-gallery/cd-test.avif',
-  //   '/imgs/heresy/album-gallery/cd-test.avif',
-  //   '/imgs/heresy/album-gallery/cd-test.avif',
-  //   '/imgs/heresy/album-gallery/cd-test.avif',
-  // ];
-
   const handleImageClick = (index: number) => {
     setActiveIndex(index);
     setIsFullscreen(true);
@@ -42,8 +32,7 @@ const Gallery = ({ className = '', images }: GalleryProps) => {
         {images.map((image, index) => (
           <div
             key={image}
-            className='relative aspect-square cursor-pointer w-[calc((100%-14px)/2)] sm:w-[calc((100%-14px*2)/3)] lg:w-[calc((100%-14px*5)/6)]
- hover:opacity-90'
+            className='relative aspect-square cursor-pointer w-[calc((100%-14px)/2)] sm:w-[calc((100%-14px*2)/3)] lg:w-[calc((100%-14px*5)/6)] hover:scale-[1.02] transition-all duration-200'
             onClick={() => handleImageClick(index)}>
             <Image
               src={image}

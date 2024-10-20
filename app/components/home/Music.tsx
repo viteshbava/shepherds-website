@@ -16,7 +16,7 @@ const Music = () => {
             <Link
               key={index}
               href={`/music/${release.slug}`}
-              className='inline-block w-full sm:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0  hover:opacity-80'>
+              className='inline-block w-full sm:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0  hover:scale-[1.02] transition-all duration-200'>
               <div className='relative aspect-square w-full'>
                 <Image
                   src={release.frontCover.url}
