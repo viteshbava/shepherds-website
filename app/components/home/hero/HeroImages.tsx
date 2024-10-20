@@ -76,30 +76,22 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
         }
       }}>
       <div className='absolute object-contain aspect-square max-w-full max-h-full w-full'>
-        <Image
-          priority
-          src={images[0]}
-          alt={altText}
-          className='object-contain rounded-xl'
-          fill
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-        />
+        {images.map((image, index) => (
+          <Image
+            key={index}
+            priority={index === 0}
+            src={image}
+            alt={altText}
+            className={`object-contain rounded transition-opacity duration-500 ease-out ${
+              index === currentIndex ? 'opacity-100' : 'opacity-0'
+            } ${images.length > 1 ? 'cursor-pointer' : ''}`}
+            fill
+            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            onLoad={index === 0 ? onFirstImageLoad : undefined}
+            onClick={handleClick}
+          />
+        ))}
       </div>
-      {/* {images.map((image, index) => (
-        <Image
-          key={index}
-          priority={index === 0}
-          src={image}
-          alt={altText}
-          className={`object-contain rounded transition-opacity duration-500 ease-out ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          } ${images.length > 1 ? 'cursor-pointer' : ''}`}
-          fill
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          onLoad={index === 0 ? onFirstImageLoad : undefined}
-          onClick={handleClick}
-        />
-      ))} */}
     </div>
   );
 };
