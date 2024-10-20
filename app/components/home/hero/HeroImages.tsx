@@ -27,7 +27,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
       console.log('SETTING LOOP FROM USEEFFECT!');
       intervalIdRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 3000);
+      }, 4000);
       setIntervalId(intervalIdRef.current);
     }
 
@@ -47,7 +47,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
       console.log('SETTING LOOP FROM HANDLECLICK!');
       const newInterval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 3000);
+      }, 4000);
       setIntervalId(newInterval);
     }
   };
@@ -70,7 +70,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
             console.log('SETTING LOOP FROM MOUSELEAVE!');
             const newInterval = setInterval(() => {
               setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-            }, 3000);
+            }, 4000);
             setIntervalId(newInterval);
           }
         }
@@ -81,7 +81,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           priority={index === 0}
           src={image}
           alt={altText}
-          className={`object-contain rounded transition-opacity duration-300 ease-out ${
+          className={`object-contain rounded transition-opacity duration-500 ease-out ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           } ${images.length > 1 ? 'cursor-pointer' : ''}`}
           fill
