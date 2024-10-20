@@ -81,6 +81,19 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           priority={index === 0}
           src={image}
           alt={altText}
+          className='object-contain rounded'
+          fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          onLoad={index === 0 ? onFirstImageLoad : undefined}
+          onClick={handleClick}
+        />
+      ))}
+      {/* {images.map((image, index) => (
+        <Image
+          key={index}
+          priority={index === 0}
+          src={image}
+          alt={altText}
           className={`object-contain rounded transition-opacity duration-500 ease-out ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           } ${images.length > 1 ? 'cursor-pointer' : ''}`}
@@ -89,7 +102,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           onLoad={index === 0 ? onFirstImageLoad : undefined}
           onClick={handleClick}
         />
-      ))}
+      ))} */}
     </div>
   );
 };
