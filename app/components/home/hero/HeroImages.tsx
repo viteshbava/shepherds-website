@@ -79,7 +79,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
         priority
         src={images[0]}
         alt={altText}
-        className='object-contain rounded-xl'
+        className='object-contain border border-red-600 rounded-xl'
         fill
         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
       />
