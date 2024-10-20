@@ -62,6 +62,7 @@ const selfTitled: MusicData = {
       href: 'https://www.youtube.com/watch?v=w634TRfVArU&list=OLAK5uy_kkOnINVx4z9qi5a077Upy3ab4NP_vixNY',
     },
   ],
+  galleryPath: '/imgs/selftitled/album-gallery',
 };
 
 export default selfTitled;

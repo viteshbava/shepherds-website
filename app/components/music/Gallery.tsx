@@ -7,22 +7,23 @@ import Image from 'next/image';
 
 interface GalleryProps {
   className?: string;
+  images: string[];
 }
 
-const Gallery = ({ className = '' }: GalleryProps) => {
+const Gallery = ({ className = '', images }: GalleryProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const setIsBodyScrollLocked = useLockBodyScroll();
 
-  const images = [
-    '/imgs/heresy/album-gallery/vinyl-test.webp',
-    '/imgs/heresy/album-gallery/cd-test.avif',
-    '/imgs/heresy/album-gallery/cd-test.avif',
-    '/imgs/heresy/album-gallery/cd-test.avif',
-    '/imgs/heresy/album-gallery/cd-test.avif',
-    '/imgs/heresy/album-gallery/cd-test.avif',
-    '/imgs/heresy/album-gallery/cd-test.avif',
-  ];
+  // const images = [
+  //   '/imgs/heresy/album-gallery/vinyl-test.webp',
+  //   '/imgs/heresy/album-gallery/cd-test.avif',
+  //   '/imgs/heresy/album-gallery/cd-test.avif',
+  //   '/imgs/heresy/album-gallery/cd-test.avif',
+  //   '/imgs/heresy/album-gallery/cd-test.avif',
+  //   '/imgs/heresy/album-gallery/cd-test.avif',
+  //   '/imgs/heresy/album-gallery/cd-test.avif',
+  // ];
 
   const handleImageClick = (index: number) => {
     setActiveIndex(index);
