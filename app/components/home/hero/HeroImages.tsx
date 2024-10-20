@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 interface HeroImagesProps {
@@ -15,19 +15,26 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
   const [loaded, setLoaded] = useState(false);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
+  // Inside your component
+  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
+  const isTouchDevice = useRef<boolean>(window.matchMedia('(hover: none)').matches).current;
+
   useEffect(() => {
-    if (intervalId) clearInterval(intervalId);
-    if (images.length > 1 && loaded && !isHovered) {
-      const newInterval = setInterval(() => {
+    if (images.length === 0) return; // Handle empty images
+    if (intervalIdRef.current) clearInterval(intervalIdRef.current);
+
+    if (loaded && !isHovered) {
+      console.log('SETTING LOOP FROM USEEFFECT!');
+      intervalIdRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, 3000);
-      setIntervalId(newInterval);
+      setIntervalId(intervalIdRef.current);
     }
 
     return () => {
-      if (intervalId) clearInterval(intervalId);
+      if (intervalIdRef.current) clearInterval(intervalIdRef.current);
     };
-  }, [images.length, isHovered, loaded, currentIndex]);
+  }, [images.length, isHovered, loaded]);
 
   const onFirstImageLoad = () => {
     setLoaded(true);
@@ -37,6 +44,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     if (intervalId) clearInterval(intervalId);
     if (!isHovered) {
+      console.log('SETTING LOOP FROM HANDLECLICK!');
       const newInterval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, 3000);
@@ -48,21 +56,23 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
     <div
       className={`relative aspect-square max-w-full max-h-full w-full ${className}`}
       onMouseEnter={() => {
-        console.log('mouse entered');
-        const isTouchDevice = window.matchMedia('(hover: none)').matches;
         if (!isTouchDevice) {
+          console.log('mouse entered');
           setIsHovered(true);
           if (intervalId) clearInterval(intervalId);
         }
       }}
       onMouseLeave={() => {
-        console.log('mouse left');
-        setIsHovered(false);
-        if (!intervalId && loaded) {
-          const newInterval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-          }, 3000);
-          setIntervalId(newInterval);
+        if (!isTouchDevice) {
+          console.log('mouse left');
+          setIsHovered(false);
+          if (!intervalId && loaded) {
+            console.log('SETTING LOOP FROM MOUSELEAVE!');
+            const newInterval = setInterval(() => {
+              setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+            }, 3000);
+            setIntervalId(newInterval);
+          }
         }
       }}>
       {images.map((image, index) => (
