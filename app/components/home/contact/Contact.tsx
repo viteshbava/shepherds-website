@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import Section from '../../ui/Section';
 import ButtonLink from '../../ui/ButtonLink';
 import ImageGrid from './ImageGrid';
-import FullScreenGallery from './FullScreenGallery';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
+import FullScreenGallery from '../../FullScreenGallery';
 
 const Contact = ({ images }: { images: string[] }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);

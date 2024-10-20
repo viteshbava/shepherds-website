@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { HamburgerButton } from '../../header/HamburgerButton';
+import { HamburgerButton } from './header/HamburgerButton';
 
 interface FullscreenImageProps {
   images: string[];

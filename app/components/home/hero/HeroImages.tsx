@@ -82,7 +82,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
             priority={index === 0}
             src={image}
             alt={altText}
-            className={`object-contain rounded transition-opacity duration-500 ease-out ${
+            className={`object-contain rounded transition-opacity duration-700 ease-out opacity-0 ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             } ${images.length > 1 ? 'cursor-pointer' : ''}`}
             fill

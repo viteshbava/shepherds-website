@@ -9,6 +9,7 @@ import ListenBlock from './ListenBlock';
 import Credits from './Credits';
 import BackgroundImage from '../BackgroundImage';
 import Clouds from '../clouds/Clouds';
+import Gallery from './Gallery';
 
 const MusicTemplate = ({ release }: { release: MusicData }) => {
   return (
@@ -52,6 +53,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
             credits={release.credits}
             theme={release.theme}
           />
+          <Gallery className='col-start-1 col-span-2 mt-10' />
         </div>
         <MusicNav className='mt-10 sm:mt-20' currentSlug={release.slug} />
       </Section>
