@@ -3,9 +3,15 @@ import styles from './styles.module.css';
 import Section from '../../ui/Section';
 import ButtonLink from '../../ui/ButtonLink';
 import data from '@/app/data/music/heresy';
-import MainImage from './MainImage';
+import { getGalleryImages } from '@/app/libs/getGalleryImages';
+import MainImages from './HeroImages';
 
 const Hero = () => {
+  const images = getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' });
+  images.unshift(data.frontCover.url);
+
+  console.log(images);
+
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
       <div className='flex flex-col justify-center h-full w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20'>
@@ -14,7 +20,7 @@ const Hero = () => {
           <p className='sm:text-lg'>New album out now</p>
         </div>
         <div className='flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full aspect-square sm:items-start col-start-1 row-start-1 row-span-3'>
-          <MainImage imgUrl={data.frontCover.url} altText={data.frontCover.altText} />
+          <MainImages images={images} altText={data.frontCover.altText} />
         </div>
         {/* <div className='mt-4 col-start-2 row-start-2'>
           <p className='text-sm sm:text-base'>
