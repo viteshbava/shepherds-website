@@ -8,7 +8,7 @@ import Clouds from './components/clouds/Clouds';
 import { Theme } from './types';
 
 export default function Home() {
-  const images = getGalleryImages({ folderPath: 'imgs/gallery', shuffle: true });
+  const images = getGalleryImages({ folderPath: '/imgs/gallery', shuffle: true });
 
   return (
     <>

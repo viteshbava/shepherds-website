@@ -14,7 +14,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
           className='relative w-full aspect-square cursor-pointer hover:opacity-90'
           onClick={() => onClickImage(index)}>
           <Image
-            src={`/imgs/gallery/${image}`}
+            src={image}
             alt='Shepherds of Cassini gallery photo'
             fill
             sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'

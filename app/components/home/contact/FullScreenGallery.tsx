@@ -53,7 +53,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
           {images.map((image, index) => (
             <Image
               key={index}
-              src={`/imgs/gallery/${image}`}
+              src={image}
               alt='Shepherds of Cassini gallery photo'
               fill
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
