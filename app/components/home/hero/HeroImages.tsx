@@ -54,7 +54,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
 
   return (
     <div
-      className={`relative aspect-square max-w-full max-h-full w-full border border-green-500 flex justify-center ${className}`}
+      className={`relative aspect-square max-w-full max-h-full w-full flex justify-center ${className}`}
       onMouseEnter={() => {
         if (!isTouchDevice) {
           console.log('mouse entered');
@@ -75,14 +75,16 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           }
         }
       }}>
-      <Image
-        priority
-        src={images[0]}
-        alt={altText}
-        className='object-contain rounded-xl border border-red-500'
-        fill
-        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-      />
+      <div className='absolute object-contain aspect-square max-w-full max-h-full w-full'>
+        <Image
+          priority
+          src={images[0]}
+          alt={altText}
+          className='object-contain rounded-xl'
+          fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+        />
+      </div>
       {/* {images.map((image, index) => (
         <Image
           key={index}
