@@ -7,14 +7,8 @@ import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import MainImages from './HeroImages';
 
 const Hero = () => {
-  // const images = getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' });
-  // images.unshift(data.frontCover.url);
-
-  const images = [
-    data.frontCover.url,
-    '/imgs/heresy/album-gallery/vinyl-test.webp',
-    '/imgs/heresy/album-gallery/cd-test.avif',
-  ];
+  const images = getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' });
+  images.unshift(data.frontCover.url);
 
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
