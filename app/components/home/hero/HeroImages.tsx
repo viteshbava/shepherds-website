@@ -75,16 +75,14 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           }
         }
       }}>
-      <div className='relative aspect-square max-w-full max-h-full border border-blue-500'>
-        <Image
-          priority
-          src={images[0]}
-          alt={altText}
-          className='object-contain rounded-xl border border-red-500'
-          fill
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-        />
-      </div>
+      <Image
+        priority
+        src={images[0]}
+        alt={altText}
+        className='object-contain rounded-xl border border-red-500'
+        fill
+        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+      />
       {/* {images.map((image, index) => (
         <Image
           key={index}
