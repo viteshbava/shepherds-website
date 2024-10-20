@@ -75,19 +75,14 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           }
         }
       }}>
-      {images.map((image, index) => (
-        <Image
-          key={index}
-          priority={index === 0}
-          src={image}
-          alt={altText}
-          className='object-contain rounded-xl'
-          fill
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          onLoad={index === 0 ? onFirstImageLoad : undefined}
-          onClick={handleClick}
-        />
-      ))}
+      <Image
+        priority
+        src={images[0]}
+        alt={altText}
+        className='object-contain rounded-xl'
+        fill
+        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+      />
       {/* {images.map((image, index) => (
         <Image
           key={index}
