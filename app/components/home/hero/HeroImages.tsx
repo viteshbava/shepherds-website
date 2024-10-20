@@ -81,7 +81,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           priority={index === 0}
           src={image}
           alt={altText}
-          className='object-contain rounded'
+          className='object-contain rounded-xl'
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
           onLoad={index === 0 ? onFirstImageLoad : undefined}
