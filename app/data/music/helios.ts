@@ -63,7 +63,6 @@ const helios: MusicData = {
     },
   ],
   galleryPath: '/imgs/helios/album-gallery',
-  openGraphImg: '/imgs/helios/opengraph-image.png',
 };
 
 export default helios;

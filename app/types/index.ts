@@ -36,5 +36,4 @@ export interface MusicData {
   credits: Credit[];
   theme: Theme;
   galleryPath: string;
-  openGraphImg: string;
 }

@@ -63,7 +63,6 @@ const selfTitled: MusicData = {
     },
   ],
   galleryPath: '/imgs/selftitled/album-gallery',
-  openGraphImg: '/imgs/selftitled/opengraph-image.png',
 };
 
 export default selfTitled;

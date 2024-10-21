@@ -59,7 +59,6 @@ const heresy: MusicData = {
     },
   ],
   galleryPath: '/imgs/heresy/album-gallery',
-  openGraphImg: '/imgs/heresy/opengraph-image.png',
 };
 
 export default heresy;
