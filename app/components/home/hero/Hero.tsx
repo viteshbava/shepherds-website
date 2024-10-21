@@ -7,7 +7,7 @@ import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import MainImages from './HeroImages';
 
 const Hero = () => {
-  const images = getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' });
+  const images = getGalleryImages({ folderPath: '/imgs/heresy/album-gallery' });
   images.unshift(data.frontCover.url);
 
   return (
