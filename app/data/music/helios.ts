@@ -62,7 +62,7 @@ const helios: MusicData = {
       href: 'https://www.youtube.com/playlist?list=OLAK5uy_nQaQ8MPFcDXglLqlXSBojobn2mCUCmIyE&playnext=1&index=1',
     },
   ],
-  galleryPath: '',
+  galleryPath: '/imgs/helios/album-gallery',
 };
 
 export default helios;
