@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'Psychedelic prog metal from Auckland, New Zealand. Shepherds Of Cassini is Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar, Vocals, Keys',
   keywords:
     'shepherds of cassini new zealand music rock metal progressive post prog psychedelic auckland',
-  metadataBase: new URL('https://shepherds-website-staging.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
 };
 
 export default function RootLayout({
