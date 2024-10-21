@@ -18,5 +18,5 @@ export const formatMetaDescr = (musicData: MusicData): string => {
   // Format credits
   const creditsString = credits.map((credit) => `${credit.part_1} ${credit.part_2}`).join(', ');
 
-  return `Shepherds of Cassini's '${name}' was released on ${releaseDateString}. The album includes tracks ${tracks}. ${creditsString}.`;
+  return `Shepherds of Cassini's '${name}' was released on ${releaseDateString}. ${creditsString}. The album includes tracks ${tracks}.`;
 };
