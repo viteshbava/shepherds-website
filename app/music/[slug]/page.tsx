@@ -23,12 +23,12 @@ export const generateMetadata = async ({ params }: { params: IParams }) => {
     openGraph: {
       title,
       description,
-      images: [release.openGraphImg],
+      images: [{ url: release.openGraphImg, width: 315, height: 315 }],
     },
     twitter: {
       title,
       description,
-      images: [release.openGraphImg],
+      images: [{ url: release.openGraphImg, width: 315, height: 315 }],
     },
   };
 };
