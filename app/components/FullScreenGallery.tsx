@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { HamburgerButton } from './header/HamburgerButton';
 
@@ -10,6 +10,20 @@ interface FullscreenImageProps {
 
 const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const touchStartX = useRef(0); // useRef to store the starting touch position
+
+  const handleNavigation = useCallback(
+    (direction: 'prev' | 'next') => {
+      setCurrentIndex((prevIndex) => {
+        if (direction === 'next') {
+          return (prevIndex + 1) % images.length;
+        } else {
+          return (prevIndex - 1 + images.length) % images.length;
+        }
+      });
+    },
+    [images.length]
+  );
 
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
@@ -21,21 +35,32 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
         handleNavigation('next');
       }
     };
+
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartX.current = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      const touchEndX = event.touches[0].clientX;
+      const swipeThreshold = 50; // Minimum distance to consider it a swipe
+
+      if (touchStartX.current - touchEndX > swipeThreshold) {
+        handleNavigation('next'); // Swipe left
+      } else if (touchEndX - touchStartX.current > swipeThreshold) {
+        handleNavigation('prev'); // Swipe right
+      }
+    };
+
     document.addEventListener('keydown', handleKeydown);
+    document.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchmove', handleTouchMove);
+
     return () => {
       document.removeEventListener('keydown', handleKeydown);
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
     };
-  }, [onClose]);
-
-  const handleNavigation = (direction: 'prev' | 'next') => {
-    setCurrentIndex((prevIndex) => {
-      if (direction === 'next') {
-        return (prevIndex + 1) % images.length;
-      } else {
-        return (prevIndex - 1 + images.length) % images.length;
-      }
-    });
-  };
+  }, [onClose, handleNavigation]);
 
   return (
     <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50'>
