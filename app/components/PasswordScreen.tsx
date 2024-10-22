@@ -1,15 +1,18 @@
 import { useState } from 'react';
 
-const PasswordScreen: React.FC<{ onAuthSuccess: () => void }> = ({ onAuthSuccess }) => {
-  const [password, setPassword] = useState('');
+interface PasswordScreenProps {
+  onAuthSuccess: () => void;
+  password: string;
+}
+
+const PasswordScreen = ({ onAuthSuccess, password }: PasswordScreenProps) => {
+  const [enteredPassword, setEnteredPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = () => {
-    const hardcodedPassword = 'skullcrusher';
-
-    if (password === hardcodedPassword) {
+    if (enteredPassword === password) {
       // Password matches, proceed to the app
-      localStorage.setItem('authenticated', 'true');
+      localStorage.setItem('authenticated', enteredPassword);
       onAuthSuccess();
     } else {
       setError('Incorrect password');
@@ -29,8 +32,8 @@ const PasswordScreen: React.FC<{ onAuthSuccess: () => void }> = ({ onAuthSuccess
         <input
           type='password'
           className='border p-2 w-full text-black'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={enteredPassword}
+          onChange={(e) => setEnteredPassword(e.target.value)}
           onKeyDown={handleKeyDown} // Listen for Enter key
           placeholder='Password'
         />

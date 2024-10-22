@@ -3,18 +3,23 @@
 import React, { useEffect, useState } from 'react';
 import PasswordScreen from './PasswordScreen';
 
-const PasswordWrapper = ({ children }: { children: React.ReactNode }) => {
+interface PasswordWrapperProps {
+  children: React.ReactNode;
+  password: string;
+}
+
+const PasswordWrapper = ({ children, password }: PasswordWrapperProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check if the user is authenticated (i.e., they have entered the password)
+    // Check if the user is authenticated (i.e., they have previously entered the correct/current password)
     const auth = localStorage.getItem('authenticated');
-    if (auth === 'true') {
+    if (auth === password) {
       setIsAuthenticated(true);
     }
     setLoading(false);
-  }, []);
+  }, [password]);
 
   const handleAuthSuccess = () => {
     setIsAuthenticated(true);
@@ -27,7 +32,7 @@ const PasswordWrapper = ({ children }: { children: React.ReactNode }) => {
 
   if (!isAuthenticated) {
     // Show the password screen if not authenticated
-    return <PasswordScreen onAuthSuccess={handleAuthSuccess} />;
+    return <PasswordScreen onAuthSuccess={handleAuthSuccess} password={password} />;
   }
 
   return children;

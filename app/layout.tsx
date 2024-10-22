@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
 };
 
+const hardcodedPassword = 'abyss';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,7 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
-        <PasswordWrapper>
+        <PasswordWrapper password={hardcodedPassword}>
           <Header />
           <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
             {children}
