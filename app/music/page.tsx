@@ -1,9 +1,5 @@
 import { redirect } from 'next/navigation';
 
-const MusicPage = () => {
-  redirect('/#music');
-
-  return null;
-};
+const MusicPage = () => redirect('/#music');
 
 export default MusicPage;
