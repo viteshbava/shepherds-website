@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
       <div className='flex flex-col justify-center h-full w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20'>
-        <div className='w-full rounded-lg	bg-black/30 py-2 mb-4 col-start-2 row-start-1'>
+        <div className='w-full rounded-lg	bg-black/30 py-2 mb-4 col-start-2 row-start-1 flex flex-col justify-center'>
           <h2 className='text-lg sm:text-3xl text-red_important'>In Thrall to Heresy</h2>
           <p className='sm:text-lg'>New album out now</p>
         </div>
