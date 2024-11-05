@@ -19,7 +19,8 @@ const heresy: MusicData = {
     { part_1: 'Recorded by', part_2: 'Dave Rhodes at The Chapel, Auckland, NZ' },
     { part_1: 'Mixed by', part_2: 'Dave Rhodes' },
     { part_1: 'Mastered by', part_2: 'Luke Finlay at Primal Mastering, Auckland, NZ' },
-    { part_1: 'Album art by', part_2: 'Moonroot' },
+    { part_1: 'Original artwork and lettering by', part_2: 'Moonroot' },
+    { part_1: 'Layout by', part_2: 'Vitesh Bava' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
   embed: {
