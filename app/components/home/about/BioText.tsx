@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import Arrow from './Arrow';
+import Link from 'next/link';
 
 const Bio = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -10,6 +11,8 @@ const Bio = () => {
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const linkStyles = 'italic hover:opacity-60 text-red_bright';
 
   return (
     <div className='flex flex-col items-center max-w-xl mx-auto'>
@@ -62,15 +65,21 @@ const Bio = () => {
         <p className='mt-6'>
           The band entered the studio at Depot Sound in May 2013 to record their debut full-length
           album with engineer Dave Rhodes. Released on August 23rd of the same year, the self-titled
-          album Shepherds of Cassini garnered positive reviews both locally and internationally.
-          Following its release, the band gigged extensively while concurrently crafting new
-          material.
+          album{' '}
+          <Link className={linkStyles} href='/music/shepherdsofcassini'>
+            Shepherds of Cassini
+          </Link>{' '}
+          garnered positive reviews both locally and internationally. Following its release, the
+          band gigged extensively while concurrently crafting new material.
         </p>
         <p className='mt-6'>
-          In April 2015, they returned to Depot Sound to record their second full-length album,
-          Helios Forsaken, once again engineered by Dave Rhodes. Released on July 11th of the same
-          year, the album received acclaim from both local and international critics, further
-          expanding the band&apos;s reach beyond New Zealand.
+          In April 2015, they returned to Depot Sound to record their second full-length album,{' '}
+          <Link className={linkStyles} href='/music/heliosforsaken'>
+            Helios Forsaken
+          </Link>
+          , once again engineered by Dave Rhodes. Released on July 11th of the same year, the album
+          received acclaim from both local and international critics, further expanding the
+          band&apos;s reach beyond New Zealand.
         </p>
         <p className='mt-6'>
           Early 2016 marked the beginning of a hiatus for the band as members pursued personal
@@ -82,10 +91,13 @@ const Bio = () => {
         <p className='mt-6'>
           Following a seven-year hiatus, the band reunited in 2023, regrouping in Auckland with a
           renewed passion for creating music. They swiftly began working on new material, returning
-          to the studio at The Chapel in February 2024 to record their third full-length album, In
-          Thrall to Heresy, once again with engineer Dave Rhodes. With production now complete and
-          final preparations underway, the album is poised to reach listeners soon, marking an
-          exciting new chapter in Shepherds of Cassini&apos;s journey.
+          to the studio at The Chapel in February 2024 to record their third full-length album,{' '}
+          <Link className={linkStyles} href='/music/inthralltoheresy'>
+            In Thrall to Heresy
+          </Link>
+          , once again with engineer Dave Rhodes. With production now complete and final
+          preparations underway, the album is poised to reach listeners soon, marking an exciting
+          new chapter in Shepherds of Cassini&apos;s journey.
         </p>
       </div>
     </div>
