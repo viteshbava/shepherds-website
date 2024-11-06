@@ -85,7 +85,7 @@ const Bio = () => {
           to the studio at The Chapel in February 2024 to record their third full-length album, In
           Thrall to Heresy, once again with engineer Dave Rhodes. With production now complete and
           final preparations underway, the album is poised to reach listeners soon, marking an
-          exciting new chapter in Shepherds of Cassini's journey.
+          exciting new chapter in Shepherds of Cassini&apos;s journey.
         </p>
       </div>
     </div>
