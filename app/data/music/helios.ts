@@ -23,7 +23,7 @@ const helios: MusicData = {
     { part_1: 'Darbuka on Mauerfall & Helios Forsaken performed by', part_2: 'Reyahn Leng' },
     { part_1: 'Album art by', part_2: 'Chris Lewis' },
     { part_1: 'Hand drawn text by', part_2: 'Omar Al-Hashimi' },
-    { part_1: 'Photography by', part_2: 'Hazwani Hussain and Fern King' },
+    { part_1: 'Photography by', part_2: 'Hazwani Hussain & Fern King' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
   embed: {
