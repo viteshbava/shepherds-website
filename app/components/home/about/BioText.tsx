@@ -81,9 +81,11 @@ const Bio = () => {
         </p>
         <p className='mt-6'>
           Following a seven-year hiatus, the band reunited in 2023, regrouping in Auckland with a
-          renewed passion for creating music. They swiftly began working on new material, entering
-          the studio at The Chapel in February 2024 to record once again with engineer Dave Rhodes.
-          Their third full-length album is due to be released in late 2024.
+          renewed passion for creating music. They swiftly began working on new material, returning
+          to the studio at The Chapel in February 2024 to record their third full-length album, In
+          Thrall to Heresy, once again with engineer Dave Rhodes. With production now complete and
+          final preparations underway, the album is poised to reach listeners soon, marking an
+          exciting new chapter in Shepherds of Cassini's journey.
         </p>
       </div>
     </div>
