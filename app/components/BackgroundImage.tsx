@@ -7,32 +7,35 @@ import { gsap } from 'gsap';
 interface BackgroundImageProps {
   url: string;
   altText: string;
+  fixed?: boolean;
 }
 
-const BackgroundImage = ({ url, altText }: BackgroundImageProps) => {
+const BackgroundImage = ({ url, altText, fixed = false }: BackgroundImageProps) => {
   const imageRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (imageRef.current) {
-        const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
+    if (!fixed) {
+      const handleScroll = () => {
+        if (imageRef.current) {
+          const scrollPosition = window.scrollY;
+          const windowHeight = window.innerHeight;
 
-        const newOpacity = Math.max(0, 0.4 - scrollPosition / windowHeight / 2.5);
-        const translateY = Math.min(0, -scrollPosition / 2.5);
+          const newOpacity = Math.max(0, 0.4 - scrollPosition / windowHeight / 2.5);
+          const translateY = Math.min(0, -scrollPosition / 2.5);
 
-        gsap.to(imageRef.current, {
-          opacity: newOpacity,
-          y: translateY,
-          duration: 0.3,
-          ease: 'power1.out',
-        });
-      }
-    };
+          gsap.to(imageRef.current, {
+            opacity: newOpacity,
+            y: translateY,
+            duration: 0.3,
+            ease: 'power1.out',
+          });
+        }
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [fixed]);
 
   const handleImageLoad = () => {
     if (imageRef.current) {

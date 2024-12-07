@@ -13,10 +13,11 @@ export default function Home() {
   return (
     <>
       <h1 className='sr-only'>Shepherds of Cassini - Home</h1>
-      <Clouds theme={Theme.Red} />
+      {/* <Clouds theme={Theme.Red} /> */}
       <BackgroundImage
         url='/imgs/heresy/heresy-back-cover.webp'
         altText='In Thrall to Heresy back cover'
+        fixed
       />
       <Hero />
       <Music />
