@@ -1,10 +1,10 @@
 .hero-height {
   min-height: 560px;
-  height: calc(100svh - 6rem);
+  height: calc(100svh - var(--header-desktop-height));
   max-height: 1080px;
   margin-top: 6rem;
   @media (max-width: 640px) {
-    height: calc(100svh - 4.5rem);
-    margin-top: 4.5rem;
+    height: calc(100svh - var(--header-mobile-height));
+    margin-top: var(--header-mobile-height);
   }
 }

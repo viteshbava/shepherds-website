@@ -2,9 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-desktop-height: 6rem;
+  --header-mobile-height: 4.5rem;
+}
+
 html {
-  scroll-padding-top: 6rem; /* Adjust this value to match the height of your fixed navbar */
+  scroll-padding-top: var(--header-desktop-height);
   @media (max-width: 640px) {
-    scroll-padding-top: 4.5rem;
+    scroll-padding-top: var(--header-mobile-height);
   }
+}
+
+.gold-gradient {
+  background: linear-gradient(
+    189deg,
+    #ceb533,
+    #70652e 22.25%,
+    #ac9f5b 46.73%,
+    #756b34 75.09%,
+    #292407 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
