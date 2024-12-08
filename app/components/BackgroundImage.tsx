@@ -8,9 +8,17 @@ interface BackgroundImageProps {
   url: string;
   altText: string;
   fixed?: boolean;
+  addBlur?: boolean;
+  finalOpacity?: number;
 }
 
-const BackgroundImage = ({ url, altText, fixed = false }: BackgroundImageProps) => {
+const BackgroundImage = ({
+  url,
+  altText,
+  fixed = false,
+  addBlur = true,
+  finalOpacity = 0.4,
+}: BackgroundImageProps) => {
   const imageRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
@@ -43,7 +51,7 @@ const BackgroundImage = ({ url, altText, fixed = false }: BackgroundImageProps) 
         imageRef.current,
         { opacity: 0 },
         {
-          opacity: 0.4,
+          opacity: finalOpacity,
           duration: 0.2,
           ease: 'power1.out',
         }
@@ -51,8 +59,23 @@ const BackgroundImage = ({ url, altText, fixed = false }: BackgroundImageProps) 
     }
   };
 
-  return (
-    <div className='absolute top-0 left-0 w-full min-h-screen max-h-full'>
+  return fixed ? (
+    <div className='fixed w-screen h-screen top-0 left-0 -z-20'>
+      <Image
+        priority
+        src={url}
+        alt={altText}
+        fill
+        sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+        className={`absolute top-0 left-0 object-cover object-top ${
+          addBlur ? 'blur-sm' : ''
+        } opacity-0`}
+        onLoad={handleImageLoad}
+        ref={imageRef}
+      />
+    </div>
+  ) : (
+    <div className='absolute top-0 left-0 w-full min-h-screen max-h-full -z-20'>
       <div className='fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-screen'>
         <Image
           priority
@@ -60,7 +83,9 @@ const BackgroundImage = ({ url, altText, fixed = false }: BackgroundImageProps) 
           alt={altText}
           fill
           sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-          className='absolute top-0 left-0 w-full object-cover blur-sm opacity-0'
+          className={`absolute top-0 left-0 w-full object-cover ${
+            addBlur ? 'blur-sm' : ''
+          } opacity-0`}
           onLoad={handleImageLoad}
           ref={imageRef}
         />

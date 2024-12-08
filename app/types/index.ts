@@ -22,6 +22,7 @@ interface Image {
 export enum Theme {
   Green = 'green',
   Red = 'red',
+  Grey = 'grey',
 }
 
 export interface MusicData {
