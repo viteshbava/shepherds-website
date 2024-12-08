@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import gsap from 'gsap';
 import Navbar from './Navbar';
 import Logo from '../Logo';
 import Link from 'next/link';
@@ -13,26 +14,13 @@ export interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  {
-    title: 'Home',
-    href: '/#home',
-  },
-  {
-    title: 'Music',
-    href: '/#music',
-  },
-  {
-    title: 'About',
-    href: '/#about',
-  },
-  {
-    title: 'Contact',
-    href: '/#contact',
-  },
+  { title: 'Home', href: '/#home' },
+  { title: 'Music', href: '/#music' },
+  { title: 'About', href: '/#about' },
+  { title: 'Contact', href: '/#contact' },
 ];
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -40,11 +28,25 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const header = document.querySelector('header');
+    const logo = document.querySelector('.logo');
+    const mediaQuery = window.matchMedia('(min-width: 640px)'); // Media query for non-mobile screens
+
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (mediaQuery.matches && header && logo) {
+        const scrollY = window.scrollY;
+
+        gsap.to(header, {
+          height: scrollY > 0 ? '4rem' : '6rem',
+          duration: 0.1,
+          ease: 'power1.out',
+        });
+
+        gsap.to(logo, {
+          scale: scrollY > 0 ? 0.8 : 1,
+          duration: 0.1,
+          ease: 'power1.out',
+        });
       }
     };
 
@@ -57,21 +59,18 @@ const Header = () => {
 
   return (
     <>
-      <header className='fixed z-40 w-full min-h-[40px] h-[18svh] max-h-[4.5rem] sm:max-h-24 px-4 sm:px-10 flex justify-between items-center'>
+      <header className='fixed z-40 w-full min-h-[4rem] h-[6rem] sm:h-[6rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300'>
         {/* Background Layer */}
-        <div
-          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-            isScrolled ? 'backdrop-blur-md' : ''
-          }`}
-        />
+        <div className='absolute inset-0 transition-all duration-500 ease-in-out backdrop-blur-md' />
         {/* Content Layer */}
         <div className='relative flex justify-between items-center w-full h-full'>
-          <div className='flex-1 flex justify-center lg:justify-start'>
+          {/* Logo in Center */}
+          <div className='flex-1 flex justify-center'>
             <Link
               onClick={() => setIsHamburgerOpen(false)}
               className='transition duration-200 ease-in-out hover:opacity-50'
               href={'/#home'}>
-              <Logo className='w-56 px-8 sm:w-80' />
+              <Logo className='logo w-72 sm:w-80 transition-transform' />
             </Link>
           </div>
           <Navbar navLinks={navLinks} />
