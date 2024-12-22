@@ -49,7 +49,8 @@ const Header = () => {
           duration: 0.1,
           ease: 'power1.out',
         });
-
+      }
+      if (header) {
         // Animate background blur
         gsap.to(header, {
           backdropFilter: scrollY > 0 ? 'blur(10px)' : 'blur(0px)',
@@ -80,7 +81,7 @@ const Header = () => {
               onClick={() => setIsHamburgerOpen(false)}
               className='transition duration-200 ease-in-out hover:scale-105'
               href={'/#home'}>
-              <Logo className='logo w-72 sm:w-80 transition-transform' />
+              <Logo className='logo w-48 sm:w-80 transition-transform' />
             </Link>
           </div>
           <Navbar navLinks={navLinks} half='right' />
