@@ -33,17 +33,26 @@ const Header = () => {
     const mediaQuery = window.matchMedia('(min-width: 640px)'); // Media query for non-mobile screens
 
     const handleScroll = () => {
-      if (mediaQuery.matches && header && logo) {
+      if (header && mediaQuery.matches) {
         const scrollY = window.scrollY;
 
+        // Animate height
         gsap.to(header, {
           height: scrollY > 0 ? '4rem' : '6rem',
           duration: 0.1,
           ease: 'power1.out',
         });
 
+        // Animate logo scaling
         gsap.to(logo, {
           scale: scrollY > 0 ? 0.8 : 1,
+          duration: 0.1,
+          ease: 'power1.out',
+        });
+
+        // Animate background blur
+        gsap.to(header, {
+          backdropFilter: scrollY > 0 ? 'blur(10px)' : 'blur(0px)',
           duration: 0.1,
           ease: 'power1.out',
         });
@@ -61,7 +70,7 @@ const Header = () => {
     <>
       <header className='fixed z-40 w-full min-h-[4rem] h-[6rem] sm:h-[6rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300'>
         {/* Background Layer */}
-        <div className='absolute inset-0 transition-all duration-500 ease-in-out backdrop-blur-md' />
+        <div className='absolute inset-0 transition-all duration-500 ease-in-out' />
         {/* Content Layer */}
         <div className='relative flex justify-between items-center w-full h-full'>
           {/* Logo in Center */}
