@@ -38,14 +38,14 @@ const Header = () => {
 
         // Animate height
         gsap.to(header, {
-          height: scrollY > 0 ? '4rem' : '6rem',
+          height: scrollY > 0 ? '6rem' : '12rem',
           duration: 0.1,
           ease: 'power1.out',
         });
 
         // Animate logo scaling
         gsap.to(logo, {
-          scale: scrollY > 0 ? 0.8 : 1,
+          scale: scrollY > 0 ? 0.6 : 1,
           duration: 0.1,
           ease: 'power1.out',
         });
@@ -68,21 +68,22 @@ const Header = () => {
 
   return (
     <>
-      <header className='fixed z-40 w-full min-h-[4rem] h-[6rem] sm:h-[6rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300'>
+      <header className='fixed z-40 w-full min-h-[6rem] h-[6rem] sm:h-[12rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300'>
         {/* Background Layer */}
         <div className='absolute inset-0 transition-all duration-500 ease-in-out' />
         {/* Content Layer */}
-        <div className='relative flex justify-between items-center w-full h-full'>
+        <div className='relative flex justify-center items-center w-full h-full'>
           {/* Logo in Center */}
-          <div className='flex-1 flex justify-center'>
+          <Navbar navLinks={navLinks} half='left' />
+          <div className='flex justify-center mx-12'>
             <Link
               onClick={() => setIsHamburgerOpen(false)}
-              className='transition duration-200 ease-in-out hover:opacity-50'
+              className='transition duration-200 ease-in-out hover:scale-105'
               href={'/#home'}>
               <Logo className='logo w-72 sm:w-80 transition-transform' />
             </Link>
           </div>
-          <Navbar navLinks={navLinks} />
+          <Navbar navLinks={navLinks} half='right' />
         </div>
         {/* Hamburger button/cross */}
         <div className='absolute top-0 right-0 pr-2 h-full lg:hidden flex flex-col justify-center'>

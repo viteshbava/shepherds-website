@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --header-desktop-height: 6rem;
+  --header-desktop-height-big: 12rem;
+  --header-desktop-height-small: 6rem;
   --header-mobile-height: 4.5rem;
 }
 
 html {
-  scroll-padding-top: var(--header-desktop-height);
+  scroll-padding-top: calc(var(--header-desktop-height-small) + 1rem);
   @media (max-width: 640px) {
     scroll-padding-top: var(--header-mobile-height);
   }

@@ -1,6 +1,6 @@
 .hero-height {
   min-height: 560px;
-  height: calc(100svh - var(--header-desktop-height));
+  height: calc(100svh - var(--header-desktop-height-big));
   max-height: 1080px;
   margin-top: 6rem;
   @media (max-width: 640px) {
