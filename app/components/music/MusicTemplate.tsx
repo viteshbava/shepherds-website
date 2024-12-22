@@ -25,7 +25,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
           animation='albums-1'
         />
       )}
-      <Section className='my-[4.5rem] sm:my-[6rem] items-center'>
+      <Section className='mb-10 sm:mb-20 mt-[7rem] sm:mt-[12rem] items-center'>
         <h1 className='text-2xl sm:text-4xl pb-4 border-white/50 border-b-[1px] w-full'>
           {release.name}
         </h1>
