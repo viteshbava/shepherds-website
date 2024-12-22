@@ -1,0 +1,27 @@
+import React from 'react';
+import Section from '../ui/Section';
+import Image from 'next/image';
+
+const News = () => {
+  return (
+    <Section id='news' className='mt-24'>
+      <h2 className='mb-6 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>News</h2>
+      <div className='relative w-full aspect-[990/560]'>
+        <Image
+          priority
+          src='/imgs/about-photo.webp'
+          alt='Shepherds of Cassini band members standing together'
+          className='object-cover rounded'
+          fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+        />
+      </div>
+      <p className='self-start text-left mt-1 text-sm'>
+        Shepherds of Cassini is (left to right) Omar Al-Hashimi – Drums, Felix Lun – Violin, Vitesh
+        Bava – Bass, Brendan Zwaan – Guitar, Vocals, Keys
+      </p>
+    </Section>
+  );
+};
+
+export default News;

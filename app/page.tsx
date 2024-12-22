@@ -6,6 +6,7 @@ import { getGalleryImages } from './libs/getGalleryImages';
 import Clouds from './components/clouds/Clouds';
 import { Theme } from './types';
 import Hero from './components/home/hero/Hero';
+import News from './components/home/News';
 
 export default function Home() {
   const images = getGalleryImages({ folderPath: '/imgs/gallery', shuffle: true });
@@ -21,6 +22,7 @@ export default function Home() {
         finalOpacity={1}
       />
       <Hero />
+      <News />
       <Music />
       <About />
       <Contact images={images} />
