@@ -16,8 +16,8 @@ export default function Home() {
       {/* <Clouds theme={Theme.Grey} behindBackgroundImg={false} /> */}
       <BackgroundImage
         url='/imgs/home-background.png'
+        animation='home-1'
         altText='In Thrall to Heresy back cover'
-        fixed
         finalOpacity={1}
       />
       <Hero />

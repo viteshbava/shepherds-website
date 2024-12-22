@@ -24,7 +24,6 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
     if (intervalIdRef.current) clearInterval(intervalIdRef.current);
 
     if (loaded && !isHovered) {
-      console.log('SETTING LOOP FROM USEEFFECT!');
       intervalIdRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, 4000);
@@ -44,7 +43,6 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     if (intervalId) clearInterval(intervalId);
     if (!isHovered) {
-      console.log('SETTING LOOP FROM HANDLECLICK!');
       const newInterval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, 4000);
@@ -57,17 +55,14 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
       className={`relative aspect-square max-w-full max-h-full w-full flex justify-center ${className}`}
       onMouseEnter={() => {
         if (!isTouchDevice) {
-          console.log('mouse entered');
           setIsHovered(true);
           if (intervalId) clearInterval(intervalId);
         }
       }}
       onMouseLeave={() => {
         if (!isTouchDevice) {
-          console.log('mouse left');
           setIsHovered(false);
           if (!intervalId && loaded) {
-            console.log('SETTING LOOP FROM MOUSELEAVE!');
             const newInterval = setInterval(() => {
               setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
             }, 4000);

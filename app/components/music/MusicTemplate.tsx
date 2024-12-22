@@ -22,6 +22,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
         <BackgroundImage
           url={release.backgroundImage.url}
           altText={release.backgroundImage.altText}
+          animation='albums-1'
         />
       )}
       <Section className='my-[4.5rem] sm:my-[6rem] items-center'>
