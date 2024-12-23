@@ -9,12 +9,11 @@ const About = () => {
       <h2 className='mb-6 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>About</h2>
       <div className='relative w-full aspect-[990/560]'>
         <Image
-          priority
           src='/imgs/about-photo.webp'
           alt='Shepherds of Cassini band members standing together'
           className='object-cover rounded'
           fill
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
         />
       </div>
       <p className='self-start text-left mt-1 text-sm'>

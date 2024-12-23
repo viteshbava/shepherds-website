@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Archivo_Narrow } from 'next/font/google';
-import './globals.css';
+import './globals.scss';
 import Footer from './components/footer/Footer';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from './components/header/Header';

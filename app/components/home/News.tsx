@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '../ui/Section';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const News = () => {
   return (
@@ -30,10 +31,20 @@ const News = () => {
           <span className='italic'>In Thrall to Heresy</span>.
         </p>
         <p className='mt-6'>
-          <span className='text-red_bright'>Recorded & mixed by</span> Dave Rhodes<br></br>
-          <span className='text-red_bright'>Mastered by</span> Luke Finlay at Primal Mastering
+          <span className='text-red_bright'>Recorded & mixed by</span>{' '}
+          <Link className='link' target='_blank' href='https://daverhodesproductions.com/'>
+            Dave Rhodes
+          </Link>
           <br></br>
-          <span className='text-red_bright'>Original artwork and lettering by</span> Moonroot
+          <span className='text-red_bright'>Mastered by</span> Luke Finlay at{' '}
+          <Link className='link' target='_blank' href='https://www.primalmastering.com/'>
+            Primal Mastering
+          </Link>
+          <br></br>
+          <span className='text-red_bright'>Original artwork and lettering by</span>{' '}
+          <Link className='link' target='_blank' href='https://www.moonrootart.com/'>
+            Moonroot
+          </Link>
         </p>
         <p className='mt-6'>
           More details coming soon - keep an eye out here or follow us on social media for updates.

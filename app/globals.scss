@@ -28,3 +28,7 @@ html {
   background-clip: text;
   color: transparent;
 }
+
+.link {
+  @apply underline underline-offset-2 hover:decoration-2;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import { Theme } from '@/app/types';
 
 interface CloudsProps {
@@ -17,8 +17,8 @@ const CLOUD_BACKGROUNDS = {
     right: 'radial-gradient(circle closest-side, #f45f5f, rgba(211, 77, 77, 0))',
   },
   [Theme.Grey]: {
-    left: 'radial-gradient(circle closest-side, #545454, rgba(160, 160, 160, 0))',
-    right: 'radial-gradient(circle closest-side, #616161, rgba(192, 192, 192, 0))',
+    left: 'radial-gradient(circle closest-side, #323232, rgba(160, 160, 160, 0))',
+    right: 'radial-gradient(circle closest-side, #414141, rgba(192, 192, 192, 0))',
   },
   // Add more themes as needed
 };
