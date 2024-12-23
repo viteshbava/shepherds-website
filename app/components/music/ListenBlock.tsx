@@ -29,9 +29,9 @@ const ListenBlock = ({ className = '', listenLinks, embedLinks, theme }: ListenB
             isExternal
             href={link.href}
             ariaLabel={link.ariaLabel}
-            className={`w-full ${
-              theme === Theme.Red ? 'bg-red_dim' : 'bg-green_dim'
-            } uppercase text-sm`}>
+            theme={theme}
+            icon={link.icon}
+            className={`w-full`}>
             {link.label}
           </ButtonLink>
         ))}

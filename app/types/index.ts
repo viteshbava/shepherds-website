@@ -1,4 +1,5 @@
 export interface ListenLink {
+  icon?: IconNames;
   label: string;
   href: string;
   ariaLabel: string;

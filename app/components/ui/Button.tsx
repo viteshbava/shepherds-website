@@ -24,8 +24,9 @@ disabled:cursor-not-allowed
 rounded-md 
 transition 
 px-2 
-py-2 
-hover:bg-opacity-90
+py-4  
+bg-opacity-25	
+hover:bg-opacity-30 
 ${!disabled && 'active:scale-95'} 
 ${className}
 `;

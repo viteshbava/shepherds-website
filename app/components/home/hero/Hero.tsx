@@ -24,14 +24,15 @@ const Hero = () => {
           <div className='sm:hidden w-full h-[42px]'>
             <iframe className='border-0 w-full h-full' src={data.embed.small} seamless></iframe>
           </div>
-          <div className='flex flex-col space-y-3 mt-4'>
+          <div className='grid grid-cols-2 gap-3 mt-4'>
             {data.listenLinks.map((link, i) => (
               <ButtonLink
                 key={i}
                 isExternal
                 href={link.href}
                 ariaLabel={link.ariaLabel}
-                className='w-full bg-red_dim uppercase text-sm'>
+                icon={link.icon}
+                className={`w-full bg-red_dim uppercase text-sm ${i === 0 ? 'col-span-2' : ''}`}>
                 {link.label}
               </ButtonLink>
             ))}

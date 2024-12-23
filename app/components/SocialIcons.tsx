@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import Icons from './icons/Icons';
+import Icons from './icon/Icon';
 import { IconNames } from '../types';
 
 const iconClasses = 'size-9 hover:opacity-90';

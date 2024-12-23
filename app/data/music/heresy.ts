@@ -1,4 +1,4 @@
-import { MusicData, Theme } from '@/app/types';
+import { IconNames, MusicData, Theme } from '@/app/types';
 
 const heresy: MusicData = {
   name: 'In Thrall to Heresy',
@@ -39,24 +39,34 @@ const heresy: MusicData = {
   },
   listenLinks: [
     {
+      icon: IconNames.Bandcamp,
       label: 'Bandcamp | Buy CD / Vinyl',
       ariaLabel: 'Listen / buy on Bandcamp',
       href: 'https://shepherdsofcassini.bandcamp.com/album/helios-forsaken',
     },
     {
+      icon: IconNames.Spotify,
       label: 'Spotify',
       ariaLabel: 'Listen on Spotify',
       href: 'https://open.spotify.com/album/4NbjwGD2anED3em2K3SheA?si=XL013o1jRJK74sI0ZBHbZA',
     },
     {
-      label: 'Apple Music',
+      icon: IconNames.AppleMusic,
+      label: 'Apple',
       ariaLabel: 'Listen on Apple Music',
       href: 'https://music.apple.com/us/album/helios-forsaken/1693857752n',
     },
     {
-      label: 'YouTube Music',
-      ariaLabel: 'Listen on YouTube Music',
+      icon: IconNames.YouTube,
+      label: 'YouTube',
+      ariaLabel: 'Listen on YouTube',
       href: 'https://www.youtube.com/playlist?list=OLAK5uy_nQaQ8MPFcDXglLqlXSBojobn2mCUCmIyE&playnext=1&index=1',
+    },
+    {
+      icon: IconNames.Amazon,
+      label: 'Amazon',
+      ariaLabel: 'Listen on Amazon Music',
+      href: 'https://www.amazon.com/Helios-Forsaken/dp/B0DKBGVCWT',
     },
   ],
   galleryPath: '/imgs/heresy/album-gallery',
