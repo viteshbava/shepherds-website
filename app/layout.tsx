@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
 };
 
-const hardcodedPassword = 'abyss';
+const hardcodedPassword = 'nail';
 
 export default function RootLayout({
   children,
