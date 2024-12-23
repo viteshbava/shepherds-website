@@ -1,4 +1,4 @@
-import { MusicData, Theme } from '@/app/types';
+import { IconNames, MusicData, Theme } from '@/app/types';
 
 const selfTitled: MusicData = {
   name: 'Shepherds of Cassini',
@@ -42,24 +42,34 @@ const selfTitled: MusicData = {
   },
   listenLinks: [
     {
+      icon: IconNames.Bandcamp,
       label: 'Bandcamp | Buy CD',
       ariaLabel: 'Listen / buy on Bandcamp',
       href: 'https://shepherdsofcassini.bandcamp.com/album/shepherds-of-cassini',
     },
     {
+      icon: IconNames.Spotify,
       label: 'Spotify',
       ariaLabel: 'Listen on Spotify',
       href: 'https://open.spotify.com/album/2fIbm8ODcYrHnDksx2XCJn?si=QQFkegX3QtSB-Fl3_3MARA',
     },
     {
-      label: 'Apple Music',
+      icon: IconNames.AppleMusic,
+      label: 'Apple',
       ariaLabel: 'Listen on Apple Music',
       href: 'https://music.apple.com/us/album/shepherds-of-cassini/1693849616',
     },
     {
-      label: 'YouTube Music',
+      icon: IconNames.YouTube,
+      label: 'YouTube',
       ariaLabel: 'Listen on YouTube Music',
       href: 'https://www.youtube.com/watch?v=w634TRfVArU&list=OLAK5uy_kkOnINVx4z9qi5a077Upy3ab4NP_vixNY',
+    },
+    {
+      icon: IconNames.Amazon,
+      label: 'Amazon',
+      ariaLabel: 'Listen on Amazon Music',
+      href: 'https://amazon.com/music/player/albums/B0DNDMQTC9?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_U7I8JZpOt7C7ZDfw13xOJyXFZ',
     },
   ],
   galleryPath: '/imgs/selftitled/album-gallery',
