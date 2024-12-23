@@ -6,6 +6,7 @@ import ButtonLink from '../../ui/ButtonLink';
 import ImageGrid from './ImageGrid';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import FullScreenGallery from '../../FullScreenGallery';
+import { IconNames } from '@/app/types';
 
 const Contact = ({ images }: { images: string[] }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -30,7 +31,8 @@ const Contact = ({ images }: { images: string[] }) => {
         isExternal
         href='mailto:shepherdsofcassini@gmail.com'
         ariaLabel='Send email to shepherdsofcassini@gmail.com'
-        className='w-80 max-w-full bg-red_dim uppercase text-sm'>
+        icon={IconNames.Email}
+        className='w-80 max-w-full'>
         shepherdsofcassini@gmail.com
       </ButtonLink>
       <div className='w-full mt-12'>
