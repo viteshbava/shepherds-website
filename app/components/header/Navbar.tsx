@@ -29,7 +29,7 @@ const Navbar = ({ navLinks, half }: NavBarProps) => {
           <li key={index}>
             <Link
               type='nav'
-              className='flex justify-center items-center text-xl text-white rounded-full w-36 h-10 transition duration-200 ease-in-out hover:opacity-50'
+              className='flex justify-center items-center text-xl gold-heading font-bold textShadowMd rounded-full w-36 h-10 transition duration-200 ease-in-out hover:opacity-50'
               href={link.href}>
               {link.title}
             </Link>

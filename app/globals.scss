@@ -15,18 +15,29 @@ html {
   }
 }
 
+.gold-heading {
+  @apply font-cormorant uppercase tracking-widest gold-gradient;
+  &.bold {
+    @apply font-bold;
+  }
+}
+
 .gold-gradient {
   background: linear-gradient(
-    189deg,
-    #ceb533,
+    258.35deg,
+    #ceb533 0%,
     #70652e 22.25%,
     #ac9f5b 46.73%,
     #756b34 75.09%,
-    #292407 100%
+    #292407 99.99%
   );
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent;
+}
+
+.textShadowMd {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .link {

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        cormorant: ['var(--font-cormorant-upright)', 'serif'],
+      },
       colors: {
         shepherds_black: '#130A0B',
         shepherds_white: '#E5FCFF',

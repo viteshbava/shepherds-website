@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Archivo_Narrow } from 'next/font/google';
+import { Archivo_Narrow, Cormorant_Upright } from 'next/font/google';
 import './globals.scss';
 import Footer from './components/footer/Footer';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -8,6 +8,12 @@ import PasswordWrapper from './components/PasswordWrapper';
 import LoadSection from './components/LoadSection';
 
 const baseFont = Archivo_Narrow({ subsets: ['latin'], weight: ['400', '700'] });
+
+const cormorantUpright = Cormorant_Upright({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-cormorant-upright',
+});
 
 export const metadata: Metadata = {
   title: 'Shepherds of Cassini',
@@ -29,7 +35,7 @@ export default function RootLayout({
     <html className='scroll-smooth' lang='en' style={{ scrollBehavior: 'smooth' }}>
       <body
         suppressHydrationWarning={true}
-        className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
+        className={`${baseFont.className} ${cormorantUpright.variable} bg-black text-shepherds_white flex flex-col items-center`}>
         <PasswordWrapper password={hardcodedPassword}>
           <LoadSection />
           <Header />
