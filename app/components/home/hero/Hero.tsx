@@ -17,7 +17,7 @@ const Hero = () => {
           <MainImages images={images} altText={data.frontCover.altText} />
         </div>
         <div className='w-full flex flex-col justify-center mb-4'>
-          <h3 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 gold-gradient'>Listen | Purchase</h3>
+          <h3 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 gold-heading'>Listen | Purchase</h3>
           <div className='hidden sm:block w-full h-[120px]'>
             <iframe className='border-0 w-full h-full' src={data.embed.large} seamless></iframe>
           </div>
