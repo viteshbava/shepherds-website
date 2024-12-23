@@ -32,7 +32,10 @@ const ListenBlock = ({ className = '', listenLinks, embedLinks, theme }: ListenB
             theme={theme}
             icon={link.icon}
             className={`w-full`}>
-            {link.label}
+            <span className='whitespace-nowrap'>
+              <span className='font-bold'>{link.label}</span>
+              {link.secondaryLabel && ` | ${link.secondaryLabel}`}
+            </span>{' '}
           </ButtonLink>
         ))}
       </div>

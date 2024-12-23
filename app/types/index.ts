@@ -1,6 +1,7 @@
 export interface ListenLink {
   icon?: IconNames;
   label: string;
+  secondaryLabel?: string;
   href: string;
   ariaLabel: string;
 }

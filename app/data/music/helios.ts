@@ -43,7 +43,8 @@ const helios: MusicData = {
   listenLinks: [
     {
       icon: IconNames.Bandcamp,
-      label: 'Bandcamp | Buy CD',
+      label: 'Bandcamp',
+      secondaryLabel: 'Buy CD',
       ariaLabel: 'Listen / buy on Bandcamp',
       href: 'https://shepherdsofcassini.bandcamp.com/album/helios-forsaken',
     },
