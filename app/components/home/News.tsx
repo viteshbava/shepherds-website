@@ -6,7 +6,7 @@ import Link from 'next/link';
 const News = () => {
   return (
     <Section id='news' className='mt-24'>
-      <h2 className='gold-heading bold text-4xl mb-6 pb-2 w-full border-white/50 border-b-[1px]'>
+      <h2 className='gold-heading-section md:text-3xl mb-6 pb-2 w-full border-white/50 border-b-[1px]'>
         News
       </h2>
       <div className='relative w-full max-w-[500px] aspect-square mx-auto'>

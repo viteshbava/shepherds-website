@@ -16,10 +16,11 @@ html {
 }
 
 .gold-heading {
-  @apply font-cormorant uppercase tracking-widest gold-gradient;
-  &.bold {
-    @apply font-bold;
-  }
+  @apply font-cormorant uppercase tracking-wide gold-gradient;
+}
+
+.gold-heading-section {
+  @apply gold-heading text-2xl md:text-3xl;
 }
 
 .gold-gradient {
@@ -34,6 +35,8 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .textShadowMd {

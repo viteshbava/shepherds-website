@@ -26,7 +26,9 @@ const Contact = ({ images }: { images: string[] }) => {
 
   return (
     <Section id='contact' className='my-24 items-center z-auto'>
-      <h2 className='mb-12 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>Contact</h2>
+      <h2 className='gold-heading-section text-3xl mb-12 pb-2 w-full border-white/50 border-b-[1px]'>
+        Contact
+      </h2>
       <ButtonLink
         isExternal
         href='mailto:shepherdsofcassini@gmail.com'

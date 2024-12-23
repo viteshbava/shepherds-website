@@ -6,7 +6,9 @@ import BioText from './BioText';
 const About = () => {
   return (
     <Section id='about' className='mt-24'>
-      <h2 className='mb-6 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>About</h2>
+      <h2 className='gold-heading-section mb-6 pb-2 w-full border-white/50 border-b-[1px]'>
+        About
+      </h2>
       <div className='relative w-full aspect-[990/560]'>
         <Image
           src='/imgs/about-photo.webp'

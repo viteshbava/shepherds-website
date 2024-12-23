@@ -7,7 +7,9 @@ import Link from 'next/link';
 const Music = () => {
   return (
     <Section id='music' className='mt-24'>
-      <h2 className='mb-6 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>Music</h2>
+      <h2 className='gold-heading-section mb-6 pb-2 w-full border-white/50 border-b-[1px]'>
+        Music
+      </h2>
       <div className='sm:flex flex-wrap justify-center w-full gap-6'>
         {[...musicList].reverse().map((release, index) => {
           const year = release?.releaseDate?.getFullYear();
