@@ -25,6 +25,16 @@ export enum Theme {
   Grey = 'grey',
 }
 
+export enum IconNames {
+  Bandcamp = 'bandcamp',
+  Spotify = 'spotify',
+  AppleMusic = 'appleMusic',
+  YouTube = 'youtube',
+  Facebook = 'facebook',
+  Instagram = 'instagram',
+  Amazon = 'amazon',
+}
+
 export interface MusicData {
   name: string;
   slug: string;

@@ -13,14 +13,14 @@ interface ButtonLinkProps {
   ariaLabel?: string;
 }
 
-const ButtonLink: React.FC<ButtonLinkProps> = ({
-  href,
+const ButtonLink = ({
   isExternal = false,
   onClick = () => {},
   children,
   className = '',
   ariaLabel = '',
-}) => {
+  href,
+}: ButtonLinkProps) => {
   const typeClasses = buttonStyles();
 
   return (
