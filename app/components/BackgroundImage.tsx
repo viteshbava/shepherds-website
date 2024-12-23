@@ -104,14 +104,17 @@ const BackgroundImage = ({
     case 'home-1':
       return (
         <div className='absolute top-0 left-0 w-full min-h-screen max-h-full -z-20'>
-          <div className='fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-screen'>
+          <div
+            className={`fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-screen ${
+              addBlur ? 'blur-sm' : ''
+            }`}>
             <Image
               priority
               src={url}
               alt={altText}
               fill
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-              className={`absolute top-0 left-0 w-full ${addBlur ? 'blur-sm' : ''} opacity-0`}
+              className={`absolute top-0 left-0 w-full opacity-0`}
               onLoad={handleImageLoad}
               ref={imageRef}
             />
@@ -121,16 +124,17 @@ const BackgroundImage = ({
     case 'albums-1':
       return (
         <div className='absolute top-0 left-0 w-full min-h-screen max-h-full -z-20'>
-          <div className='fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-screen'>
+          <div
+            className={`fixed left-1/2 transform -translate-x-1/2 aspect-square min-w-full min-h-screen ${
+              addBlur ? 'blur-sm' : ''
+            }`}>
             <Image
               priority
               src={url}
               alt={altText}
               fill
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-              className={`absolute top-0 left-0 w-full object-cover ${
-                addBlur ? 'blur-sm' : ''
-              } opacity-0`}
+              className={`absolute top-0 left-0 w-full object-cover opacity-0`}
               onLoad={handleImageLoad}
               ref={imageRef}
             />

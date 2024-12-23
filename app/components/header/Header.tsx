@@ -51,9 +51,10 @@ const Header = () => {
         });
       }
       if (header) {
-        // Animate background blur
+        // Animate background blur and darkness
         gsap.to(header, {
           backdropFilter: scrollY > 0 ? 'blur(10px)' : 'blur(0px)',
+          backgroundColor: scrollY > 0 ? 'rgba(0, 0, 0, 0.2)' : 'rgba(0, 0, 0, 0)',
           duration: 0.1,
           ease: 'power1.out',
         });
