@@ -90,8 +90,9 @@ const BackgroundImage = ({
             priority
             src={url}
             alt={altText}
+            quality={100}
             fill
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            sizes='100vw'
             className={`absolute top-0 left-0 object-cover object-top ${
               addBlur ? 'blur-sm' : ''
             } opacity-0`}

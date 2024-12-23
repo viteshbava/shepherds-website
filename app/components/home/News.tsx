@@ -6,20 +6,15 @@ const News = () => {
   return (
     <Section id='news' className='mt-24'>
       <h2 className='mb-6 text-2xl pb-2 w-full border-white/50 border-b-[1px]'>News</h2>
-      <div className='relative w-full aspect-[990/560]'>
+      <div className='relative w-full max-w-[500px] aspect-square mx-auto'>
         <Image
-          priority
-          src='/imgs/about-photo.webp'
-          alt='Shepherds of Cassini band members standing together'
+          src='/imgs/heresy/heresy-front-cover.png'
+          alt='Shepherds of Cassini, In Thrall to Heresy, album cover'
           className='object-cover rounded'
           fill
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
         />
       </div>
-      <p className='self-start text-left mt-1 text-sm'>
-        Shepherds of Cassini is (left to right) Omar Al-Hashimi – Drums, Felix Lun – Violin, Vitesh
-        Bava – Bass, Brendan Zwaan – Guitar, Vocals, Keys
-      </p>
     </Section>
   );
 };
