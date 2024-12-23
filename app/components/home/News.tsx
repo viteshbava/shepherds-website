@@ -15,6 +15,15 @@ const News = () => {
           sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
         />
       </div>
+      <div className='relative w-full max-w-[500px] h-[100px] mx-auto'>
+        <Image
+          src='/imgs/heresy/album-logo.png'
+          alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
+          className='object-contain'
+          fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
+        />
+      </div>
     </Section>
   );
 };
