@@ -1,7 +1,7 @@
 import { EmbedLinks, ListenLink, Theme } from '@/app/types';
 import React from 'react';
 import ButtonLink from '../ui/ButtonLink';
-import BandcampPlayer from '../ BandcampPlayer';
+import BandcampPlayer from '../BandcampPlayer';
 
 interface ListenBlockProps {
   className?: string;
@@ -17,7 +17,7 @@ const ListenBlock = ({ className = '', listenLinks, embedLinks, theme }: ListenB
         className={`text-xl ${theme === Theme.Red ? 'text-red_bright' : 'text-green_bright'} mb-2`}>
         Listen | Purchase
       </h2>
-      <BandcampPlayer embed={embedLinks} />
+      <BandcampPlayer embed={embedLinks} theme={theme} />
       <div className='flex flex-col space-y-3 mt-4'>
         {listenLinks.map((link, i) => (
           <ButtonLink

@@ -5,7 +5,7 @@ import ButtonLink from '../../ui/ButtonLink';
 import data from '@/app/data/music/heresy';
 import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import MainImages from './HeroImages';
-import BandcampPlayer from '../../ BandcampPlayer';
+import BandcampPlayer from '../../BandcampPlayer';
 
 const Hero = () => {
   const images = getGalleryImages({ folderPath: '/imgs/hero-imgs' });
