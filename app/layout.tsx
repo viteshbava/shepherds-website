@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Header from './components/header/Header';
 import PasswordWrapper from './components/PasswordWrapper';
+import LoadSection from './components/LoadSection';
 
 const baseFont = Archivo_Narrow({ subsets: ['latin'], weight: ['400', '700'] });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${baseFont.className} bg-black text-shepherds_white flex flex-col items-center`}>
         <PasswordWrapper password={hardcodedPassword}>
+          <LoadSection />
           <Header />
           <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
             {children}
