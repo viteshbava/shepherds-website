@@ -115,7 +115,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
                     : null
                 }
                 type='nav'
-                className={`flex justify-center items-center p-4 text-xl gold-heading rounded-md w-full h-10 transition duration-200 ease-in-out hover:opacity-50`}
+                className={`flex justify-center items-center p-4 text-xl gold-heading rounded-md w-full h-10 transition duration-200 ease-in-out hover:opacity-70`}
                 href={link.href}>
                 {link.title}
               </Link>
