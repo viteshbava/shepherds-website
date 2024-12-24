@@ -17,7 +17,13 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
 
   // Inside your component
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
-  const isTouchDevice = useRef<boolean>(window.matchMedia('(hover: none)').matches).current;
+  const isTouchDevice = useRef<boolean>(false);
+
+  useEffect(() => {
+    if (isTouchDevice) {
+      isTouchDevice.current = window.matchMedia('(hover: none)').matches;
+    }
+  }, []);
 
   useEffect(() => {
     if (images.length === 0) return; // Handle empty images
@@ -54,13 +60,13 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
     <div
       className={`relative aspect-square max-w-full max-h-full w-full flex justify-center ${className}`}
       onMouseEnter={() => {
-        if (!isTouchDevice) {
+        if (!isTouchDevice.current) {
           setIsHovered(true);
           if (intervalId) clearInterval(intervalId);
         }
       }}
       onMouseLeave={() => {
-        if (!isTouchDevice) {
+        if (!isTouchDevice.current) {
           setIsHovered(false);
           if (!intervalId && loaded) {
             const newInterval = setInterval(() => {
