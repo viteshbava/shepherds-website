@@ -98,7 +98,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
       ref={menuRef}
       aria-hidden={!isOpen}
       role='menu'
-      className={`flex fixed bg-black inset-y-0 top-0 left-0 w-screen h-svh z-30 flex-col justify-between items-center px-4 transition-all duration-200 ${
+      className={`flex fixed bg-black inset-y-0 top-0 left-0 w-screen h-svh z-30 flex-col justify-between items-center px-6 transition-all duration-200 ${
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}>
       <div className='w-full min-h-[40px] h-[18svh] max-h-[4.5rem] sm:max-h-24'></div>
@@ -123,7 +123,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
           ))}
         </ul>
       </nav>
-      <div className='flex flex-col justify-center items-center pb-4'>
+      <div className='flex flex-col justify-center items-center w-full pb-4'>
         <SocialIcons />
         <Copyright className='text-xs' />
       </div>
