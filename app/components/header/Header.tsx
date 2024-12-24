@@ -81,7 +81,7 @@ const Header = () => {
             <Link
               onClick={() => setIsHamburgerOpen(false)}
               className='transition duration-200 ease-in-out hover:scale-105'
-              href={'/#home'}>
+              href={'/'}>
               <Logo className='logo w-48 sm:w-80 transition-transform' />
             </Link>
           </div>
