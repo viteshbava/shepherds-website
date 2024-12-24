@@ -13,6 +13,26 @@ html {
   @media (max-width: 640px) {
     scroll-padding-top: calc(var(--header-mobile-height) + 1rem);
   }
+
+  // SCROLL BAR STYLES
+  &::-webkit-scrollbar {
+    width: 8px; // Adjust scrollbar width
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #2f2f2fc8; // Scrollbar track color
+    border-radius: 4px; // Rounded corners
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #70652ea6; // Scrollbar thumb color
+    border-radius: 4px; // Rounded corners
+    border: 2px solid #2f2f2fc8; // Space around the thumb
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #70652e; // Thumb color on hover
+  }
 }
 
 .gold-heading {
