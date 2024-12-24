@@ -19,7 +19,7 @@ const Hero = () => {
         </div>
         <div className='w-full flex flex-col justify-center mb-4'>
           <h3 className='text-lg sm:text-xl mt-4 sm:mt-6 mb-3 gold-heading'>Listen | Purchase</h3>
-          <BandcampPlayer embed={data.embed} />
+          <BandcampPlayer albumId={data.bandCampId} />
           <div className='grid grid-cols-2 gap-3 mt-4'>
             {data.listenLinks.map((link, i) => (
               <ButtonLink

@@ -26,12 +26,7 @@ const helios: MusicData = {
     { part_1: 'Photography by', part_2: 'Hazwani Hussain & Fern King' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
-  embed: {
-    large:
-      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=4ec5ec/tracklist=false/artwork=none/transparent=true/',
-    small:
-      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/',
-  },
+  bandCampId: '1464114074',
   frontCover: {
     url: '/imgs/helios/helios-front-cover.jpg',
     altText: 'Shepherds of Cassini, Helios Forsaken album cover, art by Chris Lewis',

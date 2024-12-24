@@ -11,11 +11,6 @@ export interface Credit {
   part_2?: string;
 }
 
-export interface EmbedLinks {
-  large: string;
-  small: string;
-}
-
 interface Image {
   url: string;
   altText: string;
@@ -43,7 +38,7 @@ export interface MusicData {
   slug: string;
   releaseDate?: Date;
   trackListing: string[];
-  embed: EmbedLinks;
+  bandCampId: string;
   frontCover: Image;
   backgroundImage?: Image;
   listenLinks: ListenLink[];

@@ -25,12 +25,7 @@ const selfTitled: MusicData = {
     { part_1: 'Hand drawn text by', part_2: 'Omar Al-Hashimi & Marie Pfister' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
-  embed: {
-    large:
-      'https://bandcamp.com/EmbeddedPlayer/album=3887076866/size=large/bgcol=333333/linkcol=4ec5ec/tracklist=false/artwork=none/transparent=true/',
-    small:
-      'https://bandcamp.com/EmbeddedPlayer/album=3887076866/size=small/bgcol=333333/linkcol=4ec5ec/tracklist=false/artwork=none/transparent=true/',
-  },
+  bandCampId: '3887076866',
   frontCover: {
     url: '/imgs/selftitled/selftitled-front-cover.jpg',
     altText: 'Shepherds of Cassini, self titled album cover, artwork by Chris Lewis',

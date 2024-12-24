@@ -48,7 +48,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
           />
           <ListenBlock
             className='col-start-2 row-start-3 row-span-2'
-            embedLinks={release.embed}
+            bandCampId={release.bandCampId}
             listenLinks={release.listenLinks}
             theme={release.theme}
           />

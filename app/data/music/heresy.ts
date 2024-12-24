@@ -23,12 +23,7 @@ const heresy: MusicData = {
     { part_1: 'Layout by', part_2: 'Vitesh Bava' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
-  embed: {
-    large:
-      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=none/transparent=true/',
-    small:
-      'https://bandcamp.com/EmbeddedPlayer/album=1464114074/size=small/bgcol=333333/linkcol=e32c14/artwork=none/transparent=true/',
-  },
+  bandCampId: '1464114074',
   frontCover: {
     url: '/imgs/heresy/heresy-front-cover.webp',
     altText: 'Shepherds of Cassini, In Thrall to Heresy, album cover, artwork by Moonroot',
