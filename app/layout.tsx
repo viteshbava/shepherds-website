@@ -16,7 +16,7 @@ const cormorantUpright = Cormorant_Upright({
 });
 
 export const metadata: Metadata = {
-  title: 'Shepherds of Cassini',
+  title: 'Shepherds of Cassini | Official Website',
   description:
     'Psychedelic prog metal from Auckland, New Zealand. Shepherds Of Cassini is Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar, Vocals, Keys',
   keywords:
@@ -29,7 +29,7 @@ const hardcodedPassword = 'nail';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Shepherds of Cassini',
+  name: 'Shepherds of Cassini | Official Website',
 };
 
 export default function RootLayout({
