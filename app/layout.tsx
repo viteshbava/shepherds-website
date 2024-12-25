@@ -26,6 +26,12 @@ export const metadata: Metadata = {
 
 const hardcodedPassword = 'nail';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Shepherds of Cassini',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,6 +43,10 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className={`${baseFont.className} ${cormorantUpright.variable} bg-black text-shepherds_white flex flex-col items-center`}>
         {/* <PasswordWrapper password={hardcodedPassword}> */}
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <LoadSection />
         <Header />
         <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
