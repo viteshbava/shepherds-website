@@ -3,7 +3,7 @@ import { IconNames, MusicData, Theme } from '@/app/types';
 const helios: MusicData = {
   name: 'Helios Forsaken',
   slug: 'heliosforsaken',
-  releaseDate: new Date('2015-07-15'),
+  releaseDate: new Date('2015-07-11'),
   theme: Theme.Green,
   trackListing: [
     'Raijin',
