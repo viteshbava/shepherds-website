@@ -2,7 +2,7 @@
   min-height: 560px;
   height: calc(100svh - var(--header-desktop-height-big));
   max-height: 1080px;
-  margin-top: 8rem;
+  margin-top: var(--header-desktop-height-big);
   @media (max-width: 640px) {
     height: calc(100svh - var(--header-mobile-height));
     margin-top: var(--header-mobile-height);

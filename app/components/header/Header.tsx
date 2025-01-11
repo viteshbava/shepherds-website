@@ -38,7 +38,7 @@ const Header = () => {
 
         // Animate height
         gsap.to(header, {
-          height: scrollY > 0 ? '6rem' : '12rem',
+          height: scrollY > 0 ? '6rem' : '10rem',
           duration: 0.1,
           ease: 'power1.out',
         });
@@ -70,7 +70,7 @@ const Header = () => {
 
   return (
     <>
-      <header className='fixed z-40 w-full min-h-[6rem] h-[6rem] sm:h-[12rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300'>
+      <header className='fixed z-40 w-full min-h-[6rem] h-[6rem] sm:h-[10rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300 border border-green-500'>
         {/* Background Layer */}
         <div className='absolute inset-0 transition-all duration-500 ease-in-out' />
         {/* Content Layer */}

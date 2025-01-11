@@ -22,8 +22,10 @@ const Hero = () => {
   // <p className='gold-statement'>New Single 24 January 2025</p>
 
   return (
-    <Section id='hero' className={`${styles['hero-height']} items-center`}>
-      <div className='flex flex-col justify-center h-full w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20'>
+    <Section id='hero' className={`${styles['hero-height']} items-center border border-red-500`}>
+      <p className='red-veil text-2xl md:text-3xl font-bold mt-8 mb-2'>Red Veil</p>
+      <p className='gold-statement'>New Single 24 January 2025</p>
+      <div className='flex flex-col justify-center h-full w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20 border border-blue-400'>
         <div className='flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full aspect-square sm:items-start'>
           <MainImages images={images} altText='Shepherds of Cassini album artwork' />
         </div>
