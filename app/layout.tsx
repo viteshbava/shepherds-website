@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Archivo_Narrow, Cormorant_Upright } from 'next/font/google';
+import { Archivo_Narrow, Cormorant_Upright, Jura } from 'next/font/google';
 import './globals.scss';
 import Footer from './components/footer/Footer';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -15,8 +15,14 @@ const cormorantUpright = Cormorant_Upright({
   variable: '--font-cormorant-upright',
 });
 
+const jura = Jura({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--jura-upright',
+});
+
 export const metadata: Metadata = {
-  title: 'Shepherds of Cassini',
+  title: 'Shepherds of Cassini | Official Website',
   description:
     'Psychedelic prog metal from Auckland, New Zealand. Shepherds Of Cassini is Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar, Vocals, Keys',
   keywords:
@@ -25,6 +31,12 @@ export const metadata: Metadata = {
 };
 
 const hardcodedPassword = 'nail';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Shepherds of Cassini | Official Website',
+};
 
 export default function RootLayout({
   children,
@@ -35,15 +47,19 @@ export default function RootLayout({
     <html className='scroll-smooth' lang='en' style={{ scrollBehavior: 'smooth' }}>
       <body
         suppressHydrationWarning={true}
-        className={`${baseFont.className} ${cormorantUpright.variable} bg-black text-shepherds_white flex flex-col items-center`}>
-        <PasswordWrapper password={hardcodedPassword}>
-          <LoadSection />
-          <Header />
-          <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
-            {children}
-          </main>
-          <Footer />
-        </PasswordWrapper>
+        className={`${baseFont.className} ${cormorantUpright.variable} ${jura.variable} bg-black text-shepherds_white flex flex-col items-center`}>
+        {/* <PasswordWrapper password={hardcodedPassword}> */}
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <LoadSection />
+        <Header />
+        <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
+          {children}
+        </main>
+        <Footer />
+        {/* </PasswordWrapper> */}
       </body>
       <GoogleAnalytics gaId='G-L7J30WL4PG' />
     </html>

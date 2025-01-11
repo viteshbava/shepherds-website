@@ -13,7 +13,7 @@ export const generateMetadata = async ({ params }: { params: IParams }) => {
 
   if (!release) return;
 
-  const title = `${release.name} by Shepherds of Cassini`;
+  const title = `${release.name} - Shepherds of Cassini`;
   const description = formatMetaDescr(release);
 
   return {
