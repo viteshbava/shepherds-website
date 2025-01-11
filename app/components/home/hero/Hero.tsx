@@ -7,10 +7,19 @@ import { defaultListenLinks, bandCampId } from '@/app/data/defaultHeroData';
 import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import MainImages from './HeroImages';
 import BandcampPlayer from '../../BandcampPlayer';
+import { getReleaseState } from '@/app/libs/getReleaseState';
 
 const Hero = () => {
   const images = getGalleryImages({ folderPath: '/imgs/hero-imgs' });
   // images.unshift(data.frontCover.url);
+
+  const releaseState = getReleaseState();
+
+  if (releaseState === 'pre-single') {
+  }
+
+  // <p className='red-veil text-2xl md:text-3xl font-bold mt-8 mb-2'>Red Veil</p>
+  // <p className='gold-statement'>New Single 24 January 2025</p>
 
   return (
     <Section id='hero' className={`${styles['hero-height']} items-center`}>
