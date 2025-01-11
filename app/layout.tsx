@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Archivo_Narrow, Cormorant_Upright } from 'next/font/google';
+import { Archivo_Narrow, Cormorant_Upright, Jura } from 'next/font/google';
 import './globals.scss';
 import Footer from './components/footer/Footer';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -13,6 +13,12 @@ const cormorantUpright = Cormorant_Upright({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-cormorant-upright',
+});
+
+const jura = Jura({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--jura-upright',
 });
 
 export const metadata: Metadata = {
@@ -41,7 +47,7 @@ export default function RootLayout({
     <html className='scroll-smooth' lang='en' style={{ scrollBehavior: 'smooth' }}>
       <body
         suppressHydrationWarning={true}
-        className={`${baseFont.className} ${cormorantUpright.variable} bg-black text-shepherds_white flex flex-col items-center`}>
+        className={`${baseFont.className} ${cormorantUpright.variable} ${jura.variable} bg-black text-shepherds_white flex flex-col items-center`}>
         {/* <PasswordWrapper password={hardcodedPassword}> */}
         <script
           type='application/ld+json'

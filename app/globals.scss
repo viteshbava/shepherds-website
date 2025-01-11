@@ -39,6 +39,10 @@ html {
   @apply font-cormorant uppercase tracking-wide gold-gradient;
 }
 
+.gold-statement {
+  @apply font-jura uppercase tracking-wide gold-gradient;
+}
+
 .gold-heading-section {
   @apply gold-heading text-2xl md:text-3xl;
 }
@@ -65,4 +69,24 @@ html {
 
 .link {
   @apply underline underline-offset-2 hover:decoration-2;
+}
+
+.red-veil {
+  @apply font-cormorant uppercase tracking-wide red-gradient;
+}
+
+.red-gradient {
+  background: linear-gradient(
+    258.35deg,
+    #ff4d4d 0%,
+    #cc0000 22.25%,
+    #b30000 46.73%,
+    #800000 75.09%,
+    #4d0000 99.99%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
