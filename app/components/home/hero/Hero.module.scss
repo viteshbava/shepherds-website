@@ -1,8 +1,11 @@
 .hero-height {
-  // min-height: 560px;
+  min-height: fit-content;
   height: calc(100svh - var(--header-desktop-height-big));
   max-height: 1080px;
   margin-top: var(--header-desktop-height-big);
+  @media (max-width: 768px) {
+    min-height: 500px;
+  }
   @media (max-width: 639px) {
     height: calc(100svh - var(--header-mobile-height));
     margin-top: var(--header-mobile-height);

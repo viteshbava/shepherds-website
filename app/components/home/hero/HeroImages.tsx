@@ -58,7 +58,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
 
   return (
     <div
-      className={`relative h-full max-w-full w-full flex justify-center items-center ${className} border border-purple-500`}
+      className={`relative flex-grow w-full items-center ${className}`}
       onMouseEnter={() => {
         if (!isTouchDevice.current) {
           setIsHovered(true);
@@ -76,7 +76,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           }
         }
       }}>
-      <div className='absolute object-contain aspect-square w-full border border-blue-400'>
+      <div className='md:aspect-square w-full h-full'>
         {images.map((image, index) => (
           <Image
             key={index}
