@@ -19,14 +19,19 @@ const Hero = () => {
   }
 
   // <p className='red-veil text-2xl md:text-3xl font-bold mt-8 mb-2'>Red Veil</p>
-  // <p className='gold-statement'>New Single 24 January 2025</p>
+
+  // flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full
 
   return (
-    <Section id='hero' className={`${styles['hero-height']} items-center border border-red-500`}>
-      <p className='red-veil text-2xl md:text-3xl font-bold mt-8 mb-2'>Red Veil</p>
-      <p className='gold-statement'>New Single 24 January 2025</p>
-      <div className='flex flex-col justify-center h-full w-full sm:h-auto sm:grid sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20 border border-blue-400'>
-        <div className='flex flex-shrink-1 justify-center min-h-0 max-w-full max-h-full aspect-square sm:items-start'>
+    <Section
+      id='hero'
+      className={`${styles['hero-height']} justify-around border border-green-600`}>
+      <div className='flex flex-col sm:grid justify-center w-full h-full sm:grid-cols-2 sm:gap-x-10 lg:gap-x-20 my-4 sm:my-0 border border-red-600'>
+        <div className='border border-orange-400 sm:col-start-1 sm:col-span-2'>
+          <p className='red-veil text-2xl md:text-3xl font-bold mb-2'>Red Veil</p>
+          <p className='gold-statement'>New Single 24 January 2025</p>
+        </div>
+        <div className='flex-grow'>
           <MainImages images={images} altText='Shepherds of Cassini album artwork' />
         </div>
         <div className='w-full flex flex-col justify-center mb-4'>
