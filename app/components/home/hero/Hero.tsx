@@ -9,14 +9,14 @@ import HeroImages from './HeroImages';
 import BandcampPlayer from '../../BandcampPlayer';
 import { getReleaseState } from '@/app/libs/getReleaseState';
 
+const releaseState = getReleaseState();
+
 const Hero = () => {
-  const images = getGalleryImages({ folderPath: '/imgs/hero-imgs' });
-  // images.unshift(data.frontCover.url);
-
-  const releaseState = getReleaseState();
-
-  if (releaseState === 'pre-single') {
+  let images = getGalleryImages({ folderPath: '/imgs/hero-imgs' });
+  if (releaseState === 'single-released') {
+    images = getGalleryImages({ folderPath: '/imgs/hero-single-released' });
   }
+  // images.unshift(data.frontCover.url);
 
   return (
     <Section id='hero' className={`${styles['hero-height']} justify-around`}>
@@ -25,7 +25,7 @@ const Hero = () => {
           <h2 className='red-veil text-2xl md:text-3xl font-bold mb-2'>Red Veil</h2>
           <p className='gold-statement'>New Single 24 January 2025</p>
         </div>
-        <div className='flex flex-col sm:grid grid-cols-2 gap-2 sm:gap-6 flex-grow'>
+        <div className='flex flex-col sm:grid grid-cols-2 gap-2 sm:gap-12 flex-grow'>
           <HeroImages images={images} altText='Shepherds of Cassini album artwork' />
           <div className='w-full flex flex-col justify-center'>
             <h3 className='text-lg sm:text-xl mb-3 gold-heading'>Listen | Purchase</h3>

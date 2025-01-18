@@ -1,6 +1,7 @@
 type State = 'pre-single' | 'single-released' | 'album-released';
 
 export const getReleaseState = (): State => {
-  const state: State = 'pre-single';
+  // UPDATE STATE HERE
+  const state: State = 'single-released';
   return state;
 };
