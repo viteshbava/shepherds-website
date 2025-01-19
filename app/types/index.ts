@@ -47,3 +47,9 @@ export interface MusicData {
   galleryPath: string;
   openGraphImg: string;
 }
+
+export interface HeroLinks {
+  listenLinks: ListenLink[];
+  bandCampId: string;
+  trackId?: string;
+}

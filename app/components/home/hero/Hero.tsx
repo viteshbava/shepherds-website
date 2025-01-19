@@ -3,22 +3,25 @@ import styles from './Hero.module.scss';
 import Section from '../../ui/Section';
 import ButtonLink from '../../ui/ButtonLink';
 import heresyData from '@/app/data/music/heresy';
+import { redVeilData } from '@/app/data/redVeilData';
 import { defaultData } from '@/app/data/defaultHeroData';
 import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import HeroImages from './HeroImages';
 import BandcampPlayer from '../../BandcampPlayer';
 import { getReleaseState } from '@/app/libs/getReleaseState';
 import Image from 'next/image';
+import { HeroLinks } from '@/app/types';
 
 const releaseState = getReleaseState();
 
 let subHeading = 'Listen | Purchase';
 let images = getGalleryImages({ folderPath: '/imgs/hero-imgs' });
-let data = defaultData;
+let data: HeroLinks = defaultData;
 
 if (releaseState === 'single-released') {
   subHeading = 'New single streaming now';
   images = getGalleryImages({ folderPath: '/imgs/hero-single-released' });
+  data = redVeilData;
 }
 if (releaseState === 'album-released') {
   subHeading = 'New album streaming now';
@@ -51,7 +54,7 @@ const Hero = () => {
                 </div>
               )}
               <h3 className='text-lg sm:text-xl mb-2 sm:mb-3 gold-heading'>{subHeading}</h3>
-              <BandcampPlayer albumId={data.bandCampId} />
+              <BandcampPlayer albumId={data.bandCampId} trackId={data.trackId} />
             </div>
             <div className='grid grid-cols-2 gap-3 mt-4'>
               {data.listenLinks.map((link, i) => (
