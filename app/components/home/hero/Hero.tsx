@@ -8,6 +8,7 @@ import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import HeroImages from './HeroImages';
 import BandcampPlayer from '../../BandcampPlayer';
 import { getReleaseState } from '@/app/libs/getReleaseState';
+import Image from 'next/image';
 
 const releaseState = getReleaseState();
 
@@ -20,14 +21,23 @@ const Hero = () => {
 
   return (
     <Section id='hero' className={`${styles['hero-height']} justify-center gap-4 sm:gap-6`}>
-      <div className='flex flex-col h-full flex-grow sm:flex-none sm:grid sm:grid-cols-2 gap-4 sm:gap-6 md:gap-12 items-center'>
-        <div className='sm:aspect-square w-full flex-grow'>
+      <div className='flex flex-col h-full flex-grow sm:flex-none sm:grid sm:grid-cols-2 gap-2 sm:gap-6 md:gap-12 items-center pb-4'>
+        <div className='w-full h-full'>
           <HeroImages images={images} altText='Shepherds of Cassini album artwork' />
         </div>
         <div className='w-full grid grid-cols-1 gap-8'>
           <div className='flex flex-col justify-center'>
             <div>
-              <h2 className='red-veil text-2xl md:text-3xl font-bold'>Red Veil</h2>
+              {/* <h2 className='red-veil text-2xl md:text-3xl font-bold'>Red Veil</h2> */}
+              <div className='relative mx-auto max-w-[350px] h-[80px]'>
+                <Image
+                  src='/imgs/heresy/album-logo.png'
+                  alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
+                  className='object-contain'
+                  fill
+                  sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
+                />
+              </div>
               <h3 className='text-lg sm:text-xl mb-2 sm:mb-3 gold-heading'>
                 New single streaming now
               </h3>
