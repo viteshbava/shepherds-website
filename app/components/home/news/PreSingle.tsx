@@ -1,14 +1,10 @@
 import React from 'react';
-import Section from '../ui/Section';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const News = () => {
+const PreSingle = () => {
   return (
-    <Section id='news' className='mt-24'>
-      <h2 className='gold-heading-section md:text-3xl mb-6 pb-2 w-full border-white/50 border-b-[1px]'>
-        News
-      </h2>
+    <>
       <div className='relative w-full max-w-[500px] aspect-square mx-auto'>
         <Image
           src='/imgs/heresy/red-veil-cover.png'
@@ -64,8 +60,8 @@ const News = () => {
           Looking forward to sharing new music with the world again!
         </p>
       </div>
-    </Section>
+    </>
   );
 };
 
-export default News;
+export default PreSingle;

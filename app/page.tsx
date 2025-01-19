@@ -6,7 +6,7 @@ import { getGalleryImages } from './libs/getGalleryImages';
 import Clouds from './components/clouds/Clouds';
 import { Theme } from './types';
 import Hero from './components/home/hero/Hero';
-import News from './components/home/News';
+import News from './components/home/news/News';
 
 export default function Home() {
   const images = getGalleryImages({ folderPath: '/imgs/gallery', shuffle: true });

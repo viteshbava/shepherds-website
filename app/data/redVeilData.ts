@@ -1,10 +1,4 @@
-import { IconNames, ListenLink } from '../types';
-
-export interface HeroLinks {
-  listenLinks: ListenLink[];
-  bandCampId: string;
-  trackId?: string;
-}
+import { HeroLinks, IconNames } from '../types';
 
 const redVeilData: HeroLinks = {
   listenLinks: [
