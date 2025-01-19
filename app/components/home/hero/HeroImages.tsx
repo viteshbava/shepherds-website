@@ -58,7 +58,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
 
   return (
     <div
-      className={`relative flex-grow w-full items-center ${className}`}
+      className={`relative w-full h-full ${className}`}
       onMouseEnter={() => {
         if (!isTouchDevice.current) {
           setIsHovered(true);
@@ -76,23 +76,21 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           }
         }
       }}>
-      <div className='md:aspect-square w-full h-full'>
-        {images.map((image, index) => (
-          <Image
-            key={index}
-            priority={index === 0}
-            src={image}
-            alt={altText}
-            className={`object-contain rounded transition-opacity duration-700 ease-out opacity-0 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
-            } ${images.length > 1 ? 'cursor-pointer' : ''}`}
-            fill
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            onLoad={index === 0 ? onFirstImageLoad : undefined}
-            onClick={handleClick}
-          />
-        ))}
-      </div>
+      {images.map((image, index) => (
+        <Image
+          key={index}
+          priority={index === 0}
+          src={image}
+          alt={altText}
+          className={`object-contain rounded transition-opacity duration-700 ease-out opacity-0 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          } ${images.length > 1 ? 'cursor-pointer' : ''}`}
+          fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+          onLoad={index === 0 ? onFirstImageLoad : undefined}
+          onClick={handleClick}
+        />
+      ))}
     </div>
   );
 };
