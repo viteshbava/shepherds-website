@@ -71,7 +71,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           if (!intervalId && loaded) {
             const newInterval = setInterval(() => {
               setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-            }, 4000);
+            }, 5000);
             setIntervalId(newInterval);
           }
         }
@@ -82,7 +82,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
           priority={index === 0}
           src={image}
           alt={altText}
-          className={`object-contain rounded transition-opacity duration-700 ease-out opacity-0 ${
+          className={`object-contain rounded-xl transition-opacity duration-700 ease-out opacity-0 ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           } ${images.length > 1 ? 'cursor-pointer' : ''}`}
           fill
