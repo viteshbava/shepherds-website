@@ -1,12 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import VideoEmbed from '../../VideoEmbed';
 
 const SingleRelease = () => {
   return (
     <>
       <p className='red-veil text-2xl md:text-3xl font-bold mt-4 mb-2'>Red Veil</p>
-      <p className='gold-statement'>New single streaming now</p>
+      <p className='gold-statement mb-8'>New single streaming now</p>
+      <VideoEmbed title='Red Veil' url='https://youtu.be/kOVeRKH5c2Y?feature=shared' />
       <div className='relative w-full max-w-[500px] h-[80px] sm:h-[100px] mx-auto mt-4'>
         <Image
           src='/imgs/heresy/album-logo.png'
