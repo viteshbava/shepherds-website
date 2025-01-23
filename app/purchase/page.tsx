@@ -33,7 +33,7 @@ const Purchase = async () => {
             />
           </div>
           <p className='gold-statement text-2xl'>Double LP Vinyl | CD</p>
-          <div className='flex flex-col sm:flex-row justify-center items-center gap-6 my-8'>
+          <div className='flex flex-col sm:flex-row justify-center items-center gap-6 mt-8 mb-10'>
             <div className='relative aspect-square w-[200px]'>
               <Image
                 src='/imgs/heresy/placeholder-vinyl.png'
@@ -64,6 +64,19 @@ const Purchase = async () => {
             </span>{' '}
             and will be available on 2LP Vinyl and CD.
           </p>
+
+          <div className='flex flex-col gap-4 mb-8 max-w-[300px] mx-auto'>
+            <div>
+              <FaRecordVinyl className='inline-block my-2 text-red-900 text-3xl' />
+              <FaRecordVinyl className='inline-block my-2 mx-2 text-red-900 text-3xl' />
+              The full album on LIMITED EDITION black double vinyl in gatefold jacket with 2 sided
+              lyric insert.
+            </div>
+            <div>
+              <FaCompactDisc className='inline-block my-2 mr-2 text-red-900 text-3xl' />
+              The full album on CD in a jewel case with 12 page lyric booklet.
+            </div>
+          </div>
 
           <div
             className={`flex flex-col justify-center items-center bg-red_dim/10 backdrop-blur rounded-md p-8 mb-6`}>

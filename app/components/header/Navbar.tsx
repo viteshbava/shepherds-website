@@ -23,7 +23,7 @@ const Navbar = ({ navLinks, half }: NavBarProps) => {
       : navLinks; // All links if `half` is undefined
 
   return (
-    <nav className='hidden lg:block'>
+    <nav className='hidden xl:block'>
       <ul className='flex'>
         {filteredLinks.map((link, index) => (
           <li key={index}>

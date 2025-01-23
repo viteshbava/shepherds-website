@@ -14,8 +14,10 @@ export interface NavLink {
 }
 
 const navLinks: NavLink[] = [
+  { title: 'Home', href: '/' },
   { title: 'News', href: '/#news' },
   { title: 'Music', href: '/#music' },
+  { title: 'Purchase', href: '/purchase' },
   { title: 'About', href: '/#about' },
   { title: 'Contact', href: '/#contact' },
 ];
@@ -88,7 +90,7 @@ const Header = () => {
           <Navbar navLinks={navLinks} half='right' />
         </div>
         {/* Hamburger button/cross */}
-        <div className='absolute top-0 right-0 pr-2 h-full lg:hidden flex flex-col justify-center'>
+        <div className='absolute top-0 right-0 pr-2 h-full xl:hidden flex flex-col justify-center'>
           <button
             aria-label='Open menu'
             onClick={toggleMenu}
