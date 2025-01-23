@@ -8,7 +8,7 @@ const SingleRelease = () => {
     <>
       <p className='red-veil text-2xl md:text-3xl font-bold mt-4 mb-2'>Red Veil</p>
       <p className='gold-statement mb-8'>New single streaming now</p>
-      <VideoEmbed title='Red Veil' url='https://youtu.be/kOVeRKH5c2Y?feature=shared' />
+      <VideoEmbed title='Red Veil' url='https://youtu.be/Ca-k01X5RgQ?feature=shared' />
       <div className='relative w-full max-w-[500px] h-[80px] sm:h-[100px] mx-auto mt-4'>
         <Image
           src='/imgs/heresy/album-logo.png'
@@ -32,7 +32,10 @@ const SingleRelease = () => {
             here
           </Link>{' '}
           or pre-order a digital download from{' '}
-          <Link className='link' target='_blank' href='https://bandcamp.com/'>
+          <Link
+            className='link'
+            target='_blank'
+            href='https://shepherdsofcassini.bandcamp.com/album/in-thrall-to-heresy'>
             Bandcamp
           </Link>{' '}
           as soon as it&apos;s released.
@@ -41,7 +44,7 @@ const SingleRelease = () => {
         <p className='mt-6'>
           The album will be available on Double Vinyl and CD. For more information on how to
           pre-order, click{' '}
-          <Link className='link' target='_blank' href='https://example.com/preorder'>
+          <Link className='link' target='_blank' href='/purchase'>
             here
           </Link>
           .
