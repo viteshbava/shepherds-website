@@ -7,35 +7,35 @@ const redVeilData: HeroLinks = {
       label: 'Bandcamp',
       secondaryLabel: 'Pre-order album',
       ariaLabel: 'Listen on Bandcamp',
-      href: 'https://shepherdsofcassini.bandcamp.com/track/mauerfall',
+      href: 'https://shepherdsofcassini.bandcamp.com/track/red-veil',
     },
     {
       icon: IconNames.Spotify,
       label: 'Spotify',
       ariaLabel: 'Listen on Spotify',
-      href: 'https://open.spotify.com/track/4tiZDMwJ1aZB8ZGJjHQRQK?si=5e4af16544794ff0',
+      href: 'https://open.spotify.com/track/4P9EQLfTxyKXTotgYGgz8M?si=f5882b359c5248eb',
     },
     {
       icon: IconNames.AppleMusic,
       label: 'Apple',
       ariaLabel: 'Listen on Apple Music',
-      href: 'https://music.apple.com/us/album/mauerfall/1774850297?i=1774850603',
+      href: 'https://music.apple.com/us/artist/shepherds-of-cassini/738917354',
     },
     {
       icon: IconNames.YouTube,
       label: 'YouTube',
       ariaLabel: 'Listen on YouTube',
-      href: 'https://youtu.be/_TFftELaN8Y?si=a55-bsuZNzrO7rBE',
+      href: 'https://youtu.be/Ca-k01X5RgQ',
     },
     {
       icon: IconNames.Amazon,
       label: 'Amazon',
       ariaLabel: 'Listen on Amazon Music',
-      href: 'https://amazon.com/music/player/tracks/B0DKBFT4KT?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_RYHFpBUGYvEHFtYG5AU4I9VIZ',
+      href: 'https://www.amazon.com/music/player/artists/B00GHA5UKW/shepherds-of-cassini',
     },
   ],
-  bandCampId: '1464114074',
-  trackId: '1499913624',
+  bandCampId: '2488004756',
+  trackId: '2398682215',
 };
 
 export { redVeilData };
