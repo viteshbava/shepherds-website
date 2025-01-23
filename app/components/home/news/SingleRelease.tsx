@@ -31,9 +31,18 @@ const SingleRelease = () => {
           <Link className='link' target='_blank' href='https://music.drm.co.nz/itth-soc'>
             here
           </Link>{' '}
-          or pre-order the album (vinyl, CD, or digital) through{' '}
+          or pre-order a digital download from{' '}
           <Link className='link' target='_blank' href='https://bandcamp.com/'>
             Bandcamp
+          </Link>{' '}
+          as soon as it&apos;s released.
+        </p>
+
+        <p className='mt-6'>
+          The album will be available on vinyl and CD. For more information on how to pre-order,
+          click{' '}
+          <Link className='link' target='_blank' href='https://example.com/preorder'>
+            here
           </Link>
           .
         </p>
@@ -59,14 +68,13 @@ const SingleRelease = () => {
           </div>
         </div>
 
-        <p className='mt-6'>
-          If you&rsquo;re based in New Zealand, we may be able to work out a better deal directly.
-          Feel free to email us at{' '}
+        {/* <p className='mt-6'>
+          Vinyl and CD pre-orders can be made by contacting the band directly.  Email us at{' '}
           <a className='link' href='mailto:shepherdsofcassini@gmail.com'>
             shepherdsofcassini@gmail.com
           </a>{' '}
           or reach out to any of the band members if you know us.
-        </p>
+        </p> */}
 
         <p className='mt-6'>
           <span className='text-red_bright'>Recorded & mixed by</span>{' '}
