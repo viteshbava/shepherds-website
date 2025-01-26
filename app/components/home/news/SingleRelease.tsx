@@ -42,8 +42,7 @@ const SingleRelease = () => {
         </p>
 
         <p className='mt-6'>
-          The album will be available on Double Vinyl and CD. For more information on how to
-          pre-order, click{' '}
+          For more information on how to pre-order the Vinyl or CD, click{' '}
           <Link className='link' target='_blank' href='/purchase'>
             here
           </Link>
