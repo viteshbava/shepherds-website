@@ -48,18 +48,18 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={`${baseFont.className} ${cormorantUpright.variable} ${jura.variable} bg-black text-shepherds_white flex flex-col items-center`}>
-        {/* <PasswordWrapper password={hardcodedPassword}> */}
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <LoadSection />
-        <Header />
-        <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
-          {children}
-        </main>
-        <Footer />
-        {/* </PasswordWrapper> */}
+        <PasswordWrapper password={hardcodedPassword}>
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <LoadSection />
+          <Header />
+          <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
+            {children}
+          </main>
+          <Footer />
+        </PasswordWrapper>
       </body>
       <GoogleAnalytics gaId='G-L7J30WL4PG' />
     </html>
