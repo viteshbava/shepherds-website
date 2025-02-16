@@ -1,7 +1,5 @@
 import React from 'react';
 import Section from '../../ui/Section';
-import Image from 'next/image';
-import Link from 'next/link';
 import { getReleaseState } from '@/app/libs/getReleaseState';
 import PreSingle from './PreSingle';
 import SingleRelease from './SingleRelease';
