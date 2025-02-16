@@ -3,6 +3,7 @@ import { IconNames, MusicData, Theme } from '@/app/types';
 const heresy: MusicData = {
   name: 'In Thrall to Heresy',
   slug: 'inthralltoheresy',
+  releaseDate: new Date('2025-02-21'),
   theme: Theme.Red,
   trackListing: [
     'Usurper',
@@ -25,11 +26,11 @@ const heresy: MusicData = {
   ],
   bandCampId: '1464114074',
   frontCover: {
-    url: '/imgs/heresy/heresy-front-cover.webp',
+    url: '/imgs/heresy/front-cover-lettering.png',
     altText: 'Shepherds of Cassini, In Thrall to Heresy, album cover, artwork by Moonroot',
   },
   backgroundImage: {
-    url: '/imgs/heresy/heresy-back-cover.webp',
+    url: '/imgs/heresy/back-cover.png',
     altText: 'Shepherds of Cassini, In Thrall to Heresy, back cover artowrk by Moonroot',
   },
   listenLinks: [
