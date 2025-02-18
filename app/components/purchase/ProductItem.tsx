@@ -41,7 +41,7 @@ const ProductItem = ({ product, onClick }: ProductItemProps) => {
       )}
       {(price || priceInfo) && (
         <p className='text-red_bright mb-2'>
-          {price} ({priceInfo})
+          <span className='font-bold'>{price}</span> ({priceInfo})
         </p>
       )}
       <div className='text-sm text-gray-400'>

@@ -30,7 +30,7 @@ const ProductList = ({ products }: ProductListProps) => {
 
   return (
     <>
-      <div className='-mx-[10vw] mt-10 sm:hidden'>
+      <div className='-mx-[10vw] text-left mt-10 sm:hidden'>
         <Swiper
           className='w-full'
           modules={[Navigation]}
