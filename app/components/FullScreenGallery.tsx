@@ -1,9 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { HamburgerButton } from './header/HamburgerButton';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'; // Import Swiper styles
+import useLockBodyScroll from '../hooks/useLockBodyScroll';
 
 interface FullscreenImageProps {
   images: string[];
@@ -13,35 +16,35 @@ interface FullscreenImageProps {
 
 const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const setIsBodyScrollLocked = useLockBodyScroll();
 
-  const handleNavigation = useCallback(
-    (direction: 'prev' | 'next') => {
-      setCurrentIndex((prevIndex) => {
-        if (direction === 'next') {
-          return (prevIndex + 1) % images.length;
-        } else {
-          return (prevIndex - 1 + images.length) % images.length;
-        }
-      });
-    },
-    [images.length]
-  );
+  useEffect(() => {
+    setIsBodyScrollLocked(true);
+    return () => {
+      console.log('UNMOUNTING');
+      setIsBodyScrollLocked(false);
+    };
+  }, [setIsBodyScrollLocked]);
 
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         onClose();
       } else if (event.key === 'ArrowLeft') {
-        handleNavigation('prev');
+        document
+          .querySelector('.custom-prev')
+          ?.dispatchEvent(new Event('click', { bubbles: true }));
       } else if (event.key === 'ArrowRight') {
-        handleNavigation('next');
+        document
+          .querySelector('.custom-next')
+          ?.dispatchEvent(new Event('click', { bubbles: true }));
       }
     };
     document.addEventListener('keydown', handleKeydown);
     return () => {
       document.removeEventListener('keydown', handleKeydown);
     };
-  }, [onClose, handleNavigation]);
+  }, [onClose]);
 
   return (
     <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50'>
@@ -61,7 +64,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
       </button>
       <div className='relative z-40 max-w-4xl w-full h-[80vh] flex items-center justify-center'>
         <Swiper
-          initialSlide={initialIndex}
+          initialSlide={currentIndex}
           onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
           spaceBetween={50}
           modules={[Navigation]}

@@ -8,8 +8,79 @@ import {
 } from 'react-icons/fa';
 import BackgroundImage from '../components/BackgroundImage';
 import Image from 'next/image';
+import Carousel, { CarouselItem } from '../components/Carousel';
+import { getGalleryImages } from '../libs/getGalleryImages';
 
-const Purchase = async () => {
+const carouselItems: CarouselItem[] = [
+  {
+    thumbSrc: '/imgs/heresy/placeholder-vinyl.png',
+    alt: 'Placeholder Vinyl',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>In Thrall to Heresy</span> -{' '}
+          <span className='font-bold'>2LP Vinyl</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>The full album on LIMITED EDITION black double vinyl</p>
+          <ul className='list-disc list-inside'>
+            <li>Gatefold jacket</li>
+            <li>2 sided lyric insert</li>
+            <li>Original art by Moonroot</li>
+          </ul>
+        </div>
+      </>
+    ),
+  },
+  {
+    thumbSrc: '/imgs/heresy/placeholder-cd.png',
+    alt: 'Placeholder CD',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>In Thrall to Heresy</span> -{' '}
+          <span className='font-bold'>CD</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>The full album on CD in a jewel case with 12 page lyric booklet.</p>
+        </div>
+      </>
+    ),
+  },
+  {
+    thumbSrc: '/imgs/helios/album-gallery/01.webp',
+    gallery: getGalleryImages({ folderPath: '/imgs/helios/album-gallery' }),
+    alt: 'Helios gallery image',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>Helios</span> - <span className='font-bold'>Album Gallery</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>Gallery image from the Helios album.</p>
+        </div>
+      </>
+    ),
+  },
+  {
+    thumbSrc: '/imgs/selftitled/album-gallery/01.jpg',
+    gallery: getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' }),
+    alt: 'Selftitled gallery image',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>Selftitled</span> -{' '}
+          <span className='font-bold'>Album Gallery</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>Gallery image from the Selftitled album.</p>
+        </div>
+      </>
+    ),
+  },
+];
+
+const Purchase = () => {
   return (
     <>
       <BackgroundImage
@@ -23,6 +94,10 @@ const Purchase = async () => {
           Purchase
         </h1>
         <div className='max-w-xl mt-10'>
+          <div className='-mx-[10vw]'>
+            <Carousel carouselItems={carouselItems} />
+          </div>
+
           <div className='relative w-full max-w-[500px] h-[80px] sm:h-[100px] mx-auto'>
             <Image
               src='/imgs/heresy/album-logo.png'
