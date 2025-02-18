@@ -8,49 +8,75 @@ import {
 } from 'react-icons/fa';
 import BackgroundImage from '../components/BackgroundImage';
 import Image from 'next/image';
+import Carousel, { CarouselItem } from '../components/purchase/ProductList';
 import { getGalleryImages } from '../libs/getGalleryImages';
-import { Product } from '../types';
-import ProductList from '../components/purchase/ProductList';
 
-const products: Product[] = [
+const carouselItems: CarouselItem[] = [
   {
     thumbSrc: '/imgs/heresy/placeholder-vinyl.png',
-    thumbAltText: 'Placeholder Vinyl',
-    productName: 'In Thrall to Heresy',
-    productType: '2LP Vinyl',
-    price: 'NZD $80',
-    priceInfo: 'directly from band',
-    description: 'The full album on LIMITED EDITION black double vinyl',
-    details: ['Gatefold jacket', '2 sided lyric insert', 'Original art by Moonroot'],
+    alt: 'Placeholder Vinyl',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>In Thrall to Heresy</span> -{' '}
+          <span className='font-bold'>2LP Vinyl</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>The full album on LIMITED EDITION black double vinyl</p>
+          <ul className='list-disc list-inside'>
+            <li>Gatefold jacket</li>
+            <li>2 sided lyric insert</li>
+            <li>Original art by Moonroot</li>
+          </ul>
+        </div>
+      </>
+    ),
   },
   {
     thumbSrc: '/imgs/heresy/placeholder-cd.png',
-    thumbAltText: 'Placeholder CD',
-    productName: 'In Thrall to Heresy',
-    productType: 'CD',
-    price: 'NZD $30',
-    priceInfo: 'directly from band',
-    description: 'The full album on CD in a jewel case with 12 page lyric booklet.',
+    alt: 'Placeholder CD',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>In Thrall to Heresy</span> -{' '}
+          <span className='font-bold'>CD</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>The full album on CD in a jewel case with 12 page lyric booklet.</p>
+        </div>
+      </>
+    ),
   },
   {
     thumbSrc: '/imgs/helios/album-gallery/01.webp',
     gallery: getGalleryImages({ folderPath: '/imgs/helios/album-gallery' }),
-    thumbAltText: 'Helios gallery image',
-    productName: 'Helios',
-    productType: 'Album Gallery',
-    price: 'NZD $20',
-    priceInfo: 'directly from band',
-    description: 'Gallery image from the Helios album.',
+    alt: 'Helios gallery image',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>Helios</span> - <span className='font-bold'>Album Gallery</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>Gallery image from the Helios album.</p>
+        </div>
+      </>
+    ),
   },
   {
     thumbSrc: '/imgs/selftitled/album-gallery/01.jpg',
     gallery: getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' }),
-    thumbAltText: 'Selftitled gallery image',
-    productName: 'Selftitled',
-    productType: 'Album Gallery',
-    price: 'NZD $20',
-    priceInfo: 'directly from band',
-    description: 'Gallery image from the Selftitled album.',
+    alt: 'Selftitled gallery image',
+    caption: (
+      <>
+        <p className='mb-2'>
+          <span className='italic'>Selftitled</span> -{' '}
+          <span className='font-bold'>Album Gallery</span>
+        </p>
+        <div className='text-sm text-gray-400'>
+          <p>Gallery image from the Selftitled album.</p>
+        </div>
+      </>
+    ),
   },
 ];
 
@@ -67,11 +93,44 @@ const Purchase = () => {
         <h1 className='gold-heading-section pb-4 border-white/50 border-b-[1px] w-full'>
           Purchase
         </h1>
-        <ProductList products={products} />
         <div className='max-w-xl mt-10'>
-          <h2 className='text-lg sm:text-2xl gold-heading pb-4 border-white/50 border-b-[1px] w-full'>
-            Directly from band
-          </h2>
+          <div className='-mx-[10vw]'>
+            <Carousel carouselItems={carouselItems} />
+          </div>
+
+          <div className='relative w-full max-w-[500px] h-[80px] sm:h-[100px] mx-auto'>
+            <Image
+              src='/imgs/heresy/album-logo.png'
+              alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
+              className='object-contain'
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
+            />
+          </div>
+          <p className='gold-statement text-2xl'>Double LP Vinyl | CD</p>
+          <div className='flex flex-col sm:flex-row justify-center items-center gap-6 mt-8 mb-10'>
+            <div className='relative aspect-square w-[200px]'>
+              <Image
+                src='/imgs/heresy/placeholder-vinyl.png'
+                alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
+                className='object-contain'
+                fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
+              />
+            </div>
+            <div className='relative aspect-square w-[200px]'>
+              <Image
+                src='/imgs/heresy/placeholder-cd.png'
+                alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
+                className='object-contain'
+                fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
+              />
+            </div>
+          </div>
+
+          <p className='gold-statement text-2xl'>Pre-orders open</p>
+
           <p className='my-6'>
             Our new album <span className='font-semibold italic'>In Thrall to Heresy</span> will be
             released on{' '}
@@ -81,9 +140,22 @@ const Purchase = () => {
             and will be available on 2LP Vinyl and CD.
           </p>
 
+          <div className='flex flex-col gap-4 mb-8 max-w-[300px] mx-auto'>
+            <div>
+              <FaRecordVinyl className='inline-block my-2 text-red-900 text-3xl' />
+              <FaRecordVinyl className='inline-block my-2 mx-2 text-red-900 text-3xl' />
+              The full album on LIMITED EDITION black double vinyl in gatefold jacket with 2 sided
+              lyric insert.
+            </div>
+            <div>
+              <FaCompactDisc className='inline-block my-2 mr-2 text-red-900 text-3xl' />
+              The full album on CD in a jewel case with 12 page lyric booklet.
+            </div>
+          </div>
+
           <div
             className={`flex flex-col justify-center items-center bg-red_dim/10 backdrop-blur rounded-md p-8 mb-6`}>
-            <p className='mb-6'>To make a purchase, please contact us directly via:</p>
+            <p className='mb-6'>To pre-order the album, please contact us directly via:</p>
             <div>
               <p className='mb-2'>
                 <FaEnvelope className='text-red-900 text-2xl inline-block mr-2' /> Email:{' '}
@@ -222,11 +294,6 @@ const Purchase = () => {
           </p>
 
           <p className='mb-8'>Orders for physical albums on Bandcamp will open at a later point.</p>
-
-          <h2 className='text-lg sm:text-2xl gold-heading pb-4 border-white/50 border-b-[1px] w-full'>
-            via bandcamp
-          </h2>
-
           <p className='text-2xl mb-4'>Thank you!</p>
         </div>
       </Section>

@@ -15,7 +15,7 @@ const AlbumRelease = () => {
           sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
         />
       </div>
-      <p className='text-lg sm:text-3xl mb-2 sm:mb-8 gold-heading'>New album streaming now</p>
+      <p className='text-lg sm:text-2xl mb-2 sm:mb-8 gold-heading'>New album streaming now</p>
       <VideoEmbed title='Red Veil' url='https://youtu.be/Ca-k01X5RgQ?feature=shared' />
       <div className='flex flex-col items-center max-w-xl mx-auto mt-8'>
         <div className='sm:flex gap-6'>
@@ -38,7 +38,7 @@ const AlbumRelease = () => {
             />
           </div>
         </div>
-        <p className='text-lg sm:text-3xl mt-4 sm:mb-3 gold-heading'>
+        <p className='text-lg sm:text-2xl mt-4 sm:mb-3 gold-heading'>
           digital | double lp vinyl | cd
         </p>
         <p className='mt-6'>

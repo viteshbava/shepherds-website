@@ -53,3 +53,15 @@ export interface HeroLinks {
   bandCampId: string;
   trackId?: string;
 }
+
+export interface Product {
+  thumbSrc: string;
+  gallery?: string[];
+  thumbAltText: string;
+  productName?: string;
+  productType?: string;
+  price?: string;
+  priceInfo?: string;
+  details?: string[];
+  description?: string;
+}
