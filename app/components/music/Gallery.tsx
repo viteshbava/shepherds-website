@@ -13,17 +13,17 @@ interface GalleryProps {
 const Gallery = ({ className = '', images }: GalleryProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  // const setIsBodyScrollLocked = useLockBodyScroll();
+  const setIsBodyScrollLocked = useLockBodyScroll();
 
   const handleImageClick = (index: number) => {
     setActiveIndex(index);
     setIsFullscreen(true);
-    // setIsBodyScrollLocked(true);
+    setIsBodyScrollLocked(true);
   };
 
   const closeFullScreenGallery = () => {
     setIsFullscreen(false);
-    // setIsBodyScrollLocked(false);
+    setIsBodyScrollLocked(false);
   };
 
   return (

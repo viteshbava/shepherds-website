@@ -10,22 +10,11 @@ import useLockBodyScroll from '../hooks/useLockBodyScroll';
 
 interface FullscreenImageProps {
   images: string[];
-  initialIndex: number;
+  initialIndex?: number;
   onClose: () => void;
 }
 
-const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex, onClose }) => {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const setIsBodyScrollLocked = useLockBodyScroll();
-
-  useEffect(() => {
-    setIsBodyScrollLocked(true);
-    return () => {
-      console.log('UNMOUNTING');
-      setIsBodyScrollLocked(false);
-    };
-  }, [setIsBodyScrollLocked]);
-
+const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex = 1, onClose }) => {
   useEffect(() => {
     const handleKeydown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -64,8 +53,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex,
       </button>
       <div className='relative z-40 max-w-4xl w-full h-[80vh] flex items-center justify-center'>
         <Swiper
-          initialSlide={currentIndex}
-          onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+          initialSlide={initialIndex}
           spaceBetween={50}
           modules={[Navigation]}
           navigation={{ prevEl: '.custom-prev', nextEl: '.custom-next' }}

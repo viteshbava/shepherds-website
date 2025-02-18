@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
 import FullScreenGallery from './FullScreenGallery';
+import useLockBodyScroll from '../hooks/useLockBodyScroll';
 
 export interface CarouselItem {
   thumbSrc: string;
@@ -20,7 +21,18 @@ interface CarouselProps {
 }
 
 const Carousel = ({ carouselItems }: CarouselProps) => {
-  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [modalImages, setModalImages] = useState<string[] | null>(null);
+  const setIsBodyScrollLocked = useLockBodyScroll();
+
+  const handleImageClick = (images: string[] | null) => {
+    setModalImages(images);
+    setIsBodyScrollLocked(true);
+  };
+
+  const closeFullScreenGallery = () => {
+    setModalImages(null);
+    setIsBodyScrollLocked(false);
+  };
 
   return (
     <>
@@ -35,7 +47,9 @@ const Carousel = ({ carouselItems }: CarouselProps) => {
         {carouselItems.map((item, index) => (
           <SwiperSlide key={index}>
             <div className='text-left'>
-              <button className='relative aspect-square w-full'>
+              <button
+                className='relative aspect-square w-full'
+                onClick={() => handleImageClick(item.gallery || [item.thumbSrc])}>
                 <Image
                   src={item.thumbSrc}
                   alt='Physical album image'
@@ -49,7 +63,7 @@ const Carousel = ({ carouselItems }: CarouselProps) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {isFullscreen && <FullScreenGallery images={images} onClose={closeFullScreenGallery} />}
+      {modalImages && <FullScreenGallery images={modalImages} onClose={closeFullScreenGallery} />}
     </>
   );
 };
