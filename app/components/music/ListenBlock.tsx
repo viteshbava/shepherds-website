@@ -1,4 +1,4 @@
-import { ListenLink, Theme } from '@/app/types';
+import { IconNames, ListenLink, Theme } from '@/app/types';
 import React from 'react';
 import ButtonLink from '../ui/ButtonLink';
 import BandcampPlayer from '../BandcampPlayer';
@@ -22,7 +22,7 @@ const ListenBlock = ({ className = '', listenLinks, bandCampId, theme }: ListenB
         {listenLinks.map((link, i) => (
           <ButtonLink
             key={i}
-            isExternal
+            isExternal={link.icon !== IconNames.ShoppingCart}
             href={link.href}
             ariaLabel={link.ariaLabel}
             theme={theme}
