@@ -12,6 +12,7 @@ import { getGalleryImages } from '../libs/getGalleryImages';
 import { Product } from '../types';
 import ProductList from '../components/purchase/ProductList';
 import ShippingTable from '../components/purchase/ShippingTable';
+import ShippingInfo from '../components/purchase/ShippingInfo';
 
 const products: Product[] = [
   {
@@ -52,7 +53,8 @@ const products: Product[] = [
     productName: "'Shepherds of Cassini'",
     productType: 'CD',
     price: 'NZD $20',
-    priceInfo: 'The full album on CD in a jewel case.',
+    priceInfo: 'directly from band',
+    description: 'The full album on CD in a jewel case.',
     details: ['8 page art booklet', 'Original art by Chris Lewis'],
   },
 ];
@@ -68,9 +70,21 @@ const Purchase = () => {
       />
       <Section className='mb-10 sm:mb-20 mt-[7rem] sm:mt-[12rem] items-center'>
         <h1 className='gold-heading-section pb-4 border-white/50 border-b-[1px] w-full'>
-          Purchase
+          Purchase (directly or via Bandcamp)
         </h1>
+
         <ProductList products={products} />
+
+        <h2 className='text-xl font-bold mt-8 mb-4'>Shipping Costs (NZD)</h2>
+        {/* <ShippingTable /> */}
+        <ShippingInfo />
+        <p className='text-sm mt-2 italic'>All prices are in NZD.</p>
+        <p className='max-w-xl mt-8 mb-4'>
+          Shipping prices above are for a single item only. If you&#39;d like more items, we&#39;ll
+          calculate the cost for you. Once you contact us, we&#39;ll reach out with final pricing
+          details and how to make the payment.
+        </p>
+
         <div className='max-w-xl mt-10'>
           <h2 className='text-lg sm:text-2xl gold-heading pb-4 border-white/50 border-b-[1px] w-full'>
             Directly from band
@@ -116,18 +130,6 @@ const Purchase = () => {
           <p className='mb-4'>
             Albums are expected to be ready near the release date; we&#39;ll ship orders out around
             then. If there are any delays, we&#39;ll keep you informed.
-          </p>
-
-          <h2 className='text-2xl font-bold mt-8 mb-4'>Pricing (NZD)</h2>
-
-          <ShippingTable />
-
-          <p className='text-sm mt-2 italic'>All prices are in NZD.</p>
-
-          <p className='mt-8 mb-4'>
-            Shipping prices above are for a single item only. If you&#39;d like more items,
-            we&#39;ll calculate the cost for you. Once you contact us, we&#39;ll reach out with
-            final pricing details and how to make the payment.
           </p>
 
           <p className='mb-8'>Orders for physical albums on Bandcamp will open at a later point.</p>

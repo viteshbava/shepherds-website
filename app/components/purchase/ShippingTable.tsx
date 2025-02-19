@@ -38,7 +38,7 @@ const ShippingTable = () => {
         </table>
       </div>
 
-      <div className='overflow-x-auto sm:hidden'>
+      <div className='overflow-x-auto sm:hidden w-full'>
         <table className='table-auto w-full text-left border border-gray-200'>
           <thead>
             <tr className='bg-red_dim/50'>
