@@ -31,6 +31,7 @@ export enum IconNames {
   Instagram = 'instagram',
   Amazon = 'amazon',
   Email = 'email',
+  ShoppingCart = 'shoppingCart',
 }
 
 export interface MusicData {

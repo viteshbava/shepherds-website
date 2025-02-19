@@ -1,5 +1,12 @@
 import { IconNames } from '@/app/types';
-import { FaSpotify, FaYoutube, FaFacebook, FaInstagram, FaBandcamp } from 'react-icons/fa';
+import {
+  FaSpotify,
+  FaYoutube,
+  FaFacebook,
+  FaInstagram,
+  FaBandcamp,
+  FaShoppingCart,
+} from 'react-icons/fa';
 import { SiApplemusic } from 'react-icons/si';
 import { AiFillAmazonCircle } from 'react-icons/ai';
 import { MdOutlineEmail } from 'react-icons/md';
@@ -20,6 +27,7 @@ const iconMap: Record<IconNames, React.FC<{ className?: string }>> = {
   [IconNames.Instagram]: FaInstagram,
   [IconNames.Amazon]: AiFillAmazonCircle,
   [IconNames.Email]: MdOutlineEmail,
+  [IconNames.ShoppingCart]: FaShoppingCart,
 };
 const Icon = ({ name, className }: IconProps) => {
   const IconComponent = iconMap[name];

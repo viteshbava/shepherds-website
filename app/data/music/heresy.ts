@@ -37,7 +37,12 @@ const heresy: MusicData = {
     {
       icon: IconNames.Bandcamp,
       label: 'Bandcamp',
-      secondaryLabel: 'Buy CD / Vinyl',
+      ariaLabel: 'Listen / buy on Bandcamp',
+      href: 'https://shepherdsofcassini.bandcamp.com/album/helios-forsaken',
+    },
+    {
+      icon: IconNames.ShoppingCart,
+      label: 'Buy CD / Vinyl',
       ariaLabel: 'Listen / buy on Bandcamp',
       href: 'https://shepherdsofcassini.bandcamp.com/album/helios-forsaken',
     },

@@ -64,7 +64,8 @@ const Hero = () => {
                   href={link.href}
                   ariaLabel={link.ariaLabel}
                   icon={link.icon}
-                  className={`w-full bg-red_dim uppercase text-sm ${i === 0 ? 'col-span-2' : ''}`}>
+                  className={`w-full bg-red_dim uppercase text-sm`}>
+                  {/* className={`w-full bg-red_dim uppercase text-sm ${i === 0 ? 'col-span-2' : ''}`}> */}
                   <span className='whitespace-nowrap'>
                     <span className='font-bold'>{link.label}</span>
                     {link.secondaryLabel && ` | ${link.secondaryLabel}`}
