@@ -81,7 +81,9 @@ const Purchase = () => {
         <h2 className='text-xl font-bold mt-8 mb-4'>Shipping Costs (NZD)</h2>
         {/* <ShippingTable /> */}
         <ShippingInfo />
-        <p className='text-sm mt-2 italic'>All prices are in NZD.</p>
+        <p className='text-sm mt-2 italic'>
+          All prices are in NZD for a single item only (contact us for multiple item cost).
+        </p>
 
         <div className='max-w-xl mt-20'>
           <h2 className='text-lg sm:text-2xl gold-heading pb-4 border-white/50 border-b-[1px] w-full'>
