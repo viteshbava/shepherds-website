@@ -44,7 +44,7 @@ const heresy: MusicData = {
       icon: IconNames.ShoppingCart,
       label: 'Buy CD / Vinyl',
       ariaLabel: 'Listen / buy on Bandcamp',
-      href: 'https://shepherdsofcassini.bandcamp.com/album/helios-forsaken',
+      href: '/purchase',
     },
     {
       icon: IconNames.Spotify,

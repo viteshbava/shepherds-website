@@ -10,7 +10,8 @@ import HeroImages from './HeroImages';
 import BandcampPlayer from '../../BandcampPlayer';
 import { getReleaseState } from '@/app/libs/getReleaseState';
 import Image from 'next/image';
-import { HeroLinks } from '@/app/types';
+import { HeroLinks, IconNames } from '@/app/types';
+import Icon from '../../icon/Icon';
 
 const releaseState = getReleaseState();
 
@@ -60,7 +61,7 @@ const Hero = () => {
               {data.listenLinks.map((link, i) => (
                 <ButtonLink
                   key={i}
-                  isExternal
+                  isExternal={link.icon !== IconNames.ShoppingCart}
                   href={link.href}
                   ariaLabel={link.ariaLabel}
                   icon={link.icon}

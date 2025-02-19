@@ -72,7 +72,8 @@ const Purchase = () => {
       />
       <Section className='mb-10 sm:mb-20 mt-[7rem] sm:mt-[12rem] items-center'>
         <h1 className='gold-heading-section pb-4 border-white/50 border-b-[1px] w-full'>
-          Purchase (directly or via Bandcamp)
+          Purchase<br></br>
+          <span className='text-xl'>directly or via Bandcamp</span>
         </h1>
 
         <ProductList products={products} />
