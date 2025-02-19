@@ -3,7 +3,7 @@ import { FaCompactDisc, FaRecordVinyl } from 'react-icons/fa';
 
 const ShippingInfo = () => {
   return (
-    <div className='flex flex-col md:flex-row gap-4 items-center'>
+    <div className='flex gap-4 items-center'>
       <div className='p-4 border border-gray-200 rounded-lg '>
         <div className='flex items-center text-lg font-semibold text-red-900'>
           <FaRecordVinyl className='mr-2 text-3xl' />
