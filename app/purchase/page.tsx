@@ -146,7 +146,7 @@ const Purchase = () => {
             theme={Theme.Red}
             icon={IconNames.Bandcamp}
             className={`w-full mb-20`}>
-            <span className='whitespace-nowrap'>Purchase on Bandcamp</span>
+            <span className='whitespace-nowrap'>Purchase via Bandcamp</span>
           </ButtonLink>
 
           <p className='text-2xl mb-4'>Thank you!</p>
