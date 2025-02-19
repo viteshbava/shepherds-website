@@ -16,7 +16,7 @@ import ShippingInfo from '../components/purchase/ShippingInfo';
 
 const products: Product[] = [
   {
-    thumbSrc: '/imgs/heresy/placeholder-vinyl.png',
+    thumbSrc: '/imgs/heresy/album-gallery/placeholder-vinyl.png',
     thumbAltText: 'Placeholder Vinyl image',
     productName: 'In Thrall to Heresy',
     productType: '2LP Vinyl',
@@ -26,7 +26,7 @@ const products: Product[] = [
     details: ['Gatefold jacket', '2 sided lyric insert', 'Original art by Moonroot'],
   },
   {
-    thumbSrc: '/imgs/heresy/placeholder-cd.png',
+    thumbSrc: '/imgs/heresy/album-gallery/placeholder-cd.png',
     thumbAltText: 'Placeholder CD image',
     productName: 'In Thrall to Heresy',
     productType: 'CD',
