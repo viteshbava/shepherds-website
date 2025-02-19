@@ -64,7 +64,7 @@ const selfTitled: MusicData = {
       icon: IconNames.YouTube,
       label: 'YouTube',
       ariaLabel: 'Listen on YouTube Music',
-      href: 'https://www.youtube.com/watch?v=w634TRfVArU&list=OLAK5uy_kkOnINVx4z9qi5a077Upy3ab4NP_vixNY',
+      href: 'https://youtu.be/HWRvoNl8kY8?si=BIesfmwgD5WrDrwp',
     },
     {
       icon: IconNames.Amazon,

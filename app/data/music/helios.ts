@@ -64,7 +64,7 @@ const helios: MusicData = {
       icon: IconNames.YouTube,
       label: 'YouTube',
       ariaLabel: 'Listen on YouTube',
-      href: 'https://www.youtube.com/playlist?list=OLAK5uy_nQaQ8MPFcDXglLqlXSBojobn2mCUCmIyE&playnext=1&index=1',
+      href: 'https://youtu.be/VfNeit3rLpg?si=EcwrUSc3Avj0xCAK',
     },
     {
       icon: IconNames.Amazon,
