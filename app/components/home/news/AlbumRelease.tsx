@@ -16,7 +16,7 @@ const AlbumRelease = () => {
         />
       </div>
       <p className='text-lg sm:text-2xl mb-2 sm:mb-8 gold-heading'>New album streaming now</p>
-      <VideoEmbed title='Red Veil' url='https://youtu.be/Ca-k01X5RgQ?feature=shared' />
+      <VideoEmbed title='Red Veil' url='https://youtu.be/mE1xsRpZFqQ' />
       <div className='flex flex-col items-center max-w-xl mx-auto mt-8'>
         <div className='sm:flex gap-6'>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
