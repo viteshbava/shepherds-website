@@ -30,7 +30,7 @@ const AlbumRelease = () => {
           </div>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
             <Image
-              src='/imgs/heresy/album-gallery/placeholder-cd.png'
+              src='/imgs/heresy/placeholder-cd.png'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
               fill
