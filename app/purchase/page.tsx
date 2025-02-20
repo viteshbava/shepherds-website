@@ -24,7 +24,7 @@ const products: Product[] = [
     price: 'NZD $80',
     priceInfo: 'directly from band',
     description:
-      'The full album on LIMITED EDITION black double vinyl. Products due end of Feb 2025.',
+      'The full album on LIMITED EDITION black double vinyl.  Records expected to be ready for shipping early March 2025.',
     details: ['Gatefold jacket', '2 sided lyric insert', 'Original art by Moonroot'],
   },
   {
