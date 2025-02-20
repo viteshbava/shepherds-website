@@ -13,7 +13,7 @@ export const getGalleryImages = ({
   const galleryDir = path.join(process.cwd(), `public/${folderPath}`);
   const imageFiles = fs
     .readdirSync(galleryDir)
-    .filter((file) => /\.(png|jpe?g|webp|avif|gif)$/.test(file));
+    .filter((file) => /\.(png|jpe?g|webp|avif|gif)$/i.test(file));
 
   // Shuffle images if required
   if (shuffle) {

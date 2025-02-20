@@ -28,7 +28,8 @@ const products: Product[] = [
     details: ['Gatefold jacket', '2 sided lyric insert', 'Original art by Moonroot'],
   },
   {
-    thumbSrc: '/imgs/heresy/album-gallery/placeholder-cd.png',
+    thumbSrc: '/imgs/heresy/album-gallery/02-IMG_3666.JPG',
+    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery' }).slice(1),
     thumbAltText: 'Placeholder CD image',
     productName: 'In Thrall to Heresy',
     productType: 'CD',
@@ -38,7 +39,7 @@ const products: Product[] = [
     details: ['12 page lyric booklet', 'Original art by Moonroot'],
   },
   {
-    thumbSrc: '/imgs/helios/album-gallery/01.webp',
+    thumbSrc: '/imgs/helios/album-gallery/01-IMG_3608.jpg',
     gallery: getGalleryImages({ folderPath: '/imgs/helios/album-gallery' }),
     thumbAltText: 'Helios Forsaken digipack image',
     productName: 'Helios Forsaken',
