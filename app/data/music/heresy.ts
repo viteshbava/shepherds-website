@@ -24,7 +24,7 @@ const heresy: MusicData = {
     { part_1: 'Layout by', part_2: 'Vitesh Bava' },
     { part_1: 'All music written by', part_2: 'Shepherds of Cassini' },
   ],
-  bandCampId: '1464114074',
+  bandCampId: '2488004756',
   frontCover: {
     url: '/imgs/heresy/front-cover-lettering.png',
     altText: 'Shepherds of Cassini, In Thrall to Heresy, album cover, artwork by Moonroot',
@@ -38,7 +38,7 @@ const heresy: MusicData = {
       icon: IconNames.Bandcamp,
       label: 'Bandcamp',
       ariaLabel: 'Listen / buy on Bandcamp',
-      href: 'https://shepherdsofcassini.bandcamp.com/album/helios-forsaken',
+      href: 'https://shepherdsofcassini.bandcamp.com/album/in-thrall-to-heresy',
     },
     {
       icon: IconNames.ShoppingCart,
@@ -62,7 +62,7 @@ const heresy: MusicData = {
       icon: IconNames.YouTube,
       label: 'YouTube',
       ariaLabel: 'Listen on YouTube',
-      href: 'https://www.youtube.com/playlist?list=OLAK5uy_nQaQ8MPFcDXglLqlXSBojobn2mCUCmIyE&playnext=1&index=1',
+      href: 'https://youtu.be/mE1xsRpZFqQ',
     },
     {
       icon: IconNames.Amazon,
