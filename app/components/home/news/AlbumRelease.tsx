@@ -21,7 +21,7 @@ const AlbumRelease = () => {
         <div className='sm:flex gap-6'>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
             <Image
-              src='/imgs/heresy/album-gallery/placeholder-vinyl.png'
+              src='/imgs/heresy/album-gallery/01-placeholder-vinyl.png'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
               fill

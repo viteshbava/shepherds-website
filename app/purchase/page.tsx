@@ -17,7 +17,7 @@ import ButtonLink from '../components/ui/ButtonLink';
 
 const products: Product[] = [
   {
-    thumbSrc: '/imgs/heresy/album-gallery/placeholder-vinyl.png',
+    thumbSrc: '/imgs/heresy/album-gallery/01-placeholder-vinyl.png',
     thumbAltText: 'Placeholder Vinyl image',
     productName: 'In Thrall to Heresy',
     productType: '2LP Vinyl',
