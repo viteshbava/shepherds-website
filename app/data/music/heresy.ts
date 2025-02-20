@@ -72,7 +72,7 @@ const heresy: MusicData = {
     },
   ],
   galleryPath: '/imgs/heresy/album-gallery',
-  openGraphImg: '/imgs/heresy/front-cover-lettering.png',
+  openGraphImg: '/imgs/heresy/opengraph-image.png',
 };
 
 export default heresy;
