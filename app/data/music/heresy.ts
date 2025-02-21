@@ -56,7 +56,7 @@ const heresy: MusicData = {
       icon: IconNames.AppleMusic,
       label: 'Apple',
       ariaLabel: 'Listen on Apple Music',
-      href: 'https://music.apple.com/us/artist/shepherds-of-cassini/738917354',
+      href: 'https://music.apple.com/us/album/in-thrall-to-heresy/1788808288',
     },
     {
       icon: IconNames.YouTube,
@@ -68,7 +68,7 @@ const heresy: MusicData = {
       icon: IconNames.Amazon,
       label: 'Amazon',
       ariaLabel: 'Listen on Amazon Music',
-      href: 'https://www.amazon.com/music/player/artists/B00GHA5UKW/shepherds-of-cassini',
+      href: 'https://amazon.com/music/player/albums/B0DSB138VH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_9j6rtLGPmZFCyBYkek8ISY6v5',
     },
   ],
   galleryPath: '/imgs/heresy/album-gallery',
