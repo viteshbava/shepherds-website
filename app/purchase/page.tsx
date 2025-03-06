@@ -17,7 +17,8 @@ import ButtonLink from '../components/ui/ButtonLink';
 
 const products: Product[] = [
   {
-    thumbSrc: '/imgs/heresy/album-gallery/01-placeholder-vinyl.png',
+    thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' })[0],
+    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' }),
     thumbAltText: 'Placeholder Vinyl image',
     productName: 'In Thrall to Heresy',
     productType: '2LP Vinyl',
@@ -28,8 +29,8 @@ const products: Product[] = [
     details: ['Gatefold jacket', '2 sided lyric insert', 'Original art by Moonroot'],
   },
   {
-    thumbSrc: '/imgs/heresy/album-gallery/02-IMG_3666.JPG',
-    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery' }).slice(1),
+    thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' })[0],
+    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' }),
     thumbAltText: 'Placeholder CD image',
     productName: 'In Thrall to Heresy',
     productType: 'CD',
