@@ -1,3 +1,4 @@
+import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import { IconNames, MusicData, Theme } from '@/app/types';
 
 const selfTitled: MusicData = {
@@ -73,7 +74,7 @@ const selfTitled: MusicData = {
       href: 'https://amazon.com/music/player/albums/B0DNDMQTC9?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_U7I8JZpOt7C7ZDfw13xOJyXFZ',
     },
   ],
-  galleryPath: '/imgs/selftitled/album-gallery',
+  galleryImages: getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' }),
   openGraphImg: '/imgs/selftitled/opengraph-image.png',
 };
 

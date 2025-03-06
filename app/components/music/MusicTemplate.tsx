@@ -10,11 +10,8 @@ import Credits from './Credits';
 import BackgroundImage from '../BackgroundImage';
 import Clouds from '../clouds/Clouds';
 import Gallery from './Gallery';
-import { getGalleryImages } from '@/app/libs/getGalleryImages';
 
 const MusicTemplate = ({ release }: { release: MusicData }) => {
-  const images = getGalleryImages({ folderPath: release.galleryPath });
-
   return (
     <>
       <Clouds theme={release.theme} />
@@ -57,7 +54,7 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
             credits={release.credits}
             theme={release.theme}
           />
-          <Gallery className='col-start-1 col-span-2 mt-10' images={images} />
+          <Gallery className='col-start-1 col-span-2 mt-10' images={release.galleryImages} />
         </div>
         <MusicNav className='mt-10 sm:mt-20' currentSlug={release.slug} />
       </Section>

@@ -1,3 +1,4 @@
+import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import { IconNames, MusicData, Theme } from '@/app/types';
 
 const heresy: MusicData = {
@@ -71,7 +72,10 @@ const heresy: MusicData = {
       href: 'https://amazon.com/music/player/albums/B0DSB138VH?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_9j6rtLGPmZFCyBYkek8ISY6v5',
     },
   ],
-  galleryPath: '/imgs/heresy/album-gallery',
+  galleryImages: [
+    ...getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' }),
+    ...getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' }),
+  ],
   openGraphImg: '/imgs/heresy/opengraph-image.png',
 };
 

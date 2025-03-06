@@ -1,3 +1,4 @@
+import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import { IconNames, MusicData, Theme } from '@/app/types';
 
 const helios: MusicData = {
@@ -73,7 +74,7 @@ const helios: MusicData = {
       href: 'https://www.amazon.com/Helios-Forsaken/dp/B0DKBGVCWT',
     },
   ],
-  galleryPath: '/imgs/helios/album-gallery',
+  galleryImages: getGalleryImages({ folderPath: '/imgs/helios/album-gallery' }),
   openGraphImg: '/imgs/helios/opengraph-image.png',
 };
 

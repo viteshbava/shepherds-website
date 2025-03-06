@@ -45,7 +45,7 @@ export interface MusicData {
   listenLinks: ListenLink[];
   credits: Credit[];
   theme: Theme;
-  galleryPath: string;
+  galleryImages: string[];
   openGraphImg: string;
 }
 
