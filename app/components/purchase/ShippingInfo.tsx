@@ -12,15 +12,15 @@ const ShippingInfo = () => {
         <div className='mt-2 text-sm'>
           <p className='mb-2'>
             📦 <span className='font-bold'>NZ:</span>{' '}
-            <span className='block sm:inline'>Up to $20</span>
+            <span className='block sm:inline'>Up to $18</span>
           </p>
           <p className='mb-2'>
             📦 <span className='font-bold'>Australia:</span>{' '}
-            <span className='block sm:inline'>Up to $35</span>
+            <span className='block sm:inline'>Up to $30</span>
           </p>
           <p className='mb-2'>
             📦 <span className='font-bold'>International:</span>{' '}
-            <span className='block sm:inline'>Up to $60</span>
+            <span className='block sm:inline'>Up to $52</span>
           </p>
         </div>
       </div>
@@ -37,11 +37,11 @@ const ShippingInfo = () => {
           </p>
           <p className='mb-2'>
             📦 <span className='font-bold'>Australia:</span>{' '}
-            <span className='block sm:inline'>Up to $25</span>
+            <span className='block sm:inline'>Up to $22</span>
           </p>
           <p className='mb-2'>
             📦 <span className='font-bold'>International:</span>{' '}
-            <span className='block sm:inline'>Up to $35</span>
+            <span className='block sm:inline'>Up to $30</span>
           </p>
         </div>
       </div>
