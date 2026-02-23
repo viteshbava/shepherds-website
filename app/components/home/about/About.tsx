@@ -1,6 +1,6 @@
 import React from 'react';
 import Section from '../../ui/Section';
-import Image from 'next/image';
+import BlurImage from '../../BlurImage';
 import BioText from './BioText';
 
 const About = () => {
@@ -10,7 +10,7 @@ const About = () => {
         About
       </h2>
       <div className='relative w-full aspect-[990/560]'>
-        <Image
+        <BlurImage
           src='/imgs/about-photo.webp'
           alt='Shepherds of Cassini band members standing together'
           className='object-cover rounded'

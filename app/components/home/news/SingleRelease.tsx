@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import BlurImage from '../../BlurImage';
 import Link from 'next/link';
 import VideoEmbed from '../../VideoEmbed';
 
@@ -10,7 +10,7 @@ const SingleRelease = () => {
       <p className='gold-statement mb-8'>New single streaming now</p>
       <VideoEmbed title='Red Veil' url='https://youtu.be/Ca-k01X5RgQ?feature=shared' />
       <div className='relative w-full max-w-[500px] h-[80px] sm:h-[100px] mx-auto mt-4'>
-        <Image
+        <BlurImage
           src='/imgs/heresy/album-logo.png'
           alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
           className='object-contain'
@@ -51,7 +51,7 @@ const SingleRelease = () => {
 
         <div className='sm:flex gap-6'>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
-            <Image
+            <BlurImage
               src='/imgs/heresy/album-gallery/placeholder-vinyl.png'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
@@ -60,7 +60,7 @@ const SingleRelease = () => {
             />
           </div>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
-            <Image
+            <BlurImage
               src='/imgs/heresy/album-gallery/placeholder-cd.png'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'

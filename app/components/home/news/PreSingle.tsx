@@ -1,12 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
+import BlurImage from '../../BlurImage';
 import Link from 'next/link';
 
 const PreSingle = () => {
   return (
     <>
       <div className='relative w-full max-w-[500px] aspect-square mx-auto'>
-        <Image
+        <BlurImage
           src='/imgs/heresy/red-veil-cover.png'
           alt='Shepherds of Cassini, In Thrall to Heresy, album cover'
           className='object-cover rounded'
@@ -17,7 +17,7 @@ const PreSingle = () => {
       <p className='red-veil text-2xl md:text-3xl font-bold mt-8 mb-2'>Red Veil</p>
       <p className='gold-statement'>New Single 24 January 2025</p>
       <div className='relative w-full max-w-[500px] h-[100px] mx-auto mb-0 md:mb-4'>
-        <Image
+        <BlurImage
           src='/imgs/heresy/album-logo.png'
           alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
           className='object-contain'

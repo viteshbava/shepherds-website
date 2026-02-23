@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import BlurImage from '../../BlurImage';
 
 interface ImageGridProps {
   images: string[];
@@ -13,7 +13,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
           key={image}
           className='relative w-full aspect-square cursor-pointer hover:scale-[1.02] transition-all duration-200'
           onClick={() => onClickImage(index)}>
-          <Image
+          <BlurImage
             src={image}
             alt='Shepherds of Cassini gallery photo'
             fill

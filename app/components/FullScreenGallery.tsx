@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import BlurImage from './BlurImage';
 import { HamburgerButton } from './header/HamburgerButton';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -62,7 +62,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex 
           pagination={{ clickable: true }}>
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <Image
+              <BlurImage
                 src={image}
                 alt='Shepherds of Cassini gallery photo'
                 fill

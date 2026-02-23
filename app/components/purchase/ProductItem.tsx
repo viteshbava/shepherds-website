@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import BlurImage from '../BlurImage';
 import { Product } from '@/app/types';
 
 interface ProductItemProps {
@@ -25,7 +25,7 @@ const ProductItem = ({ product, onClick }: ProductItemProps) => {
       <button
         className='relative aspect-square w-full hover:scale-[1.02] transition-all duration-200'
         onClick={onClick}>
-        <Image
+        <BlurImage
           src={thumbSrc}
           alt={thumbAltText}
           className='object-cover'

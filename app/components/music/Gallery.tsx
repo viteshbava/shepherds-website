@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import FullScreenGallery from '../FullScreenGallery';
-import Image from 'next/image';
+import BlurImage from '../BlurImage';
 
 interface GalleryProps {
   className?: string;
@@ -34,7 +34,7 @@ const Gallery = ({ className = '', images }: GalleryProps) => {
             key={image}
             className='relative aspect-square cursor-pointer w-[calc((100%-14px)/2)] sm:w-[calc((100%-14px*2)/3)] lg:w-[calc((100%-14px*5)/6)] hover:scale-[1.02] transition-all duration-200'
             onClick={() => handleImageClick(index)}>
-            <Image
+            <BlurImage
               src={image}
               alt='Shepherds of Cassini gallery photo'
               fill

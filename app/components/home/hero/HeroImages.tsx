@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import BlurImage from '../../BlurImage';
 
 interface HeroImagesProps {
   images: string[];
@@ -77,7 +77,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
         }
       }}>
       {images.map((image, index) => (
-        <Image
+        <BlurImage
           key={index}
           priority={index === 0}
           src={image}

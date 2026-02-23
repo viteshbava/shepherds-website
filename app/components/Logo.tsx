@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import BlurImage from './BlurImage';
 
 interface LogoProps {
   className?: string;
@@ -7,7 +7,7 @@ interface LogoProps {
 
 const Logo = ({ className = '' }: LogoProps) => {
   return (
-    <Image
+    <BlurImage
       priority
       className={className}
       src='/imgs/soc-logo.png'

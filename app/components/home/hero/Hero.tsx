@@ -9,7 +9,7 @@ import { getGalleryImages } from '@/app/libs/getGalleryImages';
 import HeroImages from './HeroImages';
 import BandcampPlayer from '../../BandcampPlayer';
 import { getReleaseState } from '@/app/libs/getReleaseState';
-import Image from 'next/image';
+import BlurImage from '../../BlurImage';
 import { HeroLinks, IconNames } from '@/app/types';
 import Icon from '../../icon/Icon';
 
@@ -45,7 +45,7 @@ const Hero = () => {
               )}
               {releaseState === 'album-released' && (
                 <div className='relative mx-auto max-w-[350px] h-[80px]'>
-                  <Image
+                  <BlurImage
                     src='/imgs/heresy/album-logo.png'
                     alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
                     className='object-contain'

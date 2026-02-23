@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import BlurImage from '../../BlurImage';
 import Link from 'next/link';
 import VideoEmbed from '../../VideoEmbed';
 
@@ -7,7 +7,7 @@ const AlbumRelease = () => {
   return (
     <>
       <div className='relative w-full max-w-[500px] h-[100px] mx-auto mb-0 md:mb-4'>
-        <Image
+        <BlurImage
           src='/imgs/heresy/album-logo.png'
           alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
           className='object-contain'
@@ -20,7 +20,7 @@ const AlbumRelease = () => {
       <div className='flex flex-col items-center max-w-xl mx-auto mt-8'>
         <div className='sm:flex gap-6'>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
-            <Image
+            <BlurImage
               src='/imgs/heresy/placeholder-vinyl.png'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
@@ -29,7 +29,7 @@ const AlbumRelease = () => {
             />
           </div>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
-            <Image
+            <BlurImage
               src='/imgs/heresy/placeholder-cd.png'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'

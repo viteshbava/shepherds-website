@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import BlurImage from '../BlurImage';
 import Section from '../ui/Section';
 import musicList from '@/app/data/music/musicList';
 import Link from 'next/link';
@@ -20,7 +20,7 @@ const Music = () => {
               href={`/music/${release.slug}`}
               className='inline-block w-full sm:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0  hover:scale-[1.02] transition-all duration-200'>
               <div className='relative aspect-square w-full'>
-                <Image
+                <BlurImage
                   src={release.frontCover.url}
                   alt={release.frontCover.altText}
                   className='object-cover rounded'
