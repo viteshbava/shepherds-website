@@ -1,10 +1,11 @@
 'use client';
 
 /*
-  This component will land the user on the correct section on page load/navigation.
-  - If a hash is in the URL, scroll to that section smoothly.
-  - Otherwise, scroll to the top of the page instantly (overriding the CSS scroll-smooth
-    which can cause incorrect scroll positions during page transitions).
+  Handles scroll position on page load and navigation:
+  - If a hash is in the URL, scroll to that section.
+  - Otherwise, force scroll to the top of the page.
+  Uses both scrollTo and direct scrollTop assignment for maximum
+  iOS Safari/Chrome compatibility.
 */
 
 import { useEffect } from 'react';
@@ -21,10 +22,12 @@ const LoadSection = () => {
       const element = document.getElementById(elementId);
 
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView();
       }
     } else {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     }
   }, [pathname]);
 
