@@ -10,6 +10,7 @@ import Credits from './Credits';
 import BackgroundImage from '../BackgroundImage';
 import Clouds from '../clouds/Clouds';
 import Gallery from './Gallery';
+import ScrollReveal from '../ui/ScrollReveal';
 
 const MusicTemplate = ({ release }: { release: MusicData }) => {
   return (
@@ -28,33 +29,44 @@ const MusicTemplate = ({ release }: { release: MusicData }) => {
         </h1>
         <MusicNav className='my-10' currentSlug={release.slug} />
         <div className='w-full sm:grid sm:grid-cols-2 gap-y-5 gap-x-5 md:gap-x-10 lg:gap-x-20'>
-          <MainImage
-            className='col-start-1 row-start-1 row-span-2'
-            imgUrl={release.frontCover.url}
-            altText={release.frontCover.altText}
-          />
-          <ReleaseDate
-            className='col-start-2 row-start-1 row-span-1'
-            releaseDate={release.releaseDate}
-            theme={release.theme}
-          />
-          <TrackListing
-            className='col-start-2 row-start-2 row-span-1'
-            trackListing={release.trackListing}
-            theme={release.theme}
-          />
-          <ListenBlock
-            className='col-start-2 row-start-3 row-span-2'
-            bandCampId={release.bandCampId}
-            listenLinks={release.listenLinks}
-            theme={release.theme}
-          />
-          <Credits
-            className='col-start-1 row-start-3 row-span-2'
-            credits={release.credits}
-            theme={release.theme}
-          />
-          <Gallery className='col-start-1 col-span-2 mt-10' images={release.galleryImages} />
+          <ScrollReveal className='col-start-1 row-start-1 row-span-2'>
+            <MainImage
+              imgUrl={release.frontCover.url}
+              altText={release.frontCover.altText}
+            />
+          </ScrollReveal>
+          <ScrollReveal className='col-start-2 row-start-1 row-span-1' delay={100}>
+            <ReleaseDate
+              className='h-full'
+              releaseDate={release.releaseDate}
+              theme={release.theme}
+            />
+          </ScrollReveal>
+          <ScrollReveal className='col-start-2 row-start-2 row-span-1' delay={200}>
+            <TrackListing
+              className='h-full'
+              trackListing={release.trackListing}
+              theme={release.theme}
+            />
+          </ScrollReveal>
+          <ScrollReveal className='col-start-1 row-start-3 row-span-2'>
+            <Credits
+              className='h-full'
+              credits={release.credits}
+              theme={release.theme}
+            />
+          </ScrollReveal>
+          <ScrollReveal className='col-start-2 row-start-3 row-span-2' delay={100}>
+            <ListenBlock
+              className='h-full'
+              bandCampId={release.bandCampId}
+              listenLinks={release.listenLinks}
+              theme={release.theme}
+            />
+          </ScrollReveal>
+          <ScrollReveal className='col-start-1 col-span-2 mt-10'>
+            <Gallery images={release.galleryImages} />
+          </ScrollReveal>
         </div>
         <MusicNav className='mt-10 sm:mt-20' currentSlug={release.slug} />
       </Section>

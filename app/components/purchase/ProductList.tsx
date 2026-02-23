@@ -9,6 +9,7 @@ import FullScreenGallery from '../FullScreenGallery';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 import { Product } from '@/app/types';
 import ProductItem from './ProductItem';
+import ScrollReveal from '../ui/ScrollReveal';
 
 interface ProductListProps {
   products: Product[];
@@ -52,11 +53,12 @@ const ProductList = ({ products }: ProductListProps) => {
       </div>
       <div className='mt-10 hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 text-left gap-4 w-full'>
         {products.map((product, index) => (
-          <ProductItem
-            key={index}
-            product={product}
-            onClick={() => handleImageClick(product.gallery || [product.thumbSrc])}
-          />
+          <ScrollReveal key={index} delay={index * 120}>
+            <ProductItem
+              product={product}
+              onClick={() => handleImageClick(product.gallery || [product.thumbSrc])}
+            />
+          </ScrollReveal>
         ))}
       </div>
       {modalImages && <FullScreenGallery images={modalImages} onClose={closeFullScreenGallery} />}

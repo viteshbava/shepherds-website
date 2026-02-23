@@ -14,6 +14,7 @@ import ProductList from '../components/purchase/ProductList';
 import ShippingTable from '../components/purchase/ShippingTable';
 import ShippingInfo from '../components/purchase/ShippingInfo';
 import ButtonLink from '../components/ui/ButtonLink';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 const products: Product[] = [
   {
@@ -77,16 +78,20 @@ const Purchase = () => {
           <span className='text-xl'>directly or via Bandcamp</span>
         </h1>
 
-        <ProductList products={products} />
+        <ScrollReveal className='w-full'>
+          <ProductList products={products} />
+        </ScrollReveal>
 
-        <h2 className='text-xl font-bold mt-8 mb-4'>Shipping Costs (NZD)</h2>
-        {/* <ShippingTable /> */}
-        <ShippingInfo />
-        <p className='text-sm mt-2 italic'>
-          All prices are in NZD for a single item only (contact us for multiple item cost).
-        </p>
+        <ScrollReveal className='w-full'>
+          <h2 className='text-xl font-bold mt-8 mb-4'>Shipping Costs (NZD)</h2>
+          {/* <ShippingTable /> */}
+          <ShippingInfo />
+          <p className='text-sm mt-2 italic'>
+            All prices are in NZD for a single item only (contact us for multiple item cost).
+          </p>
+        </ScrollReveal>
 
-        <div className='max-w-xl mt-20'>
+        <ScrollReveal className='max-w-xl w-full mt-20'>
           <h2 className='text-lg sm:text-2xl gold-heading pb-4 border-white/50 border-b-[1px] w-full'>
             Directly from band
           </h2>
@@ -130,7 +135,9 @@ const Purchase = () => {
             Let us know where you&#39;d like your order delivered or where you&#39;re based when you
             contact us.
           </p>
+        </ScrollReveal>
 
+        <ScrollReveal className='max-w-xl w-full'>
           <h2 className='text-lg sm:text-2xl gold-heading mt-20 pb-4 border-white/50 border-b-[1px] w-full'>
             via bandcamp
           </h2>
@@ -151,7 +158,7 @@ const Purchase = () => {
           </ButtonLink>
 
           <p className='text-2xl mb-4'>Thank you!</p>
-        </div>
+        </ScrollReveal>
       </Section>
     </>
   );

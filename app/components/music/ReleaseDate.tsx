@@ -8,7 +8,7 @@ interface ReleaseDateProps {
   theme: Theme;
 }
 
-const ReleaseDate = ({ className, releaseDate, theme }: ReleaseDateProps) => {
+const ReleaseDate = ({ className = '', releaseDate, theme }: ReleaseDateProps) => {
   return (
     <div
       className={`${className} flex flex-col justify-center items-center bg-gray-500/10 backdrop-blur rounded px-4 py-6 sm:p-0 my-6 sm:my-0`}>

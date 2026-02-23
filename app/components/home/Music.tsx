@@ -3,6 +3,7 @@ import BlurImage from '../BlurImage';
 import Section from '../ui/Section';
 import musicList from '@/app/data/music/musicList';
 import Link from 'next/link';
+import ScrollReveal from '../ui/ScrollReveal';
 
 const Music = () => {
   return (
@@ -15,21 +16,25 @@ const Music = () => {
           const year = release?.releaseDate?.getFullYear();
           const caption = `${release.name}${year ? ` (${year})` : ''}`;
           return (
-            <Link
+            <ScrollReveal
               key={index}
-              href={`/music/${release.slug}`}
-              className='inline-block w-full sm:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0  hover:scale-[1.02] transition-all duration-200'>
-              <div className='relative aspect-square w-full'>
-                <BlurImage
-                  src={release.frontCover.url}
-                  alt={release.frontCover.altText}
-                  className='object-cover rounded'
-                  fill
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                />
-              </div>
-              <p className='mt-1 w-full'>{caption}</p>
-            </Link>
+              delay={index * 100}
+              className='inline-block w-full sm:w-[calc((100%-1.5rem*2)/2)] lg:w-[calc((100%-1.5rem*2)/3)] mb-6 sm:mb-0'>
+              <Link
+                href={`/music/${release.slug}`}
+                className='inline-block w-full hover:scale-[1.02] transition-all duration-200'>
+                <div className='relative aspect-square w-full'>
+                  <BlurImage
+                    src={release.frontCover.url}
+                    alt={release.frontCover.altText}
+                    className='object-cover rounded'
+                    fill
+                    sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  />
+                </div>
+                <p className='mt-1 w-full'>{caption}</p>
+              </Link>
+            </ScrollReveal>
           );
         })}
       </div>

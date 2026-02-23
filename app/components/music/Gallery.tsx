@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import FullScreenGallery from '../FullScreenGallery';
 import BlurImage from '../BlurImage';
+import ScrollReveal from '../ui/ScrollReveal';
 
 interface GalleryProps {
   className?: string;
@@ -30,18 +31,22 @@ const Gallery = ({ className = '', images }: GalleryProps) => {
     <div className={`${className}`}>
       <div className='flex justify-center items-center flex-wrap gap-[14px]'>
         {images.map((image, index) => (
-          <div
+          <ScrollReveal
             key={image}
-            className='relative aspect-square cursor-pointer w-[calc((100%-14px)/2)] sm:w-[calc((100%-14px*2)/3)] lg:w-[calc((100%-14px*5)/6)] hover:scale-[1.02] transition-all duration-200'
-            onClick={() => handleImageClick(index)}>
-            <BlurImage
-              src={image}
-              alt='Shepherds of Cassini gallery photo'
-              fill
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-              className='rounded-sm object-cover'
-            />
-          </div>
+            delay={index * 60}
+            className='w-[calc((100%-14px)/2)] sm:w-[calc((100%-14px*2)/3)] lg:w-[calc((100%-14px*5)/6)]'>
+            <div
+              className='relative aspect-square cursor-pointer w-full hover:scale-[1.02] transition-all duration-200'
+              onClick={() => handleImageClick(index)}>
+              <BlurImage
+                src={image}
+                alt='Shepherds of Cassini gallery photo'
+                fill
+                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                className='rounded-sm object-cover'
+              />
+            </div>
+          </ScrollReveal>
         ))}
       </div>
       {isFullscreen && (
