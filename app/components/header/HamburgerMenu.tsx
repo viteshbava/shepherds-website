@@ -96,7 +96,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
   return (
     <div
       ref={menuRef}
-      aria-hidden={!isOpen}
+      {...(!isOpen && { inert: true as any })}
       role='menu'
       className={`flex fixed bg-black inset-y-0 top-0 left-0 w-screen h-svh z-30 flex-col justify-between items-center px-6 transition-all duration-200 ${
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
