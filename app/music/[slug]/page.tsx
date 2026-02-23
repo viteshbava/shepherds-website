@@ -7,8 +7,8 @@ interface IParams {
   slug: string;
 }
 
-export const generateMetadata = async ({ params }: { params: IParams }) => {
-  const { slug } = params;
+export const generateMetadata = async ({ params }: { params: Promise<IParams> }) => {
+  const { slug } = await params;
   const release = musicList.find((release) => release.slug === slug);
 
   if (!release) return;
@@ -33,8 +33,8 @@ export const generateMetadata = async ({ params }: { params: IParams }) => {
   };
 };
 
-export default async function MusicRelease({ params }: { params: IParams }) {
-  const { slug } = params;
+export default async function MusicRelease({ params }: { params: Promise<IParams> }) {
+  const { slug } = await params;
   const release = musicList.find((release) => release.slug === slug);
 
   if (!release) redirect('/');
