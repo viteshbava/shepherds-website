@@ -65,8 +65,8 @@
 ### 1.7 Favicon & Icons
 
 - [x] :green_circle: **Favicon present** -- `/favicon.ico` (32x32) served correctly.
-- [ ] :yellow_circle: **No Apple Touch Icon** -- No 180x180 icon for iOS home screen. Add via metadata API.
-- [ ] :yellow_circle: **No web app manifest** -- No `manifest.webmanifest` for PWA support. Consider adding basic manifest with site name, icons, and theme color.
+- [x] :yellow_circle: **No Apple Touch Icon** -- No 180x180 icon for iOS home screen. Add via metadata API.
+- [x] :yellow_circle: **No web app manifest** -- No `manifest.webmanifest` for PWA support. Consider adding basic manifest with site name, icons, and theme color.
 
 ### 1.8 Font Loading
 
@@ -77,7 +77,7 @@
 ### 1.9 Image SEO
 
 - [ ] :yellow_circle: **Gallery images have generic alt text** -- `Gallery.tsx:43`, `FullScreenGallery.tsx:67`, and `ImageGrid.tsx:19` all use `alt='Shepherds of Cassini gallery photo'` for every image. Each image should have a unique, descriptive alt text.
-- [ ] :yellow_circle: **Product images have placeholder alt text** -- `purchase/page.tsx:23,33` uses "Placeholder Vinyl image" and "Placeholder CD image". Replace with actual descriptive alt text.
+- [x] :yellow_circle: **Product images have placeholder alt text** -- `purchase/page.tsx:23,33` uses "Placeholder Vinyl image" and "Placeholder CD image". Replace with actual descriptive alt text.
 - [x] :green_circle: **Album cover images have good alt text** -- Each album's `frontCover.altText` includes the album name and artist.
 - [x] :green_circle: **About photo has descriptive alt text** -- "Shepherds of Cassini band members standing together".
 

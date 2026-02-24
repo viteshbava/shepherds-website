@@ -42,7 +42,7 @@ const products: Product[] = [
   {
     thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' })[0],
     gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' }),
-    thumbAltText: 'Placeholder Vinyl image',
+    thumbAltText: 'In Thrall to Heresy vinyl packaging image',
     productName: 'In Thrall to Heresy',
     productType: '2LP Vinyl',
     price: 'NZD $80',
@@ -53,7 +53,7 @@ const products: Product[] = [
   {
     thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' })[0],
     gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' }),
-    thumbAltText: 'Placeholder CD image',
+    thumbAltText: 'In Thrall to Heresy CD jewel case packaging image',
     productName: 'In Thrall to Heresy',
     productType: 'CD',
     price: 'NZD $30',
