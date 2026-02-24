@@ -191,7 +191,7 @@
 ### 3.5 Caching Strategy
 
 - [x] :green_circle: **Vercel caching active** -- Response headers show `x-vercel-cache: HIT` and `x-nextjs-prerender: 1`, confirming static generation and edge caching.
-- [ ] :yellow_circle: **No `Cache-Control` customization** -- Currently uses Vercel defaults (`public, max-age=0, must-revalidate`). Since the site content is static (no CMS), consider setting longer `revalidate` periods or fully static generation.
+- [x] :yellow_circle: **No `Cache-Control` customization** -- Currently uses Vercel defaults (`public, max-age=0, must-revalidate`). Since the site content is static (no CMS), consider setting longer `revalidate` periods or fully static generation.
 - [x] :green_circle: **Static pages properly generated** -- All pages are statically generated at build time.
 
 ### 3.6 Third-Party Resources

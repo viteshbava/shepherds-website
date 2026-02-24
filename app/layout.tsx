@@ -41,6 +41,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
+        <link rel='preconnect' href='https://www.youtube.com' />
+        <link rel='preconnect' href='https://i.ytimg.com' />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getMusicGroupSchema()) }}
