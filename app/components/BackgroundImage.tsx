@@ -90,7 +90,6 @@ const BackgroundImage = ({
             priority
             src={url}
             alt={altText}
-            quality={100}
             fill
             sizes='100vw'
             className={`absolute top-0 left-0 object-cover object-top ${
