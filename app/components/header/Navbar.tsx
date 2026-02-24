@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { NavLink } from './Header';
 
 interface NavBarProps {
@@ -8,6 +9,7 @@ interface NavBarProps {
 }
 
 const Navbar = ({ navLinks, half }: NavBarProps) => {
+  const pathname = usePathname();
   const totalLinks = navLinks.length;
   const midpoint = Math.floor(totalLinks / 2); // Midpoint index
 
@@ -28,9 +30,9 @@ const Navbar = ({ navLinks, half }: NavBarProps) => {
         {filteredLinks.map((link, index) => (
           <li key={index}>
             <Link
-              type='nav'
               className='flex justify-center items-center text-xl gold-heading font-bold rounded-full w-36 h-10 transition duration-200 ease-in-out hover:opacity-70'
-              href={link.href}>
+              href={link.href}
+              {...(link.href === pathname && { 'aria-current': 'page' as const })}>
               {link.title}
             </Link>
           </li>

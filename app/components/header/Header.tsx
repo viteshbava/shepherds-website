@@ -104,7 +104,7 @@ const Header = () => {
         {/* Hamburger button/cross */}
         <div className='absolute top-0 right-0 pr-2 h-full xl:hidden flex flex-col justify-center'>
           <button
-            aria-label='Open menu'
+            aria-label={isHamburgerOpen ? 'Close menu' : 'Open menu'}
             onClick={toggleMenu}
             className='flex justify-center items-center focus:outline-none pointer-fine:focus-visible:ring-2 pointer-fine:focus-visible:ring-white/60 w-14 h-14 sm:w-16 sm:h-16 rounded-full active:bg-primary_yellow sm:hover:bg-primary_yellow transition'>
             <HamburgerButton closed={!isHamburgerOpen} />

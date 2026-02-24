@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { NavLink } from './Header';
 import Copyright from '../Copyright';
 import SocialIcons from '../SocialIcons';
@@ -12,6 +13,7 @@ interface HamburgerMenuProps {
 }
 
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMenu }) => {
+  const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
   const setIsBodyScrollLocked = useLockBodyScroll();
 
@@ -114,9 +116,9 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
                     ? lastFocusableRef
                     : null
                 }
-                type='nav'
                 className={`flex justify-center items-center p-4 text-xl gold-heading rounded-md w-full h-10 transition duration-200 ease-in-out hover:opacity-70`}
-                href={link.href}>
+                href={link.href}
+                {...(link.href === pathname && { 'aria-current': 'page' as const })}>
                 {link.title}
               </Link>
             </li>
