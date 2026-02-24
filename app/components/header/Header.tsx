@@ -65,10 +65,20 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    let rafId = 0;
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        handleScroll();
+        rafId = 0;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 

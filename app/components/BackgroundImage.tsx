@@ -23,6 +23,7 @@ const BackgroundImage = ({
 
   useEffect(() => {
     let handleScroll = () => {};
+    let rafId = 0;
 
     switch (animation) {
       case 'fixed':
@@ -64,8 +65,19 @@ const BackgroundImage = ({
         break;
     }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        handleScroll();
+        rafId = 0;
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(rafId);
+    };
   }, [animation, finalOpacity]);
 
   const handleImageLoad = () => {

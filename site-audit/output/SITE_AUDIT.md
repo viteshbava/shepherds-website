@@ -169,7 +169,7 @@
 ### 3.2 Client-Side JavaScript
 
 - [x] :green_circle: **Server components by default** -- Pages (`page.tsx`, `layout.tsx`) and many components are server components.
-- [ ] :yellow_circle: **Header is a client component with raw DOM queries** -- `Header.tsx:33-34` uses `document.querySelector('header')` and `document.querySelector('.logo')` instead of React refs. This is fragile and bypasses React's rendering model.
+- [x] :yellow_circle: **Header is a client component with raw DOM queries** -- `Header.tsx:33-34` uses `document.querySelector('header')` and `document.querySelector('.logo')` instead of React refs. This is fragile and bypasses React's rendering model.
 - [ ] :yellow_circle: **GSAP scroll handlers without throttling** -- `BackgroundImage.tsx:67` and `Header.tsx:66` both attach raw `scroll` event listeners without throttling or `requestAnimationFrame`. Scroll events fire at 60+ fps, causing unnecessary GSAP animations on every frame.
 - [ ] :yellow_circle: **Hero carousel runs off-screen** -- `HeroImages.tsx:33` has a 4-second `setInterval` that continues even when the hero is scrolled off-viewport. Should pause with `IntersectionObserver` when not visible.
 
