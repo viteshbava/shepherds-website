@@ -23,8 +23,8 @@
 
 ### 1.1 Search Engine Indexing
 
-- [ ] :red_circle: **No `robots.txt` file** -- No `robots.txt` route or static file exists anywhere in the project. Search engines have no crawling directives, and no sitemap reference. Create `app/robots.ts` using the Next.js Metadata API.
-- [ ] :red_circle: **No `sitemap.xml`** -- No sitemap generation exists. Search engines cannot discover pages efficiently. Create `app/sitemap.ts` listing the homepage, all `/music/[slug]` pages, and `/purchase`.
+- [x] :red_circle: **No `robots.txt` file** -- No `robots.txt` route or static file exists anywhere in the project. Search engines have no crawling directives, and no sitemap reference. Create `app/robots.ts` using the Next.js Metadata API.
+- [x] :red_circle: **No `sitemap.xml`** -- No sitemap generation exists. Search engines cannot discover pages efficiently. Create `app/sitemap.ts` listing the homepage, all `/music/[slug]` pages, and `/purchase`.
 - [ ] :red_circle: **No `robots` meta tag** -- No noindex/nofollow gating for staging vs production. The staging deployment at `shepherds-website-staging.vercel.app` is fully indexable by search engines, which will create duplicate content issues. Add environment-aware `robots` metadata.
 - [x] :green_circle: **`<html lang='en'>` set** -- Correct language attribute present.
 
@@ -308,83 +308,83 @@
 
 ### :red_circle: CRITICAL -- Fix Before Production Launch
 
-| # | Issue | Category | Location |
-|---|-------|----------|----------|
-| 1 | Add `robots.txt` with sitemap reference | SEO | Create `app/robots.ts` |
-| 2 | Add `sitemap.xml` with all pages | SEO | Create `app/sitemap.ts` |
-| 3 | Add canonical URLs to all pages | SEO | `layout.tsx` metadata + page-level |
-| 4 | Add environment-aware `robots` meta tag (noindex staging) | SEO | `layout.tsx` metadata |
-| 5 | Add security headers (CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy) | Security | `next.config.mjs` headers config |
-| 6 | Remove hardcoded password from client bundle | Security | `layout.tsx:33` |
-| 7 | Add skip-to-content link | Accessibility | Create component, add to `layout.tsx` |
-| 8 | Add `aria-label` to all social icon links | Accessibility | `SocialIcons.tsx` |
-| 9 | Convert gallery image `<div onClick>` to `<button>` | Accessibility | `ImageGrid.tsx`, `Gallery.tsx` |
+| #   | Issue                                                                                                    | Category      | Location                              |
+| --- | -------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------- |
+| 1   | Add `robots.txt` with sitemap reference                                                                  | SEO           | Create `app/robots.ts`                |
+| 2   | Add `sitemap.xml` with all pages                                                                         | SEO           | Create `app/sitemap.ts`               |
+| 3   | Add canonical URLs to all pages                                                                          | SEO           | `layout.tsx` metadata + page-level    |
+| 4   | Add environment-aware `robots` meta tag (noindex staging)                                                | SEO           | `layout.tsx` metadata                 |
+| 5   | Add security headers (CSP, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy) | Security      | `next.config.mjs` headers config      |
+| 6   | Remove hardcoded password from client bundle                                                             | Security      | `layout.tsx:33`                       |
+| 7   | Add skip-to-content link                                                                                 | Accessibility | Create component, add to `layout.tsx` |
+| 8   | Add `aria-label` to all social icon links                                                                | Accessibility | `SocialIcons.tsx`                     |
+| 9   | Convert gallery image `<div onClick>` to `<button>`                                                      | Accessibility | `ImageGrid.tsx`, `Gallery.tsx`        |
 
 ### :orange_circle: HIGH -- Fix Within First Week
 
-| # | Issue | Category | Location |
-|---|-------|----------|----------|
-| 10 | Add `MusicGroup` structured data | SEO | `layout.tsx` or new component |
-| 11 | Add `MusicAlbum` structured data to album pages | SEO | `MusicTemplate.tsx` |
-| 12 | Add unique metadata to Purchase page | SEO | `purchase/page.tsx` |
-| 13 | Shorten homepage meta description to ~150 chars | SEO | `layout.tsx:26` |
-| 14 | Shorten music page meta descriptions | SEO | `formatMetaDescr.ts` |
-| 15 | Expand WebSite schema (add `url`, `description`) | SEO | `layout.tsx:35-39` |
-| 16 | Disable `poweredByHeader` in next.config | Security | `next.config.mjs` |
-| 17 | Run `npm audit fix` for dependency vulnerabilities | Security | Terminal |
-| 18 | Compress source images (73MB -> target ~15MB) | Performance | `/public/imgs/` |
-| 19 | Enable AVIF image format | Performance | `next.config.mjs` |
-| 20 | Add focus ring to hamburger button | Accessibility | `Header.tsx:97` |
-| 21 | Add focus ring to gallery close button | Accessibility | `FullScreenGallery.tsx:44` |
-| 22 | Add `aria-label` to gallery Previous/Next buttons | Accessibility | `FullScreenGallery.tsx:48-53` |
-| 23 | Add `title` to Bandcamp iframes | Accessibility | `BandcampPlayer.tsx:19,24` |
-| 24 | Add `role='dialog'`, `aria-modal`, `aria-label` to gallery modal | Accessibility | `FullScreenGallery.tsx:39` |
-| 25 | Add focus trapping to FullScreenGallery | Accessibility | `FullScreenGallery.tsx` |
-| 26 | Toggle hamburger `aria-label` between Open/Close | Accessibility | `Header.tsx:95` |
-| 27 | Add `prefers-reduced-motion` to cloud animations | Accessibility | `styles.module.scss` |
-| 28 | Set `metadataBase` to production domain in env | SEO | Vercel env vars |
+| #   | Issue                                                            | Category      | Location                      |
+| --- | ---------------------------------------------------------------- | ------------- | ----------------------------- |
+| 10  | Add `MusicGroup` structured data                                 | SEO           | `layout.tsx` or new component |
+| 11  | Add `MusicAlbum` structured data to album pages                  | SEO           | `MusicTemplate.tsx`           |
+| 12  | Add unique metadata to Purchase page                             | SEO           | `purchase/page.tsx`           |
+| 13  | Shorten homepage meta description to ~150 chars                  | SEO           | `layout.tsx:26`               |
+| 14  | Shorten music page meta descriptions                             | SEO           | `formatMetaDescr.ts`          |
+| 15  | Expand WebSite schema (add `url`, `description`)                 | SEO           | `layout.tsx:35-39`            |
+| 16  | Disable `poweredByHeader` in next.config                         | Security      | `next.config.mjs`             |
+| 17  | Run `npm audit fix` for dependency vulnerabilities               | Security      | Terminal                      |
+| 18  | Compress source images (73MB -> target ~15MB)                    | Performance   | `/public/imgs/`               |
+| 19  | Enable AVIF image format                                         | Performance   | `next.config.mjs`             |
+| 20  | Add focus ring to hamburger button                               | Accessibility | `Header.tsx:97`               |
+| 21  | Add focus ring to gallery close button                           | Accessibility | `FullScreenGallery.tsx:44`    |
+| 22  | Add `aria-label` to gallery Previous/Next buttons                | Accessibility | `FullScreenGallery.tsx:48-53` |
+| 23  | Add `title` to Bandcamp iframes                                  | Accessibility | `BandcampPlayer.tsx:19,24`    |
+| 24  | Add `role='dialog'`, `aria-modal`, `aria-label` to gallery modal | Accessibility | `FullScreenGallery.tsx:39`    |
+| 25  | Add focus trapping to FullScreenGallery                          | Accessibility | `FullScreenGallery.tsx`       |
+| 26  | Toggle hamburger `aria-label` between Open/Close                 | Accessibility | `Header.tsx:95`               |
+| 27  | Add `prefers-reduced-motion` to cloud animations                 | Accessibility | `styles.module.scss`          |
+| 28  | Set `metadataBase` to production domain in env                   | SEO           | Vercel env vars               |
 
 ### :yellow_circle: MEDIUM -- Fix Within First Month
 
-| # | Issue | Category | Location |
-|---|-------|----------|----------|
-| 29 | Add Apple Touch Icon and web manifest | SEO | Metadata API |
-| 30 | Add larger OG images for music pages (1200x630) | SEO | Music data files |
-| 31 | Fix generic gallery image alt texts | SEO/A11y | Multiple gallery components |
-| 32 | Fix product placeholder alt texts | SEO/A11y | `purchase/page.tsx` |
-| 33 | Add BreadcrumbList structured data | SEO | Album pages |
-| 34 | Add `.env` to `.gitignore` | Security | `.gitignore` |
-| 35 | Add `sandbox` to Bandcamp iframes | Security | `BandcampPlayer.tsx` |
-| 36 | Fix background image `sizes` hint to `100vw` | Performance | `BackgroundImage.tsx:116,136` |
-| 37 | Remove `quality={100}` from background images | Performance | `BackgroundImage.tsx:93` |
-| 38 | Throttle GSAP scroll handlers | Performance | `BackgroundImage.tsx`, `Header.tsx` |
-| 39 | Pause hero carousel when off-screen | Performance | `HeroImages.tsx` |
-| 40 | Add `loading='lazy'` to YouTube iframes | Performance | `VideoEmbed.tsx:27` |
-| 41 | Add `aria-expanded` to bio toggle button | Accessibility | `BioText.tsx:42` |
-| 42 | Remove invalid `type='nav'` from `<a>` elements | Accessibility | `Navbar.tsx`, `HamburgerMenu.tsx` |
-| 43 | Fix `role='menu'` to `role='dialog'` or remove | Accessibility | `HamburgerMenu.tsx:100` |
-| 44 | Add `aria-current='page'` to active nav link | Accessibility | `Header.tsx`, `Navbar.tsx` |
-| 45 | Add focus ring to ButtonLink components | Accessibility | `ButtonLink.tsx` |
-| 46 | Add `prefers-reduced-motion` to GSAP animations | Accessibility | `BackgroundImage.tsx`, `Header.tsx` |
-| 47 | Update copyright year to be dynamic | Accessibility | `Copyright.tsx:4` |
-| 48 | Fix H3 in hero section (should be H2) | Accessibility | `Hero.tsx:57` |
-| 49 | Use React refs instead of DOM queries in Header | Performance | `Header.tsx:33-34` |
-| 50 | Verify GSC setup and submit sitemap | SEO | External service |
+| #   | Issue                                           | Category      | Location                            |
+| --- | ----------------------------------------------- | ------------- | ----------------------------------- |
+| 29  | Add Apple Touch Icon and web manifest           | SEO           | Metadata API                        |
+| 30  | Add larger OG images for music pages (1200x630) | SEO           | Music data files                    |
+| 31  | Fix generic gallery image alt texts             | SEO/A11y      | Multiple gallery components         |
+| 32  | Fix product placeholder alt texts               | SEO/A11y      | `purchase/page.tsx`                 |
+| 33  | Add BreadcrumbList structured data              | SEO           | Album pages                         |
+| 34  | Add `.env` to `.gitignore`                      | Security      | `.gitignore`                        |
+| 35  | Add `sandbox` to Bandcamp iframes               | Security      | `BandcampPlayer.tsx`                |
+| 36  | Fix background image `sizes` hint to `100vw`    | Performance   | `BackgroundImage.tsx:116,136`       |
+| 37  | Remove `quality={100}` from background images   | Performance   | `BackgroundImage.tsx:93`            |
+| 38  | Throttle GSAP scroll handlers                   | Performance   | `BackgroundImage.tsx`, `Header.tsx` |
+| 39  | Pause hero carousel when off-screen             | Performance   | `HeroImages.tsx`                    |
+| 40  | Add `loading='lazy'` to YouTube iframes         | Performance   | `VideoEmbed.tsx:27`                 |
+| 41  | Add `aria-expanded` to bio toggle button        | Accessibility | `BioText.tsx:42`                    |
+| 42  | Remove invalid `type='nav'` from `<a>` elements | Accessibility | `Navbar.tsx`, `HamburgerMenu.tsx`   |
+| 43  | Fix `role='menu'` to `role='dialog'` or remove  | Accessibility | `HamburgerMenu.tsx:100`             |
+| 44  | Add `aria-current='page'` to active nav link    | Accessibility | `Header.tsx`, `Navbar.tsx`          |
+| 45  | Add focus ring to ButtonLink components         | Accessibility | `ButtonLink.tsx`                    |
+| 46  | Add `prefers-reduced-motion` to GSAP animations | Accessibility | `BackgroundImage.tsx`, `Header.tsx` |
+| 47  | Update copyright year to be dynamic             | Accessibility | `Copyright.tsx:4`                   |
+| 48  | Fix H3 in hero section (should be H2)           | Accessibility | `Hero.tsx:57`                       |
+| 49  | Use React refs instead of DOM queries in Header | Performance   | `Header.tsx:33-34`                  |
+| 50  | Verify GSC setup and submit sitemap             | SEO           | External service                    |
 
 ### :white_circle: LOW -- Best Practice / Refinement
 
-| # | Issue | Category | Location |
-|---|-------|----------|----------|
-| 51 | Add `sameAs` social links to schema | SEO | Structured data |
-| 52 | Add blog/news content strategy | SEO | New page/content |
-| 53 | Add Speculation Rules API for prefetching | Performance | `layout.tsx` |
-| 54 | Add preconnect hints for Bandcamp/YouTube | Performance | `layout.tsx` |
-| 55 | Consolidate react-icons to single set or custom SVGs | Performance | `Icon.tsx`, other files |
-| 56 | Add bundle analyzer | Performance | `next.config.mjs` / dev deps |
-| 57 | Consider lightweight alternative to Swiper | Performance | `FullScreenGallery.tsx`, `ProductList.tsx` |
-| 58 | Shared IntersectionObserver for ScrollReveal | Performance | `useScrollReveal.ts` |
-| 59 | Add Cross-Origin isolation headers | Security | `next.config.mjs` |
-| 60 | AI Overviews content optimization | SEO | Content structure |
+| #   | Issue                                                | Category    | Location                                   |
+| --- | ---------------------------------------------------- | ----------- | ------------------------------------------ |
+| 51  | Add `sameAs` social links to schema                  | SEO         | Structured data                            |
+| 52  | Add blog/news content strategy                       | SEO         | New page/content                           |
+| 53  | Add Speculation Rules API for prefetching            | Performance | `layout.tsx`                               |
+| 54  | Add preconnect hints for Bandcamp/YouTube            | Performance | `layout.tsx`                               |
+| 55  | Consolidate react-icons to single set or custom SVGs | Performance | `Icon.tsx`, other files                    |
+| 56  | Add bundle analyzer                                  | Performance | `next.config.mjs` / dev deps               |
+| 57  | Consider lightweight alternative to Swiper           | Performance | `FullScreenGallery.tsx`, `ProductList.tsx` |
+| 58  | Shared IntersectionObserver for ScrollReveal         | Performance | `useScrollReveal.ts`                       |
+| 59  | Add Cross-Origin isolation headers                   | Security    | `next.config.mjs`                          |
+| 60  | AI Overviews content optimization                    | SEO         | Content structure                          |
 
 ---
 
@@ -393,6 +393,7 @@
 The following aspects of the site are well-implemented and should be maintained:
 
 **SEO:**
+
 - Google Analytics properly integrated via `@next/third-parties`
 - Correct `<html lang='en'>` attribute
 - Proper use of `next/font/google` for optimized font loading
@@ -401,6 +402,7 @@ The following aspects of the site are well-implemented and should be maintained:
 - Well-formed title tags
 
 **Security:**
+
 - No hardcoded secrets (except the commented-out password -- see above)
 - No API routes to protect
 - No `.env` files committed
@@ -409,6 +411,7 @@ The following aspects of the site are well-implemented and should be maintained:
 - HSTS provided by Vercel
 
 **Performance:**
+
 - Server components by default (pages and layout are server components)
 - Static generation for all pages (confirmed via `x-nextjs-prerender: 1`)
 - Vercel edge caching active
@@ -419,6 +422,7 @@ The following aspects of the site are well-implemented and should be maintained:
 - Minimal CSS (Tailwind + ~93 lines of custom SCSS)
 
 **Accessibility:**
+
 - Semantic HTML structure (`<header>`, `<main>`, `<footer>`, `<nav>`, `<section>`)
 - SR-only H1 on homepage
 - Proper heading hierarchy (H1 > H2) on most pages
