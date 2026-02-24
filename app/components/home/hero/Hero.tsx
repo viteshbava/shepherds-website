@@ -46,7 +46,7 @@ const Hero = () => {
               {releaseState === 'album-released' && (
                 <div className='relative mx-auto max-w-[350px] h-[80px]'>
                   <BlurImage
-                    src='/imgs/heresy/album-logo.png'
+                    src='/imgs/heresy/album-logo.webp'
                     alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
                     className='object-contain'
                     fill

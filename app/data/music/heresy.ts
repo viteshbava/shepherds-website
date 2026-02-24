@@ -27,11 +27,11 @@ const heresy: MusicData = {
   ],
   bandCampId: '2488004756',
   frontCover: {
-    url: '/imgs/heresy/front-cover-lettering.png',
+    url: '/imgs/heresy/front-cover-lettering.webp',
     altText: 'Shepherds of Cassini, In Thrall to Heresy, album cover, artwork by Moonroot',
   },
   backgroundImage: {
-    url: '/imgs/heresy/back-cover.png',
+    url: '/imgs/heresy/back-cover.webp',
     altText: 'Shepherds of Cassini, In Thrall to Heresy, back cover artowrk by Moonroot',
   },
   listenLinks: [

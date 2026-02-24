@@ -149,7 +149,7 @@
 ### 2.7 iframe Security
 
 - [x] :green_circle: **YouTube iframes use `referrerPolicy='strict-origin-when-cross-origin'`** -- `VideoEmbed.tsx:32` correctly sets referrer policy on YouTube embeds.
-- [ ] :yellow_circle: **Bandcamp iframes have no `sandbox` attribute** -- `BandcampPlayer.tsx:19,24` embeds Bandcamp player with `seamless` attribute (deprecated). Consider adding `sandbox="allow-scripts allow-same-origin allow-popups"` for defense-in-depth.
+- [x] :yellow_circle: **Bandcamp iframes have no `sandbox` attribute** -- `BandcampPlayer.tsx:19,24` embeds Bandcamp player with `seamless` attribute (deprecated). Consider adding `sandbox="allow-scripts allow-same-origin allow-popups"` for defense-in-depth.
 
 ---
 

@@ -11,7 +11,7 @@ const SingleRelease = () => {
       <VideoEmbed title='Red Veil' url='https://youtu.be/Ca-k01X5RgQ?feature=shared' />
       <div className='relative w-full max-w-[500px] h-[80px] sm:h-[100px] mx-auto mt-4'>
         <BlurImage
-          src='/imgs/heresy/album-logo.png'
+          src='/imgs/heresy/album-logo.webp'
           alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
           className='object-contain'
           fill
@@ -52,7 +52,7 @@ const SingleRelease = () => {
         <div className='sm:flex gap-6'>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
             <BlurImage
-              src='/imgs/heresy/album-gallery/placeholder-vinyl.png'
+              src='/imgs/heresy/placeholder-vinyl.webp'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
               fill
@@ -61,7 +61,7 @@ const SingleRelease = () => {
           </div>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
             <BlurImage
-              src='/imgs/heresy/album-gallery/placeholder-cd.png'
+              src='/imgs/heresy/placeholder-cd.webp'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
               fill

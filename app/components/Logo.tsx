@@ -10,7 +10,7 @@ const Logo = ({ className = '' }: LogoProps) => {
     <BlurImage
       priority
       className={className}
-      src='/imgs/soc-logo.png'
+      src='/imgs/soc-logo.webp'
       alt='Shepherds of Cassini logo'
       width={300}
       height={60}

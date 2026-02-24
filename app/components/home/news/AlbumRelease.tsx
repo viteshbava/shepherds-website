@@ -8,7 +8,7 @@ const AlbumRelease = () => {
     <>
       <div className='relative w-full max-w-[500px] h-[100px] mx-auto mb-0 md:mb-4'>
         <BlurImage
-          src='/imgs/heresy/album-logo.png'
+          src='/imgs/heresy/album-logo.webp'
           alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
           className='object-contain'
           fill
@@ -21,7 +21,7 @@ const AlbumRelease = () => {
         <div className='sm:flex gap-6'>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
             <BlurImage
-              src='/imgs/heresy/placeholder-vinyl.png'
+              src='/imgs/heresy/placeholder-vinyl.webp'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
               fill
@@ -30,7 +30,7 @@ const AlbumRelease = () => {
           </div>
           <div className='relative aspect-square w-[200px] mx-auto mt-4'>
             <BlurImage
-              src='/imgs/heresy/placeholder-cd.png'
+              src='/imgs/heresy/placeholder-cd.webp'
               alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
               className='object-contain'
               fill

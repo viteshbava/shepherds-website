@@ -24,7 +24,7 @@ export default function Home() {
       <h1 className='sr-only'>Shepherds of Cassini - Home</h1>
       {/* <Clouds theme={Theme.Grey} behindBackgroundImg={false} /> */}
       <BackgroundImage
-        url='/imgs/home-background.png'
+        url='/imgs/home-background.webp'
         animation='home-1'
         altText='In Thrall to Heresy back cover'
         finalOpacity={1}

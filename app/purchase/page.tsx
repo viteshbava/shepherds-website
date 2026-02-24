@@ -89,7 +89,7 @@ const Purchase = () => {
   return (
     <>
       <BackgroundImage
-        url='/imgs/home-background.png'
+        url='/imgs/home-background.webp'
         animation='home-1'
         altText='In Thrall to Heresy back cover'
         finalOpacity={1}

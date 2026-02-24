@@ -7,7 +7,7 @@ const PreSingle = () => {
     <>
       <div className='relative w-full max-w-[500px] aspect-square mx-auto'>
         <BlurImage
-          src='/imgs/heresy/red-veil-cover.png'
+          src='/imgs/heresy/red-veil-cover.webp'
           alt='Shepherds of Cassini, In Thrall to Heresy, album cover'
           className='object-cover rounded'
           fill
@@ -18,7 +18,7 @@ const PreSingle = () => {
       <p className='gold-statement'>New Single 24 January 2025</p>
       <div className='relative w-full max-w-[500px] h-[100px] mx-auto mb-0 md:mb-4'>
         <BlurImage
-          src='/imgs/heresy/album-logo.png'
+          src='/imgs/heresy/album-logo.webp'
           alt='Shepherds of Cassini, In Thrall to Heresy, album logo'
           className='object-contain'
           fill

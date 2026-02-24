@@ -71,7 +71,7 @@ const getMusicGroupSchema = () => {
           'https://www.facebook.com/shepherdsofcassiniband/',
           'https://www.instagram.com/shepherdsofcassini/',
         ],
-        image: `${baseUrl}/imgs/heresy/front-cover-lettering.png`,
+        image: `${baseUrl}/imgs/heresy/front-cover-lettering.webp`,
       },
     ],
   };
