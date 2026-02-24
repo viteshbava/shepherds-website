@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import Navbar from './Navbar';
 import Logo from '../Logo';
@@ -24,14 +24,16 @@ const navLinks: NavLink[] = [
 
 const Header = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsHamburgerOpen(!isHamburgerOpen);
   };
 
   useEffect(() => {
-    const header = document.querySelector('header');
-    const logo = document.querySelector('.logo');
+    const header = headerRef.current;
+    const logo = logoRef.current;
     const mediaQuery = window.matchMedia('(min-width: 640px)'); // Media query for non-mobile screens
 
     const handleScroll = () => {
@@ -72,19 +74,19 @@ const Header = () => {
 
   return (
     <>
-      <header className='fixed z-40 w-full min-h-[6rem] h-[6rem] sm:h-[10rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300'>
+      <header ref={headerRef} className='fixed z-40 w-full min-h-[6rem] h-[6rem] sm:h-[10rem] px-4 sm:px-10 flex justify-between items-center transition-all duration-300'>
         {/* Background Layer */}
         <div className='absolute inset-0 transition-all duration-500 ease-in-out' />
         {/* Content Layer */}
         <div className='relative flex justify-center items-center w-full h-full'>
           {/* Logo in Center */}
           <Navbar navLinks={navLinks} half='left' />
-          <div className='flex justify-center mx-12'>
+          <div ref={logoRef} className='flex justify-center mx-12'>
             <Link
               onClick={() => setIsHamburgerOpen(false)}
               className='transition duration-200 ease-in-out hover:scale-105'
               href={'/'}>
-              <Logo className='logo w-48 sm:w-80 transition-transform' />
+              <Logo className='w-48 sm:w-80 transition-transform' />
             </Link>
           </div>
           <Navbar navLinks={navLinks} half='right' />

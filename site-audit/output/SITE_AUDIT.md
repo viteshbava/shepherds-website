@@ -164,7 +164,7 @@
   - **Action:** Compress source images. Album art PNGs should be no larger than 500KB-1MB. Gallery JPEGs should be under 500KB. Convert PNGs to WebP where transparency isn't needed.
 - [x] :orange_circle: **AVIF not enabled** -- `next.config.mjs` has no `images.formats` configuration. Adding `images: { formats: ['image/avif', 'image/webp'] }` gives 30-50% smaller images than WebP alone for supporting browsers.
 - [x] :orange_circle: **Background image uses `quality={100}`** -- `BackgroundImage.tsx:93` sets `quality={100}` on the fixed variant. For a blurred background image, `quality={75}` (default) or even lower would be visually indistinguishable but significantly smaller.
-- [ ] :yellow_circle: **Background image `sizes` hint incorrect** -- `BackgroundImage.tsx:116,136` uses `sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'` for an image that fills the entire viewport. Should be `sizes='100vw'` so the browser downloads the appropriately sized image.
+- [x] :yellow_circle: **Background image `sizes` hint incorrect** -- `BackgroundImage.tsx:116,136` uses `sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'` for an image that fills the entire viewport. Should be `sizes='100vw'` so the browser downloads the appropriately sized image.
 
 ### 3.2 Client-Side JavaScript
 
