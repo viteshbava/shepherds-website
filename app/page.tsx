@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import About from './components/home/about/About';
 import BackgroundImage from './components/BackgroundImage';
 import Contact from './components/home/contact/Contact';
@@ -8,6 +9,12 @@ import { Theme } from './types';
 import Hero from './components/home/hero/Hero';
 import News from './components/home/news/News';
 import ScrollReveal from './components/ui/ScrollReveal';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   const images = getGalleryImages({ folderPath: '/imgs/gallery', shuffle: true });

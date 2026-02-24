@@ -20,6 +20,9 @@ export const generateMetadata = async ({ params }: { params: Promise<IParams> })
     title,
     description,
     keywords: `shepherds of cassini new zealand music rock metal progressive post prog psychedelic auckland ${release.name}`,
+    alternates: {
+      canonical: `/music/${slug}`,
+    },
     openGraph: {
       title,
       description,

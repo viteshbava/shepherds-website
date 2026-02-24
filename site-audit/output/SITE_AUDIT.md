@@ -25,13 +25,13 @@
 
 - [x] :red_circle: **No `robots.txt` file** -- No `robots.txt` route or static file exists anywhere in the project. Search engines have no crawling directives, and no sitemap reference. Create `app/robots.ts` using the Next.js Metadata API.
 - [x] :red_circle: **No `sitemap.xml`** -- No sitemap generation exists. Search engines cannot discover pages efficiently. Create `app/sitemap.ts` listing the homepage, all `/music/[slug]` pages, and `/purchase`.
-- [ ] :red_circle: **No `robots` meta tag** -- No noindex/nofollow gating for staging vs production. The staging deployment at `shepherds-website-staging.vercel.app` is fully indexable by search engines, which will create duplicate content issues. Add environment-aware `robots` metadata.
+- [x] :red_circle: **No `robots` meta tag** -- No noindex/nofollow gating for staging vs production. The staging deployment at `shepherds-website-staging.vercel.app` is fully indexable by search engines, which will create duplicate content issues. Add environment-aware `robots` metadata.
 - [x] :green_circle: **`<html lang='en'>` set** -- Correct language attribute present.
 
 ### 1.2 Canonical Tags
 
 - [ ] :red_circle: **No canonical tags on any page** -- No `alternates.canonical` in metadata exports. This means search engines may index the staging URL as the canonical version, or index duplicate URLs with/without trailing slashes. Add canonical URLs to all pages via the Next.js Metadata API.
-- [ ] :orange_circle: **`metadataBase` points to staging URL** -- `layout.tsx:30` sets `metadataBase` using `process.env.NEXT_PUBLIC_BASE_URL` with localhost fallback. On the deployed staging site, all OG image URLs resolve to `shepherds-website-staging.vercel.app`. Ensure the production deployment has `NEXT_PUBLIC_BASE_URL` set to the final production domain.
+- [x] :orange_circle: **`metadataBase` points to staging URL** -- `layout.tsx:30` sets `metadataBase` using `process.env.NEXT_PUBLIC_BASE_URL` with localhost fallback. On the deployed staging site, all OG image URLs resolve to `shepherds-website-staging.vercel.app`. Ensure the production deployment has `NEXT_PUBLIC_BASE_URL` set to the final production domain.
 
 ### 1.3 Meta Descriptions
 

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Section from '../components/ui/Section';
 import {
   FaCompactDisc,
@@ -15,6 +16,12 @@ import ShippingTable from '../components/purchase/ShippingTable';
 import ShippingInfo from '../components/purchase/ShippingInfo';
 import ButtonLink from '../components/ui/ButtonLink';
 import ScrollReveal from '../components/ui/ScrollReveal';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/purchase',
+  },
+};
 
 const products: Product[] = [
   {
