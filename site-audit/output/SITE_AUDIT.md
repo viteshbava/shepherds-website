@@ -274,7 +274,7 @@
 ### 4.8 Images & Media
 
 - [ ] :yellow_circle: **Gallery images all share same generic alt text** -- `Gallery.tsx:43`, `FullScreenGallery.tsx:67`, and `ImageGrid.tsx:19` use `'Shepherds of Cassini gallery photo'` for every image. Ideally each should have unique alt text, or at minimum include an index (e.g., "Band photo 1 of 6").
-- [ ] :yellow_circle: **VideoEmbed fallback title is generic** -- `VideoEmbed.tsx:30` defaults to `'YouTube Video'` if no title prop is passed. While the current usage in `AlbumRelease.tsx:19` passes `title='Red Veil'`, any future usage without a title will be inaccessible.
+- [x] :yellow_circle: **VideoEmbed fallback title is generic** -- `VideoEmbed.tsx:30` defaults to `'YouTube Video'` if no title prop is passed. While the current usage in `AlbumRelease.tsx:19` passes `title='Red Veil'`, any future usage without a title will be inaccessible.
 - [x] :green_circle: **Album cover images have descriptive alt text** -- All album data includes meaningful `altText` values.
 - [x] :green_circle: **Background image has descriptive alt text** -- "In Thrall to Heresy back cover".
 

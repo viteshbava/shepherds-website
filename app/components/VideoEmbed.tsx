@@ -27,7 +27,7 @@ const VideoEmbed = ({ url, title }: VideoEmbedProps) => {
     <iframe
       className='rounded-md lg:rounded-xl mx-auto w-full lg:max-w-[972px] aspect-video'
       src={embedUrl}
-      title={title || 'YouTube Video'}
+      title={title}
       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
       referrerPolicy='strict-origin-when-cross-origin'
       loading='lazy'
