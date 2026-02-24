@@ -48,11 +48,11 @@
 
 ### 1.5 Structured Data / Schema Markup
 
-- [ ] :orange_circle: **WebSite schema is minimal** -- `layout.tsx:35-39` only includes `@type` and `name`. Missing `url`, `description`, `publisher`, and `potentialAction` (SearchAction). Expand with at minimum `url` and `description`.
-- [ ] :orange_circle: **No MusicGroup schema** -- The band has no `MusicGroup` structured data. This is the most important schema type for a music artist website. Should include members, albums, genre, founding date, and `sameAs` links to all streaming/social profiles.
-- [ ] :orange_circle: **No MusicAlbum/MusicRecording schema on album pages** -- Music release pages (`/music/[slug]`) have no structured data. Each should have `MusicAlbum` schema with tracks, release date, artist, and links.
-- [ ] :yellow_circle: **No BreadcrumbList schema** -- Album pages have an implicit hierarchy (Home > Music > Album Name) but no breadcrumb structured data.
-- [ ] :white_circle: **No `sameAs` links in any schema** -- Social profiles (Bandcamp, Spotify, Apple Music, YouTube, Facebook, Instagram) should be linked via `sameAs` in the Organization or MusicGroup schema.
+- [x] :orange_circle: **WebSite schema is minimal** -- `layout.tsx:35-39` only includes `@type` and `name`. Missing `url`, `description`, `publisher`, and `potentialAction` (SearchAction). Expand with at minimum `url` and `description`.
+- [x] :orange_circle: **No MusicGroup schema** -- The band has no `MusicGroup` structured data. This is the most important schema type for a music artist website. Should include members, albums, genre, founding date, and `sameAs` links to all streaming/social profiles.
+- [x] :orange_circle: **No MusicAlbum/MusicRecording schema on album pages** -- Music release pages (`/music/[slug]`) have no structured data. Each should have `MusicAlbum` schema with tracks, release date, artist, and links.
+- [x] :yellow_circle: **No BreadcrumbList schema** -- Album pages have an implicit hierarchy (Home > Music > Album Name) but no breadcrumb structured data.
+- [x] :white_circle: **No `sameAs` links in any schema** -- Social profiles (Bandcamp, Spotify, Apple Music, YouTube, Facebook, Instagram) should be linked via `sameAs` in the Organization or MusicGroup schema.
 
 ### 1.6 Open Graph / Social Meta
 
