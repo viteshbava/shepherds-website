@@ -1,18 +1,10 @@
 import type { Metadata } from 'next';
 import Section from '../components/ui/Section';
-import {
-  FaCompactDisc,
-  FaEnvelope,
-  FaMobileAlt,
-  FaRecordVinyl,
-  FaUserFriends,
-} from 'react-icons/fa';
+import { FaEnvelope, FaMobileAlt, FaUserFriends } from 'react-icons/fa';
 import BackgroundImage from '../components/BackgroundImage';
-import Image from 'next/image';
 import { getGalleryImages } from '../libs/getGalleryImages';
 import { IconNames, Product, Theme } from '../types';
 import ProductList from '../components/purchase/ProductList';
-import ShippingTable from '../components/purchase/ShippingTable';
 import ShippingInfo from '../components/purchase/ShippingInfo';
 import ButtonLink from '../components/ui/ButtonLink';
 import ScrollReveal from '../components/ui/ScrollReveal';
@@ -41,7 +33,9 @@ export const metadata: Metadata = {
 const products: Product[] = [
   {
     thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' })[0].url,
-    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' }).map((img) => img.url),
+    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' }).map(
+      (img) => img.url,
+    ),
     thumbAltText: 'In Thrall to Heresy vinyl packaging image',
     productName: 'In Thrall to Heresy',
     productType: '2LP Vinyl',
@@ -52,7 +46,9 @@ const products: Product[] = [
   },
   {
     thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' })[0].url,
-    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' }).map((img) => img.url),
+    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' }).map(
+      (img) => img.url,
+    ),
     thumbAltText: 'In Thrall to Heresy CD jewel case packaging image',
     productName: 'In Thrall to Heresy',
     productType: 'CD',
@@ -74,7 +70,9 @@ const products: Product[] = [
   },
   {
     thumbSrc: '/imgs/selftitled/album-gallery/01.jpg',
-    gallery: getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' }).map((img) => img.url),
+    gallery: getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' }).map(
+      (img) => img.url,
+    ),
     thumbAltText: 'Shepherds of Cassini jewel case image',
     productName: "'Shepherds of Cassini'",
     productType: 'CD',
