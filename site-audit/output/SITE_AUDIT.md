@@ -76,7 +76,7 @@
 
 ### 1.9 Image SEO
 
-- [ ] :yellow_circle: **Gallery images have generic alt text** -- `Gallery.tsx:43`, `FullScreenGallery.tsx:67`, and `ImageGrid.tsx:19` all use `alt='Shepherds of Cassini gallery photo'` for every image. Each image should have a unique, descriptive alt text.
+- [x] :yellow_circle: **Gallery images have generic alt text** -- `Gallery.tsx:43`, `FullScreenGallery.tsx:67`, and `ImageGrid.tsx:19` all use `alt='Shepherds of Cassini gallery photo'` for every image. Each image should have a unique, descriptive alt text.
 - [x] :yellow_circle: **Product images have placeholder alt text** -- `purchase/page.tsx:23,33` uses "Placeholder Vinyl image" and "Placeholder CD image". Replace with actual descriptive alt text.
 - [x] :green_circle: **Album cover images have good alt text** -- Each album's `frontCover.altText` includes the album name and artist.
 - [x] :green_circle: **About photo has descriptive alt text** -- "Shepherds of Cassini band members standing together".
@@ -96,7 +96,7 @@
 ### 1.12 Analytics
 
 - [x] :green_circle: **Google Analytics implemented** -- `layout.tsx:64` uses `@next/third-parties` GoogleAnalytics with tag `G-L7J30WL4PG`.
-- [ ] :yellow_circle: **No Google Search Console verification detected** -- Ensure GSC is set up with the production domain and sitemap submitted.
+- [x] :yellow_circle: **No Google Search Console verification detected** -- Ensure GSC is set up with the production domain and sitemap submitted.
 
 ---
 
