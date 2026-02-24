@@ -124,7 +124,7 @@
 - [x] :red_circle: **Hardcoded password in client bundle** -- `layout.tsx:33` has `const hardcodedPassword = 'nail';`. Even though the `<PasswordWrapper>` is commented out (lines 51, 62), the password string is still included in the JavaScript bundle shipped to users. **Remove the password variable entirely, or move it to a server-only environment variable.**
 - [ ] :orange_circle: **PasswordScreen stores password in plain text in localStorage** -- `PasswordScreen.tsx:15` stores `localStorage.setItem('authenticated', enteredPassword)` -- the raw password. If password protection is re-enabled, this should use a hashed token instead.
 - [x] :green_circle: **No `.env` files committed** -- `.gitignore` properly excludes `.env*.local`.
-- [ ] :yellow_circle: **`.gitignore` only excludes `.env*.local`** -- A file named `.env` (without `.local` suffix) would NOT be excluded. Add `.env` to `.gitignore` as well.
+- [x] :yellow_circle: **`.gitignore` only excludes `.env*.local`** -- A file named `.env` (without `.local` suffix) would NOT be excluded. Add `.env` to `.gitignore` as well.
 
 ### 2.4 XSS Prevention
 
