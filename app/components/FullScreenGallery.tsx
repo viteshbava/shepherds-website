@@ -67,7 +67,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex 
                 alt='Shepherds of Cassini gallery photo'
                 fill
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                className='object-contain transition-opacity duration-300 opacity-100'
+                className='object-contain'
               />
             </SwiperSlide>
           ))}
