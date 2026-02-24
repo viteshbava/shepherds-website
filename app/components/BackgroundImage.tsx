@@ -112,7 +112,7 @@ const BackgroundImage = ({
               src={url}
               alt={altText}
               fill
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              sizes='100vw'
               className={`absolute top-0 left-0 w-full opacity-0`}
               onLoad={handleImageLoad}
               ref={imageRef}
@@ -132,7 +132,7 @@ const BackgroundImage = ({
               src={url}
               alt={altText}
               fill
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              sizes='100vw'
               className={`absolute top-0 left-0 w-full object-cover opacity-0`}
               onLoad={handleImageLoad}
               ref={imageRef}
