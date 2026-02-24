@@ -25,7 +25,7 @@ const VideoEmbed = ({ url, title }: VideoEmbedProps) => {
 
   return (
     <iframe
-      className='rounded-md lg:rounded-xl mx-auto w-full lg:max-w-[972px] aspect-video'
+      className='rounded-md lg:rounded-xl mx-auto w-full aspect-video'
       src={embedUrl}
       title={title}
       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

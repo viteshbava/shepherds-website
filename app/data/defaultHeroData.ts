@@ -40,7 +40,7 @@ const defaultData: { listenLinks: ListenLink[]; bandCampId: string } = {
     },
   ],
 
-  bandCampId: '1464114074',
+  bandCampId: '2488004756',
 };
 
 export { defaultData };

@@ -30,9 +30,9 @@ export default function Home() {
         finalOpacity={1}
       />
       <Hero />
-      <ScrollReveal className='w-full flex flex-col items-center'>
+      {/* <ScrollReveal className='w-full flex flex-col items-center'>
         <News />
-      </ScrollReveal>
+      </ScrollReveal> */}
       <ScrollReveal className='w-full flex flex-col items-center'>
         <Music />
       </ScrollReveal>
