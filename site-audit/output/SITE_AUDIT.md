@@ -299,7 +299,7 @@
 
 ### 4.12 Miscellaneous
 
-- [ ] :yellow_circle: **Copyright year hardcoded to 2024** -- `Copyright.tsx:4` renders "2024 Shepherds of Cassini". Should be dynamically generated with `new Date().getFullYear()` or updated to 2025/2026.
+- [x] :yellow_circle: **Copyright year hardcoded to 2024** -- `Copyright.tsx:4` renders "2024 Shepherds of Cassini". Should be dynamically generated with `new Date().getFullYear()` or updated to 2025/2026.
 - [ ] :yellow_circle: **External links missing `rel` context** -- `SocialIcons.tsx` and other external links use `target='_blank'`. Next.js `<Link>` automatically adds `rel="noopener"` but not `rel="noreferrer"` for external links. Consider adding both explicitly for privacy.
 
 ---
