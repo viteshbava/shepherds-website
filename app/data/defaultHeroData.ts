@@ -5,9 +5,14 @@ const defaultData: { listenLinks: ListenLink[]; bandCampId: string } = {
     {
       icon: IconNames.Bandcamp,
       label: 'Bandcamp',
-      secondaryLabel: 'Buy physical albums',
       ariaLabel: 'Listen / buy on Bandcamp',
       href: 'https://shepherdsofcassini.bandcamp.com/',
+    },
+    {
+      icon: IconNames.ShoppingCart,
+      label: 'Buy CDs / Vinyl',
+      ariaLabel: 'Listen / buy on Bandcamp',
+      href: '/purchase',
     },
     {
       icon: IconNames.Spotify,
@@ -34,6 +39,7 @@ const defaultData: { listenLinks: ListenLink[]; bandCampId: string } = {
       href: 'https://www.amazon.com/music/player/artists/B00GHA5UKW',
     },
   ],
+
   bandCampId: '1464114074',
 };
 

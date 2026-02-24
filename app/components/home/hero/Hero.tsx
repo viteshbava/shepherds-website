@@ -25,9 +25,9 @@ if (releaseState === 'single-released') {
   data = redVeilData;
 }
 if (releaseState === 'album-released') {
-  subHeading = 'New album streaming now';
+  subHeading = 'Psychedelic prog from Auckland, New Zealand';
   images = getGalleryImages({ folderPath: '/imgs/hero-album-released' }).map((img) => img.url);
-  data = heresyData;
+  data = defaultData;
 }
 
 const Hero = () => {
@@ -43,7 +43,7 @@ const Hero = () => {
               {releaseState === 'single-released' && (
                 <h2 className='red-veil text-2xl md:text-3xl font-bold'>Red Veil</h2>
               )}
-              {releaseState === 'album-released' && (
+              {/* {releaseState === 'album-released' && (
                 <div className='relative mx-auto max-w-[350px] h-[80px]'>
                   <BlurImage
                     src='/imgs/heresy/album-logo.webp'
@@ -53,11 +53,13 @@ const Hero = () => {
                     sizes='(max-width: 768px) 100vw, (max-width: 1920px) 50vw, 33vw'
                   />
                 </div>
-              )}
+              )} */}
               {releaseState === 'single-released' ? (
                 <h3 className='text-lg sm:text-xl mb-2 sm:mb-3 gold-heading'>{subHeading}</h3>
               ) : (
-                <h2 className='text-lg sm:text-xl mb-2 sm:mb-3 gold-heading'>{subHeading}</h2>
+                <>
+                  <h2 className='text-xl md:text-3xl mb-2 sm:mb-6 gold-heading'>{subHeading}</h2>
+                </>
               )}
               <BandcampPlayer albumId={data.bandCampId} trackId={data.trackId} />
             </div>
