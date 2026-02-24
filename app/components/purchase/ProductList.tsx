@@ -1,10 +1,6 @@
 'use client';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import FullScreenGallery from '../FullScreenGallery';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
 import { Image, Product } from '@/app/types';
@@ -21,6 +17,31 @@ const toImages = (urls: string[]): Image[] =>
 const ProductList = ({ products }: ProductListProps) => {
   const [modalImages, setModalImages] = useState<Image[] | null>(null);
   const setIsBodyScrollLocked = useLockBodyScroll();
+  const scrollRef = useRef<HTMLUListElement>(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.clientX;
+    scrollLeft.current = scrollRef.current!.scrollLeft;
+    scrollRef.current!.style.scrollSnapType = 'none';
+    scrollRef.current!.style.scrollBehavior = 'auto';
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    scrollRef.current!.scrollLeft = scrollLeft.current - (e.clientX - startX.current);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    scrollRef.current!.style.scrollSnapType = '';
+    scrollRef.current!.style.scrollBehavior = '';
+  };
 
   const handleImageClick = (images: Image[] | null) => {
     setModalImages(images);
@@ -35,24 +56,24 @@ const ProductList = ({ products }: ProductListProps) => {
   return (
     <>
       <div className='-mx-[10vw] text-left mt-10 sm:hidden'>
-        <Swiper
-          className='w-full'
-          modules={[Navigation]}
-          spaceBetween={20}
-          slidesPerView={'auto'}
-          centeredSlides={false}
-          grabCursor={true}
-          style={{ paddingLeft: '10vw', paddingRight: '20%' }}>
+        <ul
+          ref={scrollRef}
+          className='flex gap-5 overflow-x-auto cursor-grab scroll-pl-[10vw]
+                     snap-x snap-mandatory scroll-smooth select-none
+                     [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]'
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}>
           {products.map((product, index) => (
-            <SwiperSlide key={index}>
+            <li key={index} className='shrink-0 w-[70vw] snap-start first:ml-[10vw] last:mr-[20%]'>
               <ProductItem
-                key={index}
                 product={product}
                 onClick={() => handleImageClick(toImages(product.gallery || [product.thumbSrc]))}
               />
-            </SwiperSlide>
+            </li>
           ))}
-        </Swiper>
+        </ul>
       </div>
       <div className='mt-10 hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 text-left gap-4 w-full'>
         {products.map((product, index) => (
