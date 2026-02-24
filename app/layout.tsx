@@ -33,8 +33,6 @@ export const metadata: Metadata = {
   }),
 };
 
-const hardcodedPassword = 'nail';
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,21 +40,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        suppressHydrationWarning={true}
-        className={`${baseFont.className} ${cormorantUpright.variable} ${jura.variable} bg-black text-shepherds_white flex flex-col items-center`}>
-        {/* <PasswordWrapper password={hardcodedPassword}> */}
+      <head>
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getMusicGroupSchema()) }}
         />
-        <LoadSection />
-        <Header />
-        <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
-          {children}
-        </main>
-        <Footer />
-        {/* </PasswordWrapper> */}
+      </head>
+      <body
+        suppressHydrationWarning={true}
+        className={`${baseFont.className} ${cormorantUpright.variable} ${jura.variable} bg-black text-shepherds_white flex flex-col items-center`}>
+        <PasswordWrapper password={process.env.BAND_PASSWORD}>
+          <LoadSection />
+          <Header />
+          <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
+            {children}
+          </main>
+          <Footer />
+        </PasswordWrapper>
       </body>
       <GoogleAnalytics gaId='G-L7J30WL4PG' />
     </html>

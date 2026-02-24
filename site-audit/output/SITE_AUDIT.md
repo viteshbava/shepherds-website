@@ -104,7 +104,7 @@
 
 ### 2.1 Security Headers
 
-- [ ] :red_circle: **No security headers configured at all** -- `next.config.mjs` is completely empty (`const nextConfig = {};`). None of the following critical headers are set:
+- [x] :red_circle: **No security headers configured at all** -- `next.config.mjs` is completely empty (`const nextConfig = {};`). None of the following critical headers are set:
   - **Content-Security-Policy (CSP)** -- No CSP header. The site embeds Bandcamp and YouTube iframes, which need to be whitelisted. Implement a CSP allowing `'self'`, `bandcamp.com`, `youtube.com`, `www.youtube.com`, `www.googletagmanager.com`, `www.google-analytics.com`, and Next.js inline scripts.
   - **X-Content-Type-Options** -- Missing `nosniff`. Prevents MIME-type sniffing attacks.
   - **X-Frame-Options** -- Site can be embedded in iframes by any domain, enabling clickjacking.
@@ -112,8 +112,8 @@
   - **Permissions-Policy** -- No restriction on browser feature access (camera, microphone, geolocation).
   - Add all of these via the `headers()` config in `next.config.mjs`.
 - [x] :green_circle: **HSTS present** -- `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload` (provided by Vercel).
-- [ ] :orange_circle: **`X-Powered-By` not disabled** -- `next.config.mjs` does not set `poweredByHeader: false`. The `X-Powered-By: Next.js` header leaks framework information. While not observed on the current deployment (Vercel may strip it), it should be explicitly disabled.
-- [ ] :yellow_circle: **Missing Cross-Origin headers** -- Consider adding `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Resource-Policy: same-origin` for enhanced isolation.
+- [x] :orange_circle: **`X-Powered-By` not disabled** -- `next.config.mjs` does not set `poweredByHeader: false`. The `X-Powered-By: Next.js` header leaks framework information. While not observed on the current deployment (Vercel may strip it), it should be explicitly disabled.
+- [x] :yellow_circle: **Missing Cross-Origin headers** -- Consider adding `Cross-Origin-Opener-Policy: same-origin` and `Cross-Origin-Resource-Policy: same-origin` for enhanced isolation.
 
 ### 2.2 CORS
 
