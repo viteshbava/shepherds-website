@@ -157,7 +157,7 @@
 
 ### 3.1 Image Optimization
 
-- [ ] :red_circle: **Massive unoptimized images in `/public`** -- 62 images totaling **73MB**. The 6 largest files are 4.3-5.1MB each (PNG album art). While Next.js Image component will serve optimized versions at runtime, these oversized source files cause:
+- [x] :red_circle: **Massive unoptimized images in `/public`** -- 62 images totaling **73MB**. The 6 largest files are 4.3-5.1MB each (PNG album art). While Next.js Image component will serve optimized versions at runtime, these oversized source files cause:
   - Slower builds
   - Larger git repository
   - Unnecessarily large images served even after optimization (Next.js can only downsize, not magic away detail from a 5MB PNG)
