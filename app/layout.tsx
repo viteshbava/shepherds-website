@@ -23,8 +23,7 @@ const jura = Jura({
 
 export const metadata: Metadata = {
   title: 'Shepherds of Cassini | Official Website',
-  description:
-    'Psychedelic prog metal from Auckland, New Zealand. Shepherds of Cassini is Omar Al-Hashimi – Drums, Vitesh Bava – Bass, Felix Lun – Violin, Brendan Zwaan – Guitar, Vocals, Keys',
+  description: 'Shepherds of Cassini – psychedelic prog metal from Auckland, New Zealand.',
   keywords:
     'shepherds of cassini new zealand music rock metal progressive post prog psychedelic auckland',
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),

@@ -18,6 +18,9 @@ import ButtonLink from '../components/ui/ButtonLink';
 import ScrollReveal from '../components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
+  title: 'Purchase – Shepherds of Cassini',
+  description:
+    'Buy Shepherds of Cassini vinyl, CDs, and merch. Order directly from the band or via Bandcamp. Shipping available worldwide.',
   alternates: {
     canonical: '/purchase',
   },

@@ -1,9 +1,10 @@
 import { MusicData } from '../types';
 
-export const formatMetaDescr = (musicData: MusicData): string => {
-  const { name, releaseDate, trackListing, credits } = musicData;
+const MAX_LENGTH = 155;
 
-  // Format the release date
+export const formatMetaDescr = (musicData: MusicData): string => {
+  const { name, releaseDate, trackListing } = musicData;
+
   const releaseDateString = releaseDate
     ? releaseDate.toLocaleDateString('en-US', {
         year: 'numeric',
@@ -12,11 +13,26 @@ export const formatMetaDescr = (musicData: MusicData): string => {
       })
     : '(date TBC)';
 
-  // Format track listing
-  const tracks = trackListing.join(', ');
+  const base = `'${name}' by Shepherds of Cassini, released ${releaseDateString}.`;
 
-  // Format credits
-  const creditsString = credits.map((credit) => `${credit.part_1} ${credit.part_2}`).join(', ');
+  // Try to fit as many track names as possible within the limit
+  const tracksPrefix = ' Tracks: ';
+  const ellipsis = '...';
+  const available = MAX_LENGTH - base.length - tracksPrefix.length - ellipsis.length;
 
-  return `Shepherds of Cassini's '${name}' was released on ${releaseDateString}. ${creditsString}. The album includes tracks ${tracks}.`;
+  if (available > 0) {
+    let tracks = '';
+    for (let i = 0; i < trackListing.length; i++) {
+      const separator = i === 0 ? '' : ', ';
+      const next = separator + trackListing[i];
+      if (tracks.length + next.length > available) {
+        return base + tracksPrefix + tracks + ellipsis;
+      }
+      tracks += next;
+    }
+    // All tracks fit
+    return (base + tracksPrefix + tracks).slice(0, MAX_LENGTH);
+  }
+
+  return base.slice(0, MAX_LENGTH);
 };
