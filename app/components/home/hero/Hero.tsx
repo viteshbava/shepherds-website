@@ -16,17 +16,17 @@ import Icon from '../../icon/Icon';
 const releaseState = getReleaseState();
 
 let subHeading = 'Listen | Purchase';
-let images = getGalleryImages({ folderPath: '/imgs/hero-imgs' });
+let images = getGalleryImages({ folderPath: '/imgs/hero-imgs' }).map((img) => img.url);
 let data: HeroLinks = defaultData;
 
 if (releaseState === 'single-released') {
   subHeading = 'New single streaming now';
-  images = getGalleryImages({ folderPath: '/imgs/hero-single-released' });
+  images = getGalleryImages({ folderPath: '/imgs/hero-single-released' }).map((img) => img.url);
   data = redVeilData;
 }
 if (releaseState === 'album-released') {
   subHeading = 'New album streaming now';
-  images = getGalleryImages({ folderPath: '/imgs/hero-album-released' });
+  images = getGalleryImages({ folderPath: '/imgs/hero-album-released' }).map((img) => img.url);
   data = heresyData;
 }
 

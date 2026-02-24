@@ -6,9 +6,9 @@ import ButtonLink from '../../ui/ButtonLink';
 import ImageGrid from './ImageGrid';
 import useLockBodyScroll from '@/app/hooks/useLockBodyScroll';
 import FullScreenGallery from '../../FullScreenGallery';
-import { IconNames } from '@/app/types';
+import { IconNames, Image } from '@/app/types';
 
-const Contact = ({ images }: { images: string[] }) => {
+const Contact = ({ images }: { images: Image[] }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const setIsBodyScrollLocked = useLockBodyScroll();

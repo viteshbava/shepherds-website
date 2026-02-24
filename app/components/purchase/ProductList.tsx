@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import { useState } from 'react';
 import FullScreenGallery from '../FullScreenGallery';
 import useLockBodyScroll from '../../hooks/useLockBodyScroll';
-import { Product } from '@/app/types';
+import { Image, Product } from '@/app/types';
 import ProductItem from './ProductItem';
 import ScrollReveal from '../ui/ScrollReveal';
 
@@ -15,11 +15,14 @@ interface ProductListProps {
   products: Product[];
 }
 
+const toImages = (urls: string[]): Image[] =>
+  urls.map((url) => ({ url, altText: '' }));
+
 const ProductList = ({ products }: ProductListProps) => {
-  const [modalImages, setModalImages] = useState<string[] | null>(null);
+  const [modalImages, setModalImages] = useState<Image[] | null>(null);
   const setIsBodyScrollLocked = useLockBodyScroll();
 
-  const handleImageClick = (images: string[] | null) => {
+  const handleImageClick = (images: Image[] | null) => {
     setModalImages(images);
     setIsBodyScrollLocked(true);
   };
@@ -45,7 +48,7 @@ const ProductList = ({ products }: ProductListProps) => {
               <ProductItem
                 key={index}
                 product={product}
-                onClick={() => handleImageClick(product.gallery || [product.thumbSrc])}
+                onClick={() => handleImageClick(toImages(product.gallery || [product.thumbSrc]))}
               />
             </SwiperSlide>
           ))}
@@ -56,7 +59,7 @@ const ProductList = ({ products }: ProductListProps) => {
           <ScrollReveal key={index} delay={index * 120}>
             <ProductItem
               product={product}
-              onClick={() => handleImageClick(product.gallery || [product.thumbSrc])}
+              onClick={() => handleImageClick(toImages(product.gallery || [product.thumbSrc]))}
             />
           </ScrollReveal>
         ))}

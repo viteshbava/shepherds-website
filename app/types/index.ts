@@ -11,7 +11,7 @@ export interface Credit {
   part_2?: string;
 }
 
-interface Image {
+export interface Image {
   url: string;
   altText: string;
 }
@@ -45,7 +45,7 @@ export interface MusicData {
   listenLinks: ListenLink[];
   credits: Credit[];
   theme: Theme;
-  galleryImages: string[];
+  galleryImages: Image[];
   openGraphImg: string;
 }
 

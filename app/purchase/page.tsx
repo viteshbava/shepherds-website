@@ -40,8 +40,8 @@ export const metadata: Metadata = {
 
 const products: Product[] = [
   {
-    thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' })[0],
-    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' }),
+    thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' })[0].url,
+    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-vinyl' }).map((img) => img.url),
     thumbAltText: 'In Thrall to Heresy vinyl packaging image',
     productName: 'In Thrall to Heresy',
     productType: '2LP Vinyl',
@@ -51,8 +51,8 @@ const products: Product[] = [
     details: ['Gatefold jacket', '2 sided lyric insert', 'Original art by Moonroot'],
   },
   {
-    thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' })[0],
-    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' }),
+    thumbSrc: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' })[0].url,
+    gallery: getGalleryImages({ folderPath: '/imgs/heresy/album-gallery-cd' }).map((img) => img.url),
     thumbAltText: 'In Thrall to Heresy CD jewel case packaging image',
     productName: 'In Thrall to Heresy',
     productType: 'CD',
@@ -63,7 +63,7 @@ const products: Product[] = [
   },
   {
     thumbSrc: '/imgs/helios/album-gallery/01-IMG_3608.jpg',
-    gallery: getGalleryImages({ folderPath: '/imgs/helios/album-gallery' }),
+    gallery: getGalleryImages({ folderPath: '/imgs/helios/album-gallery' }).map((img) => img.url),
     thumbAltText: 'Helios Forsaken digipack image',
     productName: 'Helios Forsaken',
     productType: 'CD',
@@ -74,7 +74,7 @@ const products: Product[] = [
   },
   {
     thumbSrc: '/imgs/selftitled/album-gallery/01.jpg',
-    gallery: getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' }),
+    gallery: getGalleryImages({ folderPath: '/imgs/selftitled/album-gallery' }).map((img) => img.url),
     thumbAltText: 'Shepherds of Cassini jewel case image',
     productName: "'Shepherds of Cassini'",
     productType: 'CD',

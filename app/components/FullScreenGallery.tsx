@@ -1,15 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import BlurImage from './BlurImage';
 import { HamburgerButton } from './header/HamburgerButton';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css'; // Import Swiper styles
-import useLockBodyScroll from '../hooks/useLockBodyScroll';
+import { Image } from '@/app/types';
 
 interface FullscreenImageProps {
-  images: string[];
+  images: Image[];
   initialIndex?: number;
   onClose: () => void;
 }
@@ -63,8 +63,8 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex 
           {images.map((image, index) => (
             <SwiperSlide key={index}>
               <BlurImage
-                src={image}
-                alt='Shepherds of Cassini gallery photo'
+                src={image.url}
+                alt={image.altText}
                 fill
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='object-contain'

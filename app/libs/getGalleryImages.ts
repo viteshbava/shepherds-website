@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { Image } from '@/app/types';
 
 interface GetGalleryImagesProps {
   folderPath: string;
@@ -9,7 +10,7 @@ interface GetGalleryImagesProps {
 export const getGalleryImages = ({
   folderPath,
   shuffle = false,
-}: GetGalleryImagesProps): string[] => {
+}: GetGalleryImagesProps): Image[] => {
   const galleryDir = path.join(process.cwd(), `public/${folderPath}`);
   const imageFiles = fs
     .readdirSync(galleryDir)
@@ -23,5 +24,15 @@ export const getGalleryImages = ({
     }
   }
 
-  return imageFiles.map((image) => `${folderPath}/${image}`);
+  // Read alt text metadata if available
+  const altTextPath = path.join(galleryDir, '_alt-text.json');
+  let altTextMap: Record<string, string> = {};
+  if (fs.existsSync(altTextPath)) {
+    altTextMap = JSON.parse(fs.readFileSync(altTextPath, 'utf-8'));
+  }
+
+  return imageFiles.map((image) => ({
+    url: `${folderPath}/${image}`,
+    altText: altTextMap[image] ?? '',
+  }));
 };
