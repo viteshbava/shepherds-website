@@ -248,20 +248,20 @@
 
 ### 4.5 Interactive Elements
 
-- [ ] :red_circle: **Social icon links have no accessible names** -- `SocialIcons.tsx:11-35` wraps SVG icons in `<Link>` elements with no `aria-label`, no visible text, and no `<title>` element inside the SVGs. Screen readers announce these as empty links or just "link". Must add `aria-label` to each (e.g., `aria-label='Bandcamp'`, `aria-label='Spotify'`). **WCAG 1.1.1 / 4.1.2 failure.**
-- [ ] :orange_circle: **Gallery Previous/Next buttons lack accessible labels** -- `FullScreenGallery.tsx:48-53` uses HTML entities `&#10094;` and `&#10095;` (chevron characters) as button content with no `aria-label`. Screen readers may not announce these meaningfully. Add `aria-label='Previous image'` and `aria-label='Next image'`.
-- [ ] :orange_circle: **Hamburger button `aria-label` doesn't update** -- `Header.tsx:95` always says `aria-label='Open menu'` even when the menu is open and the button shows an X icon. Should dynamically toggle to `'Close menu'` when `isHamburgerOpen` is true.
-- [ ] :yellow_circle: **`type='nav'` set on `<a>` elements** -- `Navbar.tsx:32` and `HamburgerMenu.tsx:118` set `type='nav'` on `<Link>` (rendered as `<a>`). `type` is not a valid attribute for anchor elements (it's valid on `<button>`, `<input>`, etc.). Remove these attributes.
-- [ ] :yellow_circle: **No `aria-current` on active navigation link** -- Navigation links don't indicate the currently active page. Add `aria-current='page'` to the active link for screen reader users.
+- [x] :red_circle: **Social icon links have no accessible names** -- `SocialIcons.tsx:11-35` wraps SVG icons in `<Link>` elements with no `aria-label`, no visible text, and no `<title>` element inside the SVGs. Screen readers announce these as empty links or just "link". Must add `aria-label` to each (e.g., `aria-label='Bandcamp'`, `aria-label='Spotify'`). **WCAG 1.1.1 / 4.1.2 failure.**
+- [x] :orange_circle: **Gallery Previous/Next buttons lack accessible labels** -- `FullScreenGallery.tsx:48-53` uses HTML entities `&#10094;` and `&#10095;` (chevron characters) as button content with no `aria-label`. Screen readers may not announce these meaningfully. Add `aria-label='Previous image'` and `aria-label='Next image'`.
+- [x] :orange_circle: **Hamburger button `aria-label` doesn't update** -- `Header.tsx:95` always says `aria-label='Open menu'` even when the menu is open and the button shows an X icon. Should dynamically toggle to `'Close menu'` when `isHamburgerOpen` is true.
+- [x] :yellow_circle: **`type='nav'` set on `<a>` elements** -- `Navbar.tsx:32` and `HamburgerMenu.tsx:118` set `type='nav'` on `<Link>` (rendered as `<a>`). `type` is not a valid attribute for anchor elements (it's valid on `<button>`, `<input>`, etc.). Remove these attributes.
+- [x] :yellow_circle: **No `aria-current` on active navigation link** -- Navigation links don't indicate the currently active page. Add `aria-current='page'` to the active link for screen reader users.
 - [x] :green_circle: **CTA/Button components use correct semantics** -- `Button.tsx` uses `<button>`, `ButtonLink.tsx` uses `<Link>/<a>`.
 - [x] :green_circle: **Button aria-labels provided** -- Listen/purchase buttons have descriptive `ariaLabel` props.
 
 ### 4.6 Screen Reader Support
 
-- [ ] :orange_circle: **BandcampPlayer iframes missing `title`** -- `BandcampPlayer.tsx:19,24` renders two `<iframe>` elements with no `title` attribute. Screen readers use the `title` to announce what the iframe contains. Add `title='Bandcamp music player'`. **WCAG 4.1.2 concern.**
-- [ ] :orange_circle: **FullScreenGallery not announced as dialog** -- `FullScreenGallery.tsx:39` is a modal overlay using a plain `<div>`. It has no `role='dialog'`, `aria-modal='true'`, or `aria-label`. Screen readers don't know a modal has opened. Add proper ARIA dialog attributes.
-- [ ] :yellow_circle: **BioText "Read bio" toggle missing `aria-expanded`** -- `BioText.tsx:42` has a button that toggles expanded content but doesn't communicate its state. Add `aria-expanded={isExpanded}` so screen readers announce "Read bio, collapsed" or "Hide bio, expanded".
-- [ ] :yellow_circle: **`role='menu'` used incorrectly** -- `HamburgerMenu.tsx:100` uses `role='menu'` for what is a navigation menu. The WAI-ARIA `menu` role is for application-style menus (like right-click menus), not navigation. Use `role='dialog'` or just rely on the `<nav>` element inside.
+- [x] :orange_circle: **BandcampPlayer iframes missing `title`** -- `BandcampPlayer.tsx:19,24` renders two `<iframe>` elements with no `title` attribute. Screen readers use the `title` to announce what the iframe contains. Add `title='Bandcamp music player'`. **WCAG 4.1.2 concern.**
+- [x] :orange_circle: **FullScreenGallery not announced as dialog** -- `FullScreenGallery.tsx:39` is a modal overlay using a plain `<div>`. It has no `role='dialog'`, `aria-modal='true'`, or `aria-label`. Screen readers don't know a modal has opened. Add proper ARIA dialog attributes.
+- [x] :yellow_circle: **BioText "Read bio" toggle missing `aria-expanded`** -- `BioText.tsx:42` has a button that toggles expanded content but doesn't communicate its state. Add `aria-expanded={isExpanded}` so screen readers announce "Read bio, collapsed" or "Hide bio, expanded".
+- [x] :yellow_circle: **`role='menu'` used incorrectly** -- `HamburgerMenu.tsx:100` uses `role='menu'` for what is a navigation menu. The WAI-ARIA `menu` role is for application-style menus (like right-click menus), not navigation. Use `role='dialog'` or just rely on the `<nav>` element inside.
 - [x] :green_circle: **`inert` attribute on closed menu** -- `HamburgerMenu.tsx:99` properly sets `inert` when the menu is closed, preventing focus and screen reader interaction.
 
 ### 4.7 Color Contrast

@@ -16,12 +16,14 @@ const BandcampPlayer = ({ albumId, trackId, theme = Theme.Red }: BandcampPlayerP
     <>
       <div className='hidden md:block w-full h-[120px]'>
         <iframe
+          title='Bandcamp music player'
           className='w-full h-full rounded-md opacity-80'
           src={`https://bandcamp.com/EmbeddedPlayer/album=${albumId}/size=large/bgcol=333333/linkcol=${linkCol}/tracklist=false/artwork=none/track=${trackId}/transparent=true/`}
           sandbox='allow-scripts allow-same-origin allow-popups'></iframe>
       </div>
       <div className='md:hidden w-full h-[42px]'>
         <iframe
+          title='Bandcamp music player'
           className='w-full h-full rounded-md opacity-80'
           src={`https://bandcamp.com/EmbeddedPlayer/album=${albumId}/size=small/bgcol=333333/linkcol=${linkCol}/tracklist=false/artwork=none/track=${trackId}/transparent=true/`}
           sandbox='allow-scripts allow-same-origin allow-popups'></iframe>

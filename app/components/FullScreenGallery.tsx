@@ -91,7 +91,7 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex 
   };
 
   return (
-    <div ref={modalRef} className='fixed inset-0 bg-black/80 flex justify-center items-center z-50'>
+    <div ref={modalRef} role='dialog' aria-modal='true' aria-label='Fullscreen image gallery' className='fixed inset-0 bg-black/80 flex justify-center items-center z-50'>
       <div className='fixed z-50 top-0 right-0 pr-2 h-[4.5rem] sm:h-24 flex flex-col justify-center'>
         <button
           ref={closeButtonRef}
