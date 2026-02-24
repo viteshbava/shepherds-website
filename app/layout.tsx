@@ -51,10 +51,15 @@ export default function RootLayout({
       <body
         suppressHydrationWarning={true}
         className={`${baseFont.className} ${cormorantUpright.variable} ${jura.variable} bg-black text-shepherds_white flex flex-col items-center`}>
+        <a
+          href='#main-content'
+          className='sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-black focus:text-shepherds_white'>
+          Skip to content
+        </a>
         <PasswordWrapper password={process.env.BAND_PASSWORD}>
           <LoadSection />
           <Header />
-          <main className='relative w-full flex flex-col grow items-center min-h-full text-center'>
+          <main id='main-content' className='relative w-full flex flex-col grow items-center min-h-full text-center'>
             {children}
           </main>
           <Footer />

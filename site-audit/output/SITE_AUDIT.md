@@ -197,9 +197,9 @@
 ### 3.6 Third-Party Resources
 
 - [ ] :yellow_circle: **No preconnect for Bandcamp** -- The homepage embeds a Bandcamp player iframe. Adding `<link rel="preconnect" href="https://bandcamp.com">` could speed up the embed load.
-- [ ] :yellow_circle: **No preconnect for YouTube** -- Album/news pages embed YouTube videos. Add preconnect hints where these appear above the fold.
+- [x] :yellow_circle: **No preconnect for YouTube** -- Album/news pages embed YouTube videos. Add preconnect hints where these appear above the fold.
 - [x] :green_circle: **Google Analytics loaded via `@next/third-parties`** -- Uses Next.js optimized integration, loaded after page content.
-- [ ] :yellow_circle: **YouTube embeds not lazy loaded** -- `VideoEmbed.tsx:27` renders an iframe immediately without `loading='lazy'`. Since videos appear below the fold on the news section, add `loading='lazy'` to defer iframe loading.
+- [x] :yellow_circle: **YouTube embeds not lazy loaded** -- `VideoEmbed.tsx:27` renders an iframe immediately without `loading='lazy'`. Since videos appear below the fold on the news section, add `loading='lazy'` to defer iframe loading.
 
 ### 3.7 CSS
 
