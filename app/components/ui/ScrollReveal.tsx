@@ -23,8 +23,12 @@ const ScrollReveal = ({
   return (
     <div
       ref={ref}
-      className={`transition-[opacity,transform] duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} ${className}`}
-      style={delay > 0 ? { transitionDelay: `${delay}ms` } : undefined}>
+      className={`transition-[opacity,transform] duration-700 ease-out ${className}`}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'none' : 'translateY(1rem)',
+        ...(delay > 0 ? { transitionDelay: `${delay}ms` } : {}),
+      }}>
       {children}
     </div>
   );
