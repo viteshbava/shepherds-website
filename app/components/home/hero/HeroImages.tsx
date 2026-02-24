@@ -13,9 +13,11 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
 
   // Inside your component
+  const containerRef = useRef<HTMLDivElement>(null);
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
   const isTouchDevice = useRef<boolean>(false);
 
@@ -26,10 +28,22 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
   }, []);
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (images.length === 0) return; // Handle empty images
     if (intervalIdRef.current) clearInterval(intervalIdRef.current);
 
-    if (loaded && !isHovered) {
+    if (loaded && !isHovered && isVisible) {
       intervalIdRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, 4000);
@@ -39,7 +53,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
     return () => {
       if (intervalIdRef.current) clearInterval(intervalIdRef.current);
     };
-  }, [images.length, isHovered, loaded]);
+  }, [images.length, isHovered, loaded, isVisible]);
 
   const onFirstImageLoad = () => {
     setLoaded(true);
@@ -58,6 +72,7 @@ const HeroImages = ({ images, altText, className = '' }: HeroImagesProps) => {
 
   return (
     <div
+      ref={containerRef}
       className={`relative w-full h-full ${className}`}
       onMouseEnter={() => {
         if (!isTouchDevice.current) {
