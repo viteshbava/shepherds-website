@@ -59,8 +59,8 @@
 - [x] :green_circle: **OG tags present on homepage** -- `og:title`, `og:description`, `og:image` (1200x630 PNG) all present.
 - [x] :green_circle: **Twitter Card tags present** -- `twitter:card` set to `summary_large_image` with matching title, description, and image.
 - [x] :green_circle: **Music pages have page-specific OG images** -- Each album page specifies its own OG image (315x315).
-- [ ] :yellow_circle: **OG images on music pages are small** -- `music/[slug]/page.tsx:26` specifies 315x315 images. Recommended OG image size is 1200x630 for optimal display on Facebook/Twitter. Consider generating properly sized OG images for each album.
-- [ ] :orange_circle: **Purchase page has no OG tags** -- Inherits homepage OG data.
+- [x] :yellow_circle: **OG images on music pages are small** -- `music/[slug]/page.tsx:26` specifies 315x315 images. Recommended OG image size is 1200x630 for optimal display on Facebook/Twitter. Consider generating properly sized OG images for each album.
+- [x] :orange_circle: **Purchase page has no OG tags** -- Inherits homepage OG data.
 
 ### 1.7 Favicon & Icons
 

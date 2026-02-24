@@ -24,6 +24,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/purchase',
   },
+  openGraph: {
+    title: 'Purchase – Shepherds of Cassini',
+    description:
+      'Buy Shepherds of Cassini vinyl, CDs, and merch. Order directly from the band or via Bandcamp. Shipping available worldwide.',
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: 'Purchase – Shepherds of Cassini',
+    description:
+      'Buy Shepherds of Cassini vinyl, CDs, and merch. Order directly from the band or via Bandcamp. Shipping available worldwide.',
+    images: [{ url: '/opengraph-image.png', width: 1200, height: 630 }],
+  },
 };
 
 const products: Product[] = [
