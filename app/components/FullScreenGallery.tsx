@@ -15,6 +15,9 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   const touchStartX = useRef(0);
   const touchDeltaX = useRef(0);
   const isSwiping = useRef(false);
@@ -39,9 +42,29 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex 
         goPrev();
       } else if (event.key === 'ArrowRight') {
         goNext();
+      } else if (event.key === 'Tab') {
+        const focusableElements = modalRef.current?.querySelectorAll(
+          'button'
+        ) as NodeListOf<HTMLElement>;
+        if (!focusableElements || focusableElements.length === 0) return;
+
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        if (!modalRef.current?.contains(document.activeElement)) {
+          event.preventDefault();
+          firstFocusable.focus();
+        } else if (event.shiftKey && document.activeElement === firstFocusable) {
+          event.preventDefault();
+          lastFocusable.focus();
+        } else if (!event.shiftKey && document.activeElement === lastFocusable) {
+          event.preventDefault();
+          firstFocusable.focus();
+        }
       }
     };
     document.addEventListener('keydown', handleKeydown);
+    closeButtonRef.current?.focus();
     return () => document.removeEventListener('keydown', handleKeydown);
   }, [onClose, goNext, goPrev]);
 
@@ -68,12 +91,13 @@ const FullscreenImage: React.FC<FullscreenImageProps> = ({ images, initialIndex 
   };
 
   return (
-    <div className='fixed inset-0 bg-black/80 flex justify-center items-center z-50'>
+    <div ref={modalRef} className='fixed inset-0 bg-black/80 flex justify-center items-center z-50'>
       <div className='fixed z-50 top-0 right-0 pr-2 h-[4.5rem] sm:h-24 flex flex-col justify-center'>
         <button
+          ref={closeButtonRef}
           aria-label='Close gallery'
           onClick={onClose}
-          className='flex justify-center items-center focus:outline-none w-14 h-14 sm:w-16 sm:h-16 rounded-full transition hover:opacity-70'>
+          className='flex justify-center items-center focus:outline-none pointer-fine:focus-visible:ring-2 pointer-fine:focus-visible:ring-white/60 w-14 h-14 sm:w-16 sm:h-16 rounded-full transition hover:opacity-70'>
           <HamburgerButton closed={false} />
         </button>
       </div>

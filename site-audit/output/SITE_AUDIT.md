@@ -236,10 +236,10 @@
 
 ### 4.4 Keyboard Navigation
 
-- [ ] :red_circle: **Gallery image grid not keyboard accessible** -- `ImageGrid.tsx:15` and `Gallery.tsx:39` use `<div onClick>` for clickable gallery thumbnails. These elements cannot receive keyboard focus and have no `role`, `tabIndex`, or keyboard event handlers. Convert to `<button>` elements. **WCAG 2.1.1 failure.**
-- [ ] :orange_circle: **Hamburger button focus ring removed** -- `Header.tsx:97` uses `focus:outline-none` with no visible replacement focus indicator. The active/hover states exist but there is no visible focus ring for keyboard users. Add `focus-visible:ring-2 focus-visible:ring-white`. **WCAG 2.4.7 failure.**
-- [ ] :orange_circle: **Gallery close button focus ring removed** -- `FullScreenGallery.tsx:44` uses `focus:outline-none` with no replacement. Same fix needed. **WCAG 2.4.7 failure.**
-- [ ] :orange_circle: **No focus trapping in FullScreenGallery** -- Unlike `HamburgerMenu.tsx` which properly traps focus, the `FullScreenGallery.tsx` gallery modal has no focus trapping. Keyboard users can Tab behind the modal overlay. Implement focus trapping similar to the hamburger menu.
+- [x] :red_circle: **Gallery image grid not keyboard accessible** -- `ImageGrid.tsx:15` and `Gallery.tsx:39` use `<div onClick>` for clickable gallery thumbnails. These elements cannot receive keyboard focus and have no `role`, `tabIndex`, or keyboard event handlers. Convert to `<button>` elements. **WCAG 2.1.1 failure.**
+- [x] :orange_circle: **Hamburger button focus ring removed** -- `Header.tsx:97` uses `focus:outline-none` with no visible replacement focus indicator. The active/hover states exist but there is no visible focus ring for keyboard users. Add `focus-visible:ring-2 focus-visible:ring-white`. **WCAG 2.4.7 failure.**
+- [x] :orange_circle: **Gallery close button focus ring removed** -- `FullScreenGallery.tsx:44` uses `focus:outline-none` with no replacement. Same fix needed. **WCAG 2.4.7 failure.**
+- [x] :orange_circle: **No focus trapping in FullScreenGallery** -- Unlike `HamburgerMenu.tsx` which properly traps focus, the `FullScreenGallery.tsx` gallery modal has no focus trapping. Keyboard users can Tab behind the modal overlay. Implement focus trapping similar to the hamburger menu.
 - [x] :green_circle: **Focus trapping in hamburger menu** -- `HamburgerMenu.tsx:58-78` properly cycles Tab/Shift+Tab within the menu.
 - [x] :green_circle: **Escape key closes hamburger menu** -- `HamburgerMenu.tsx:52-55`.
 - [x] :green_circle: **Escape key closes gallery** -- `FullScreenGallery.tsx:20-21`.
