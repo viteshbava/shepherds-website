@@ -4,8 +4,14 @@ import { formatMetaDescr } from '@/app/libs/formatMetaDescr';
 import MusicTemplate from '@/app/components/music/MusicTemplate';
 import getMusicAlbumSchema from '@/app/libs/getMusicAlbumSchema';
 
+export const dynamicParams = false;
+
 interface IParams {
   slug: string;
+}
+
+export function generateStaticParams() {
+  return musicList.map((release) => ({ slug: release.slug }));
 }
 
 export const generateMetadata = async ({ params }: { params: Promise<IParams> }) => {

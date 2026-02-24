@@ -177,7 +177,7 @@
 
 - [x] :orange_circle: **react-icons imports from 4 different icon sets** -- `Icon.tsx` imports from `react-icons/fa` (7 icons), `react-icons/si` (1), `react-icons/ai` (1), `react-icons/md` (1). Additionally, `purchase/page.tsx` and `ShippingInfo.tsx` import more icons from `react-icons/fa`. Each icon set adds to the bundle. Consider consolidating to a single set or using custom SVG icons (~2-3KB vs estimated 15-25KB gzipped for react-icons).
 - [ ] :yellow_circle: **No bundle analyzer configured** -- No `@next/bundle-analyzer` or similar tool. Add for visibility into bundle composition.
-- [ ] :yellow_circle: **Swiper imported for simple gallery** -- `FullScreenGallery.tsx` and `ProductList.tsx` import Swiper (~30KB gzipped) for what is essentially a prev/next image carousel. A lightweight custom implementation could save significant bundle weight.
+- [x] :yellow_circle: **Swiper imported for simple gallery** -- `FullScreenGallery.tsx` and `ProductList.tsx` import Swiper (~30KB gzipped) for what is essentially a prev/next image carousel. A lightweight custom implementation could save significant bundle weight.
 - [x] :green_circle: **`next.config.mjs` is minimal** -- No unnecessary experimental features enabled.
 
 ### 3.4 Core Web Vitals
