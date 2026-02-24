@@ -30,21 +30,21 @@
 
 ### 1.2 Canonical Tags
 
-- [ ] :red_circle: **No canonical tags on any page** -- No `alternates.canonical` in metadata exports. This means search engines may index the staging URL as the canonical version, or index duplicate URLs with/without trailing slashes. Add canonical URLs to all pages via the Next.js Metadata API.
+- [x] :red_circle: **No canonical tags on any page** -- No `alternates.canonical` in metadata exports. This means search engines may index the staging URL as the canonical version, or index duplicate URLs with/without trailing slashes. Add canonical URLs to all pages via the Next.js Metadata API.
 - [x] :orange_circle: **`metadataBase` points to staging URL** -- `layout.tsx:30` sets `metadataBase` using `process.env.NEXT_PUBLIC_BASE_URL` with localhost fallback. On the deployed staging site, all OG image URLs resolve to `shepherds-website-staging.vercel.app`. Ensure the production deployment has `NEXT_PUBLIC_BASE_URL` set to the final production domain.
 
 ### 1.3 Meta Descriptions
 
-- [ ] :orange_circle: **Homepage meta description too long (223 chars)** -- `layout.tsx:26-27` sets a description of ~223 characters. Optimal SERP display is 120-155 characters. Google will truncate it. Shorten to focus on the key value proposition.
-- [ ] :orange_circle: **Music page descriptions are excessively long** -- `formatMetaDescr.ts` concatenates ALL credits AND ALL track names into a single description string, producing descriptions of 400+ characters. Truncate to 155 characters, focusing on album name, band name, and release date.
-- [ ] :orange_circle: **Purchase page has no metadata** -- `purchase/page.tsx` exports no `metadata` or `generateMetadata`. It inherits the homepage title and description, meaning search results show "Shepherds of Cassini | Official Website" with the homepage description. Add unique title and description.
+- [x] :orange_circle: **Homepage meta description too long (223 chars)** -- `layout.tsx:26-27` sets a description of ~223 characters. Optimal SERP display is 120-155 characters. Google will truncate it. Shorten to focus on the key value proposition.
+- [x] :orange_circle: **Music page descriptions are excessively long** -- `formatMetaDescr.ts` concatenates ALL credits AND ALL track names into a single description string, producing descriptions of 400+ characters. Truncate to 155 characters, focusing on album name, band name, and release date.
+- [x] :orange_circle: **Purchase page has no metadata** -- `purchase/page.tsx` exports no `metadata` or `generateMetadata`. It inherits the homepage title and description, meaning search results show "Shepherds of Cassini | Official Website" with the homepage description. Add unique title and description.
 - [x] :green_circle: **Music release pages have dynamic metadata** -- `music/[slug]/page.tsx:10-33` generates per-page titles, descriptions, keywords, OG and Twitter tags.
 
 ### 1.4 Title Tags
 
 - [x] :green_circle: **Homepage title well-formed** -- "Shepherds of Cassini | Official Website" (42 chars, good).
 - [x] :green_circle: **Music pages have unique titles** -- Format: `{Album Name} - Shepherds of Cassini`.
-- [ ] :orange_circle: **Purchase page has no unique title** -- Inherits homepage title.
+- [x] :orange_circle: **Purchase page has no unique title** -- Inherits homepage title.
 
 ### 1.5 Structured Data / Schema Markup
 

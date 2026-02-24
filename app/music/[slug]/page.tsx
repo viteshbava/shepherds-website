@@ -42,5 +42,70 @@ export default async function MusicRelease({ params }: { params: Promise<IParams
 
   if (!release) redirect('/');
 
-  return <MusicTemplate release={release} />;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'MusicAlbum',
+      name: release.name,
+      url: `${baseUrl}/music/${slug}`,
+      image: `${baseUrl}${release.frontCover.url}`,
+      ...(release.releaseDate && {
+        datePublished: release.releaseDate.toISOString().split('T')[0],
+      }),
+      numTracks: release.trackListing.length,
+      byArtist: {
+        '@type': 'MusicGroup',
+        name: 'Shepherds of Cassini',
+      },
+      track: {
+        '@type': 'ItemList',
+        numberOfItems: release.trackListing.length,
+        itemListElement: release.trackListing.map((track, index) => ({
+          '@type': 'MusicRecording',
+          name: track,
+          position: index + 1,
+          byArtist: {
+            '@type': 'MusicGroup',
+            name: 'Shepherds of Cassini',
+          },
+        })),
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: baseUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Music',
+          item: `${baseUrl}/#music`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: release.name,
+          item: `${baseUrl}/music/${slug}`,
+        },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <MusicTemplate release={release} />
+    </>
+  );
 }
