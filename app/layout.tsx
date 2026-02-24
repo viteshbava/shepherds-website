@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   keywords:
     'shepherds of cassini new zealand music rock metal progressive post prog psychedelic auckland',
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
+  ...(process.env.IS_PRODUCTION !== 'true' && {
+    robots: { index: false, follow: false },
+  }),
 };
 
 const hardcodedPassword = 'nail';
