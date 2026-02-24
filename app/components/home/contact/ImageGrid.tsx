@@ -12,7 +12,9 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
     <div className='grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-4'>
       {images.slice(0, 6).map((image, index) => (
         <ScrollReveal key={image.url} delay={index * 80}>
-          <div
+          <button
+            type='button'
+            aria-label={`View photo: ${image.altText}`}
             className='relative w-full aspect-square cursor-pointer hover:scale-[1.02] transition-all duration-200'
             onClick={() => onClickImage(index)}>
             <BlurImage
@@ -22,7 +24,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images, onClickImage }) => {
               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
               className='rounded-sm object-cover'
             />
-          </div>
+          </button>
         </ScrollReveal>
       ))}
     </div>

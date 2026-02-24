@@ -36,7 +36,9 @@ const Gallery = ({ className = '', images }: GalleryProps) => {
             key={image.url}
             delay={index * 60}
             className='w-[calc((100%-14px)/2)] sm:w-[calc((100%-14px*2)/3)] lg:w-[calc((100%-14px*5)/6)]'>
-            <div
+            <button
+              type='button'
+              aria-label={`View photo: ${image.altText}`}
               className='relative aspect-square cursor-pointer w-full hover:scale-[1.02] transition-all duration-200'
               onClick={() => handleImageClick(index)}>
               <BlurImage
@@ -46,7 +48,7 @@ const Gallery = ({ className = '', images }: GalleryProps) => {
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 className='rounded-sm object-cover'
               />
-            </div>
+            </button>
           </ScrollReveal>
         ))}
       </div>

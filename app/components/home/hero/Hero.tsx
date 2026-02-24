@@ -54,7 +54,11 @@ const Hero = () => {
                   />
                 </div>
               )}
-              <h3 className='text-lg sm:text-xl mb-2 sm:mb-3 gold-heading'>{subHeading}</h3>
+              {releaseState === 'single-released' ? (
+                <h3 className='text-lg sm:text-xl mb-2 sm:mb-3 gold-heading'>{subHeading}</h3>
+              ) : (
+                <h2 className='text-lg sm:text-xl mb-2 sm:mb-3 gold-heading'>{subHeading}</h2>
+              )}
               <BandcampPlayer albumId={data.bandCampId} trackId={data.trackId} />
             </div>
             <div className='grid grid-cols-2 gap-3 mt-4'>

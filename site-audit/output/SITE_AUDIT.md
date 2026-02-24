@@ -217,7 +217,7 @@
 
 ### 4.1 Skip-to-Content Link
 
-- [ ] :red_circle: **No skip-to-content link** -- There is no skip link allowing keyboard users to bypass the header navigation and jump to `<main>`. The header has 6+ navigation links that must be tabbed through on every page. **Add a skip link as the first focusable element in `<body>`. WCAG 2.4.1 failure.**
+- [x] :red_circle: **No skip-to-content link** -- There is no skip link allowing keyboard users to bypass the header navigation and jump to `<main>`. The header has 6+ navigation links that must be tabbed through on every page. **Add a skip link as the first focusable element in `<body>`. WCAG 2.4.1 failure.**
 - [x] :green_circle: **`<main>` element present** -- `layout.tsx:58` wraps page content in `<main>`. Just needs an `id` attribute for the skip link target.
 
 ### 4.2 Document Structure
@@ -232,7 +232,7 @@
 - [x] :green_circle: **Proper H1-H2 hierarchy on homepage** -- H1 (sr-only) > H2 for each section (News, Music, About, Contact).
 - [x] :green_circle: **H1 on album pages** -- `MusicTemplate.tsx:28` uses `<h1>` for album name.
 - [x] :green_circle: **H1 on purchase page** -- `purchase/page.tsx:77` uses `<h1>`.
-- [ ] :yellow_circle: **H3 used in hero without H2 context** -- `Hero.tsx:57` uses `<h3>` ("New album streaming now") inside the hero section, but the hero section has no H2. This creates a heading level skip (H1 > H3). Consider using H2 instead.
+- [x] :yellow_circle: **H3 used in hero without H2 context** -- `Hero.tsx:57` uses `<h3>` ("New album streaming now") inside the hero section, but the hero section has no H2. This creates a heading level skip (H1 > H3). Consider using H2 instead.
 
 ### 4.4 Keyboard Navigation
 
