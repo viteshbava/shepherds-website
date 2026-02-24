@@ -26,8 +26,9 @@ transition
 px-2 
 py-4  
 bg-opacity-25	
-hover:bg-opacity-30 
-${!disabled && 'active:scale-95'} 
+hover:bg-opacity-30
+focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-black
+${!disabled && 'active:scale-95'}
 ${className}
 `;
 
