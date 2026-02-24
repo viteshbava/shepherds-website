@@ -32,6 +32,9 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const header = headerRef.current;
     const logo = logoRef.current;
     const mediaQuery = window.matchMedia('(min-width: 640px)'); // Media query for non-mobile screens

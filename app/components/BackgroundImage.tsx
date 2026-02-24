@@ -22,6 +22,9 @@ const BackgroundImage = ({
   const imageRef = useRef<HTMLImageElement | null>(null);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     let handleScroll = () => {};
     let rafId = 0;
 
