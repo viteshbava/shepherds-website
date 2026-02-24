@@ -134,7 +134,7 @@
 
 ### 2.5 Dependency Security
 
-- [ ] :orange_circle: **`npm audit` shows multiple vulnerabilities** -- The following were found:
+- [x] :orange_circle: **`npm audit` shows multiple vulnerabilities** -- The following were found:
   - **HIGH:** `braces` (<3.0.3) -- Uncontrolled resource consumption
   - **HIGH:** `cross-spawn` (7.0.0-7.0.4) -- ReDoS vulnerability
   - **HIGH:** `glob` (3.0.0-10.5.0) -- Command injection via CLI
