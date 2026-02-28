@@ -6,6 +6,8 @@ import { NavLink } from './Header';
 import Copyright from '../Copyright';
 import SocialIcons from '../SocialIcons';
 
+const HOME_LINK: NavLink = { title: 'Home', href: '/' };
+
 interface HamburgerMenuProps {
   navLinks: NavLink[];
   isOpen: boolean;
@@ -14,6 +16,7 @@ interface HamburgerMenuProps {
 
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMenu }) => {
   const pathname = usePathname();
+  const allLinks = [HOME_LINK, ...navLinks];
   const [isMounted, setIsMounted] = useState(false);
   const setIsBodyScrollLocked = useLockBodyScroll();
 
@@ -108,13 +111,13 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ navLinks, isOpen, closeMe
       <div className='w-full min-h-[40px] h-[18svh] max-h-[4.5rem] sm:max-h-24'></div>
       <nav className='flex-grow flex flex-col justify-center'>
         <ul className='flex flex-col justify-between max-h-[50svh] h-[250px]'>
-          {navLinks.map((link, index) => (
+          {allLinks.map((link, index) => (
             <li key={index} onClick={onClose}>
               <Link
                 ref={
                   index === 0
                     ? firstFocusableRef
-                    : index === navLinks.length - 1
+                    : index === allLinks.length - 1
                     ? lastFocusableRef
                     : null
                 }

@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavLink } from './Header';
 
+const HOME_LINK: NavLink = { title: 'Home', href: '/' };
+
 interface NavBarProps {
   navLinks: NavLink[];
   half?: 'left' | 'right';
@@ -10,19 +12,17 @@ interface NavBarProps {
 
 const Navbar = ({ navLinks, half }: NavBarProps) => {
   const pathname = usePathname();
-  const totalLinks = navLinks.length;
-  const midpoint = Math.floor(totalLinks / 2); // Midpoint index
+
+  // If custom links count is odd, prepend Home so both sides have equal links
+  const allLinks = navLinks.length % 2 !== 0 ? [HOME_LINK, ...navLinks] : navLinks;
+  const midpoint = allLinks.length / 2;
 
   const filteredLinks =
     half === 'left'
-      ? totalLinks % 2 === 0
-        ? navLinks.slice(0, midpoint) // First half for even
-        : navLinks.slice(0, midpoint) // Before middle for odd
+      ? allLinks.slice(0, midpoint)
       : half === 'right'
-      ? totalLinks % 2 === 0
-        ? navLinks.slice(midpoint) // Second half for even
-        : navLinks.slice(midpoint) // Middle and after for odd
-      : navLinks; // All links if `half` is undefined
+      ? allLinks.slice(midpoint)
+      : allLinks;
 
   return (
     <nav className='hidden xl:block'>
